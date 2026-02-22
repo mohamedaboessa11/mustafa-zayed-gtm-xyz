@@ -19,9 +19,6 @@
   --radius: 14px;
   --shadow: 0 1px 3px rgba(0,0,0,0.04);
   --shadow-sm: 0 1px 2px rgba(0,0,0,0.03);
-  --green: #059669;
-  --red: #dc2626;
-  --orange: #f59e0b;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -35,292 +32,66 @@ body {
   text-align: right;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   background: rgba(247, 247, 249, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   padding: 14px 0;
 }
 
-nav .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-brand {
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
+nav .container { display: flex; align-items: center; justify-content: space-between; }
+.nav-brand { font-weight: 700; font-size: 1.1rem; }
 .nav-links { display: flex; gap: 18px; align-items: center; }
-
-.nav-link {
-  text-decoration: none;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  transition: color 0.15s;
-}
+.nav-link { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; }
 .nav-link:hover { color: var(--accent); }
-.nav-link.primary {
-  background: var(--accent);
-  color: #fff;
-  padding: 6px 16px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-}
+.nav-link.primary { background: var(--accent); color: #fff; padding: 6px 16px; border-radius: 999px; font-size: 0.85rem; }
 
-.hero {
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  padding-top: 120px;
-  padding-bottom: 60px;
-}
+.hero { min-height: 55vh; display: flex; align-items: center; padding-top: 120px; padding-bottom: 50px; }
+.hero-eyebrow { font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; }
+.hero-title { font-size: clamp(2.2rem, 4vw, 3.5rem); margin: 16px 0 20px; }
+.hero-subtitle { max-width: 640px; color: var(--text-muted); font-size: 1.05rem; }
+.hero-stats { margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+.stat-value { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+.stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
 
-.hero-eyebrow {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
+.v2-badge { display:inline-block; background: #059669; color: white; padding: 4px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; margin-top: 16px; }
 
-.hero-title {
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
-  margin: 16px 0 20px;
-  color: var(--text);
-}
+section { padding: 60px 0; }
+.section-eyebrow { font-size: 0.85rem; color: var(--accent); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+.section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 12px; }
+.section-description { color: var(--text-muted); max-width: 600px; margin-bottom: 28px; }
 
-.hero-subtitle {
-  max-width: 640px;
-  color: var(--text-muted);
-  font-size: 1.05rem;
-}
-
-.hero-stats {
-  margin-top: 32px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-}
-
-.stat {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 16px;
-}
-
-.stat-value {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-
-.stat-label {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-top: 4px;
-}
-
-.badge {
-  display: inline-block;
-  background: var(--accent-soft);
-  color: var(--accent);
-  padding: 4px 12px;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-top: 16px;
-}
-
-section {
-  padding: 60px 0;
-}
-
-.section-eyebrow {
-  font-size: 0.85rem;
-  color: var(--accent);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.section-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.section-description {
-  color: var(--text-muted);
-  max-width: 600px;
-  margin-bottom: 28px;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-}
-
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px;
-  box-shadow: var(--shadow);
-}
-
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
 .card-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
 .card-text { color: var(--text-muted); font-size: 0.95rem; }
 .highlight-card { border-color: var(--accent); }
 
-.accordion {
-  margin-top: 28px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
-}
-
-.accordion-item + .accordion-item {
-  border-top: 1px solid var(--border);
-}
-
-.accordion-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 20px;
-  cursor: pointer;
-}
-
-.accordion-title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 600;
-}
-
-.step-num {
-  background: var(--accent-soft);
-  color: var(--text);
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-}
-
-.accordion-chevron {
-  transition: transform 0.2s ease;
-}
-
-.accordion-item.open .accordion-chevron {
-  transform: rotate(180deg);
-}
-
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.accordion-body {
-  padding: 0 20px 20px;
-}
-
+.accordion { margin-top: 28px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--surface); box-shadow: var(--shadow-sm); }
+.accordion-item + .accordion-item { border-top: 1px solid var(--border); }
+.accordion-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; cursor: pointer; }
+.accordion-title { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+.step-num { background: var(--accent-soft); color: var(--text); padding: 6px 10px; border-radius: 999px; font-size: 0.85rem; }
+.accordion-chevron { transition: transform 0.2s ease; }
+.accordion-item.open .accordion-chevron { transform: rotate(180deg); }
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.accordion-body { padding: 0 20px 20px; }
 .accordion-body h2 { margin-top: 1.2rem; font-size: 1.3rem; color: var(--accent); }
 .accordion-body h3 { margin-top: 1rem; font-size: 1.1rem; }
-
-.accordion-body table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1rem 0;
-  font-size: 0.95rem;
-}
-
-.accordion-body th,
-.accordion-body td {
-  border: 1px solid var(--border);
-  padding: 10px 12px;
-}
-
+.accordion-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+.accordion-body th, .accordion-body td { border: 1px solid var(--border); padding: 10px 12px; }
 .accordion-body th { background: var(--surface-muted); }
-
-.accordion-body blockquote {
-  border-right: 3px solid var(--accent);
-  background: var(--accent-soft);
-  padding: 14px 18px;
-  margin: 1rem 0;
-  border-radius: 0 var(--radius) var(--radius) 0;
-}
-
-.accordion-body pre {
-  background: var(--surface-muted);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 14px 16px;
-  font-family: 'IBM Plex Sans Arabic', sans-serif;
-  white-space: pre-wrap;
-  word-break: break-word;
-  direction: ltr;
-  text-align: left;
-  unicode-bidi: plaintext;
-}
-
-.accordion-body code {
-  background: var(--accent-soft);
-  padding: 2px 6px;
-  border-radius: 6px;
-}
-
-.accordion-body ul, .accordion-body ol {
-  margin: 0.8rem 0;
-  padding-right: 1.2rem;
-}
-
-.accordion-body .task-list {
-  list-style: none;
-  padding: 0;
-  margin: 0.8rem 0;
-}
-
-.accordion-body .task-list li {
-  position: relative;
-  margin: 0.45rem 0;
-  padding-right: 1.6rem;
-}
-
-.accordion-body .task-list input[type="checkbox"] {
-  position: absolute;
-  right: 0;
-  top: 0.35rem;
-  margin: 0;
-  transform: scale(1.05);
-}
-
-.v2-badge {
-  background: var(--green);
-  color: white;
-  padding: 4px 12px;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
+.accordion-body blockquote { border-right: 3px solid var(--accent); background: var(--accent-soft); padding: 14px 18px; margin: 1rem 0; border-radius: 0 var(--radius) var(--radius) 0; }
+.accordion-body pre { background: var(--surface-muted); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; font-family: 'IBM Plex Sans Arabic', monospace; white-space: pre-wrap; word-break: break-word; direction: ltr; text-align: left; unicode-bidi: plaintext; }
+.accordion-body code { background: var(--accent-soft); padding: 2px 6px; border-radius: 6px; }
+.accordion-body ul, .accordion-body ol { margin: 0.8rem 0; padding-right: 1.2rem; }
+.accordion-body .task-list { list-style: none; padding: 0; margin: 0.8rem 0; }
+.accordion-body .task-list li { position: relative; margin: 0.45rem 0; padding-right: 1.6rem; }
+.accordion-body .task-list input[type="checkbox"] { position: absolute; right: 0; top: 0.35rem; margin: 0; transform: scale(1.05); }
 
 @media (max-width: 720px) {
   nav .container { flex-direction: column; gap: 12px; }
@@ -344,24 +115,24 @@ section {
     <div class="container">
       <p class="hero-eyebrow">GTM Strategy v2</p>
       <h1 class="hero-title">مصطفى زايد — استراتيجية GTM v2</h1>
-      <p class="hero-subtitle">نسخة محدّثة بالكامل — بناءً على فيدباك العميل. Trust-first approach + دورة بيع واقعية + أدوات automation.</p>
-      <span class="v2-badge">v2 — محدّث ٢٢ فبراير ٢٠٢٦</span>
+      <p class="hero-subtitle">نسخة محدّثة بالكامل بناءً على فيدباك العميل — دورة بيع واقعية، أدوات automation، شراكات استشارية، ورسائل ثقة أولاً.</p>
+      <span class="v2-badge">v2 — ٢٢ فبراير ٢٠٢٦</span>
       <div class="hero-stats">
         <div class="stat">
           <div class="stat-value">٣٠-٤٥</div>
-          <div class="stat-label">يوم دورة البيع (مش ١٠)</div>
+          <div class="stat-label">يوم دورة البيع</div>
         </div>
         <div class="stat">
-          <div class="stat-value">Heyreach</div>
-          <div class="stat-label">LinkedIn Automation</div>
+          <div class="stat-value">١٣</div>
+          <div class="stat-label">قسم في الوثيقة</div>
         </div>
         <div class="stat">
           <div class="stat-value">Trust</div>
-          <div class="stat-label">الثقة أولاً مش الأرقام</div>
+          <div class="stat-label">الثقة أولاً</div>
         </div>
         <div class="stat">
           <div class="stat-value">أسبوع</div>
-          <div class="stat-label">Phase 1 مضغوط</div>
+          <div class="stat-label">أول نتائج</div>
         </div>
       </div>
     </div>
@@ -369,32 +140,31 @@ section {
 
   <section id="changes">
     <div class="container">
-      <p class="section-eyebrow">التعديلات</p>
-      <h2 class="section-title">ما تغيّر في النسخة الثانية</h2>
-      <p class="section-description">١٢ تعديل بناءً على فيدباك العميل — كل نقطة اتعالجت.</p>
+      <p class="section-eyebrow">v2 التعديلات</p>
+      <h2 class="section-title">ما تغيّر بناءً على الفيدباك</h2>
       <div class="card-grid">
         <div class="card highlight-card">
-          <h3 class="card-title">ابدأ صغير</h3>
-          <p class="card-text">بدل "جناح تنفيذي" كامل — ابدأ بمبنى واحد واكسب الثقة.</p>
+          <h3 class="card-title">🏗️ ابدأ صغير</h3>
+          <p class="card-text">مبنى واحد أو مرحلة واحدة — اكسب الثقة أولاً، ثم وسّع.</p>
         </div>
         <div class="card">
-          <h3 class="card-title">دورة بيع واقعية</h3>
-          <p class="card-text">٣٠-٤٥ يوم بدل ١٠ أيام — عقود بالملايين تحتاج وقت.</p>
+          <h3 class="card-title">⏱️ ٣٠-٤٥ يوم</h3>
+          <p class="card-text">دورة بيع واقعية بدل ١٠ أيام — عقود بالملايين تحتاج وقت.</p>
         </div>
         <div class="card">
-          <h3 class="card-title">Heyreach + Email Infra</h3>
-          <p class="card-text">أدوات automation محددة — LinkedIn sequences + email warmup.</p>
+          <h3 class="card-title">🤖 Heyreach</h3>
+          <p class="card-text">LinkedIn automation + email warmup + CRM — أدوات محددة.</p>
         </div>
         <div class="card highlight-card">
-          <h3 class="card-title">شراكات مكاتب استشارية</h3>
-          <p class="card-text">قناة جديدة — المكتب الاستشاري يوصي بمصطفى لعملائه.</p>
+          <h3 class="card-title">🤝 شراكات استشارية</h3>
+          <p class="card-text">المكتب الاستشاري يوصي بمصطفى — أقوى قناة في المقاولات.</p>
         </div>
         <div class="card">
-          <h3 class="card-title">MEP = بناء + تركيب</h3>
-          <p class="card-text">مش بس صيانة — تنفيذ أنظمة كهرباء وتكييف وسباكة.</p>
+          <h3 class="card-title">🔧 MEP = تنفيذ + تركيب</h3>
+          <p class="card-text">مش بس صيانة — بناء أنظمة كهرباء وتكييف وسباكة.</p>
         </div>
         <div class="card">
-          <h3 class="card-title">عملاء MEP موسّعين</h3>
+          <h3 class="card-title">🏨 عملاء MEP موسّعين</h3>
           <p class="card-text">مصانع + فنادق + مراكز تجارية + كمبوندات.</p>
         </div>
       </div>
@@ -404,29 +174,13 @@ section {
   <section id="full">
     <div class="container">
       <p class="section-eyebrow">الوثيقة الكاملة</p>
-      <h2 class="section-title">الاستراتيجية بتقسيم واضح</h2>
+      <h2 class="section-title">١٣ قسم — اضغط لفتح كل قسم</h2>
       <div class="accordion">
 
         <div class="accordion-item">
           <div class="accordion-header">
             <div class="accordion-title">
               <span class="step-num">01</span>
-              <span>Mustafa KSA — GTM Strategy v2</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><p><strong>شركة مقاولات + MEP | Outbound للمطورين العقاريين وقطاع MEP
-التجاري</strong> <strong>Last Updated:</strong> 2026-02-22 (v2 — بعد
-فيدباك العميل)</p>
-<hr></div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">02</span>
               <span>القسم ١: الاستراتيجية</span>
             </div>
             <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
@@ -516,14 +270,15 @@ section {
 </tr>
 </tbody>
 </table>
-<hr></div>
+<hr />
+</div>
           </div>
         </div>
 
         <div class="accordion-item">
           <div class="accordion-header">
             <div class="accordion-title">
-              <span class="step-num">03</span>
+              <span class="step-num">02</span>
               <span>القسم ٢: الشرائح المستهدفة</span>
             </div>
             <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
@@ -614,7 +369,7 @@ section {
 </tr>
 </tbody>
 </table>
-<hr>
+<hr />
 <h2 id="الشريحة-b-قطاع-mep-التجاري-موسع">🏭 الشريحة B: قطاع MEP التجاري
 (موسّع)</h2>
 <p><strong>حدّة الألم:</strong> 🔴🔴🔴</p>
@@ -696,7 +451,7 @@ section {
 </tr>
 </tbody>
 </table>
-<hr>
+<hr />
 <h2 id="من-نبتعد-عنهم">❌ من نبتعد عنهم</h2>
 <table>
 <thead>
@@ -724,10 +479,21 @@ section {
 </tr>
 </tbody>
 </table>
-<hr>
-<h1 id="القسم-٣-عملية-البيع-sales-process">القسم ٣: عملية البيع (Sales
-Process)</h1>
-<h2 id="دورة-البيع-٣٠-٤٥-يوم">دورة البيع: ٣٠-٤٥ يوم</h2>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">03</span>
+              <span>القسم ٣: عملية البيع (Sales Process)</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><h2 id="دورة-البيع-٣٠-٤٥-يوم">دورة البيع: ٣٠-٤٥ يوم</h2>
 <blockquote>
 <p><strong>⚠️ ده مش SaaS.</strong> عقود مقاولات بالملايين تحتاج بناء ثقة
 — مش ١٠ أيام.</p>
@@ -878,10 +644,21 @@ WhatsApp         زيارة موقع          عرض سعر</code></pre>
 </tr>
 </tbody>
 </table>
-<hr>
-<h1 id="القسم-٤-tech-stack-أدوات-المبيعات">القسم ٤: Tech Stack — أدوات
-المبيعات</h1>
-<h2 id="linkedin-automation">LinkedIn Automation</h2>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">04</span>
+              <span>القسم ٤: Tech Stack — أدوات المبيعات</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><h2 id="linkedin-automation">LinkedIn Automation</h2>
 <table>
 <colgroup>
 <col style="width: 34%" />
@@ -997,10 +774,21 @@ Step 4 (Day 15): Send Message 3 (meeting request)</code></pre>
 </tr>
 </tbody>
 </table>
-<hr>
-<h1 id="القسم-٥-مسار-الشراكات-مكاتب-الاستشارات-الهندسية">القسم ٥: مسار
-الشراكات — مكاتب الاستشارات الهندسية</h1>
-<blockquote>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">05</span>
+              <span>القسم ٥: مسار الشراكات — مكاتب الاستشارات الهندسية</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><blockquote>
 <p><strong>⚠️ قناة مفقودة في النسخة السابقة.</strong> المكتب الاستشاري
 يصمم المشروع ثم يوصي المطور بالمقاول. ده أقوى قناة في المقاولات.</p>
 </blockquote>
@@ -1066,10 +854,21 @@ Step 4 (Day 15): Send Message 3 (meeting request)</code></pre>
 </tr>
 </tbody>
 </table>
-<hr>
-<h1 id="القسم-٦-الرسائل-trust-first-approach">القسم ٦: الرسائل —
-Trust-First Approach</h1>
-<blockquote>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">06</span>
+              <span>القسم ٦: الرسائل — Trust-First Approach</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><blockquote>
 <p><strong>⚠️ تعديل جوهري:</strong> الرسائل القديمة كانت تحاول تقدم
 “تحليل قيمة” بأرقام عامة. في قطاع المقاولات، الثقة تتبنى بـ: <strong>سجل
 أعمال حقيقي + التزام بالمواعيد + احترافية التواصل.</strong></p>
@@ -1137,10 +936,21 @@ LinkedIn</h2>
 مع التقدير،
 [الاسم] — مصطفى للمقاولات
 [الجوال] | [الإيميل]</code></pre>
-<hr>
-<h1 id="القسم-٧-خطة-المحتوى-linkedin-content-plan">القسم ٧: خطة المحتوى
-— LinkedIn Content Plan</h1>
-<blockquote>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">07</span>
+              <span>القسم ٧: خطة المحتوى — LinkedIn Content Plan</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><blockquote>
 <p><strong>الهدف:</strong> بناء authority وثقة قبل وأثناء الـ outreach.
 المحتوى يدعم الرسائل.</p>
 </blockquote>
@@ -1197,10 +1007,21 @@ LinkedIn</h2>
 <li>“لماذا اخترنا الشريك هذا” — قصة من منظور العميل</li>
 <li>أرقام: عدد المشاريع، نسبة التسليم بالموعد، سنوات الخبرة</li>
 </ul>
-<hr>
-<h1 id="القسم-٨-الخطة-الزمنية-٩٠-يوم">القسم ٨: الخطة الزمنية — ٩٠
-يوم</h1>
-<h2 id="المرحلة-١-أسبوع-واحد-الانطلاق-والنتائج-الأولى">المرحلة ١: أسبوع
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">08</span>
+              <span>القسم ٨: الخطة الزمنية — ٩٠ يوم</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><h2 id="المرحلة-١-أسبوع-واحد-الانطلاق-والنتائج-الأولى">المرحلة ١: أسبوع
 واحد — الانطلاق والنتائج الأولى ⚡</h2>
 <blockquote>
 <p><strong>⚠️ تعديل:</strong> ضُغطت من ٤ أسابيع لأسبوع واحد. الهدف:
@@ -1428,14 +1249,15 @@ Pipeline</h2>
 </tr>
 </tbody>
 </table>
-<hr></div>
+<hr />
+</div>
           </div>
         </div>
 
         <div class="accordion-item">
           <div class="accordion-header">
             <div class="accordion-title">
-              <span class="step-num">04</span>
+              <span class="step-num">09</span>
               <span>القسم ٩: هندسة القنوات</span>
             </div>
             <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
@@ -1484,10 +1306,21 @@ Pipeline</h2>
 </tr>
 </tbody>
 </table>
-<hr>
-<h1 id="القسم-١٠-بناء-الثقة-عناصر-أساسية">القسم ١٠: بناء الثقة — عناصر
-أساسية</h1>
-<blockquote>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">10</span>
+              <span>القسم ١٠: بناء الثقة — عناصر أساسية</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><blockquote>
 <p><strong>⚠️ الثقة هي العملة الأهم في المقاولات.</strong> قبل أي PVP أو
 value — لازم تثبت إنك موثوق.</p>
 </blockquote>
@@ -1574,14 +1407,15 @@ value — لازم تثبت إنك موثوق.</p>
 </tr>
 </tbody>
 </table>
-<hr></div>
+<hr />
+</div>
           </div>
         </div>
 
         <div class="accordion-item">
           <div class="accordion-header">
             <div class="accordion-title">
-              <span class="step-num">05</span>
+              <span class="step-num">11</span>
               <span>القسم ١١: مصادر البيانات</span>
             </div>
             <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
@@ -1652,14 +1486,15 @@ Riyadh/Jeddah</td>
 </tr>
 </tbody>
 </table>
-<hr></div>
+<hr />
+</div>
           </div>
         </div>
 
         <div class="accordion-item">
           <div class="accordion-header">
             <div class="accordion-title">
-              <span class="step-num">06</span>
+              <span class="step-num">12</span>
               <span>القسم ١٢: مؤشرات الأداء</span>
             </div>
             <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
@@ -1719,10 +1554,21 @@ Riyadh/Jeddah</td>
 </tr>
 </tbody>
 </table>
-<hr>
-<h1 id="القسم-١٣-الأسئلة-المطلوبة-من-مصطفى">القسم ١٣: الأسئلة المطلوبة
-من مصطفى</h1>
-<blockquote>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">13</span>
+              <span>القسم ١٣: الأسئلة المطلوبة من مصطفى</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><blockquote>
 <p><strong>⚠️ بدون الإجابات دي ما نقدر نشغّل الـ outreach
 بفعالية.</strong> <strong>الوقت المطلوب: ≈ ساعة واحدة.</strong></p>
 </blockquote>
@@ -1889,7 +1735,8 @@ ____________</p>
 <li><label><input type="checkbox" />مراجع عملاء (٣ أسماء + أرقام
 بإذنهم)</label></li>
 <li><label><input type="checkbox" />لوقو بدقة عالية</label></li>
-</ul></div>
+</ul>
+</div>
           </div>
         </div>
       </div>
@@ -1903,13 +1750,11 @@ document.querySelectorAll('.accordion-header').forEach(header => {
     const content = item.querySelector('.accordion-content');
     const isOpen = item.classList.contains('open');
     
-    // Close all
     document.querySelectorAll('.accordion-item').forEach(ai => {
       ai.classList.remove('open');
       ai.querySelector('.accordion-content').style.maxHeight = null;
     });
     
-    // Toggle current
     if (!isOpen) {
       item.classList.add('open');
       content.style.maxHeight = content.scrollHeight + 'px';
