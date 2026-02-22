@@ -4,179 +4,79 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>مصطفى زايد — استراتيجية GTM v2</title>
+  <title>مصطفى زايد — GTM Strategy v2</title>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-:root {
-  --bg: #f7f7f9;
-  --surface: #ffffff;
-  --surface-muted: #f0f1f4;
-  --text: #1a1a2e;
-  --text-muted: #6b7280;
-  --accent: #2563eb;
-  --accent-soft: #eff3ff;
-  --border: #e2e4e9;
-  --radius: 14px;
-  --shadow: 0 1px 3px rgba(0,0,0,0.04);
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.03);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.85;
-  direction: rtl;
-  text-align: right;
-}
-
-.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(247, 247, 249, 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 0;
-}
-
-nav .container { display: flex; align-items: center; justify-content: space-between; }
-.nav-brand { font-weight: 700; font-size: 1.1rem; }
-.nav-links { display: flex; gap: 18px; align-items: center; }
-.nav-link { text-decoration: none; color: var(--text-muted); font-size: 0.9rem; }
-.nav-link:hover { color: var(--accent); }
-.nav-link.primary { background: var(--accent); color: #fff; padding: 6px 16px; border-radius: 999px; font-size: 0.85rem; }
-
-.hero { min-height: 55vh; display: flex; align-items: center; padding-top: 120px; padding-bottom: 50px; }
-.hero-eyebrow { font-size: 0.85rem; color: var(--text-muted); letter-spacing: 0.08em; text-transform: uppercase; }
-.hero-title { font-size: clamp(2.2rem, 4vw, 3.5rem); margin: 16px 0 20px; }
-.hero-subtitle { max-width: 640px; color: var(--text-muted); font-size: 1.05rem; }
-.hero-stats { margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
-.stat { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
-.stat-value { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
-.stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
-
-.v2-badge { display:inline-block; background: #059669; color: white; padding: 4px 14px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; margin-top: 16px; }
-
-section { padding: 60px 0; }
-.section-eyebrow { font-size: 0.85rem; color: var(--accent); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
-.section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 12px; }
-.section-description { color: var(--text-muted); max-width: 600px; margin-bottom: 28px; }
-
-.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
-.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
-.card-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
-.card-text { color: var(--text-muted); font-size: 0.95rem; }
-.highlight-card { border-color: var(--accent); }
-
-.accordion { margin-top: 28px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--surface); box-shadow: var(--shadow-sm); }
-.accordion-item + .accordion-item { border-top: 1px solid var(--border); }
-.accordion-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; cursor: pointer; }
-.accordion-title { display: flex; align-items: center; gap: 12px; font-weight: 600; }
-.step-num { background: var(--accent-soft); color: var(--text); padding: 6px 10px; border-radius: 999px; font-size: 0.85rem; }
-.accordion-chevron { transition: transform 0.2s ease; }
-.accordion-item.open .accordion-chevron { transform: rotate(180deg); }
-.accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-.accordion-body { padding: 0 20px 20px; }
-.accordion-body h2 { margin-top: 1.2rem; font-size: 1.3rem; color: var(--accent); }
-.accordion-body h3 { margin-top: 1rem; font-size: 1.1rem; }
-.accordion-body table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
-.accordion-body th, .accordion-body td { border: 1px solid var(--border); padding: 10px 12px; }
-.accordion-body th { background: var(--surface-muted); }
-.accordion-body blockquote { border-right: 3px solid var(--accent); background: var(--accent-soft); padding: 14px 18px; margin: 1rem 0; border-radius: 0 var(--radius) var(--radius) 0; }
-.accordion-body pre { background: var(--surface-muted); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; font-family: 'IBM Plex Sans Arabic', monospace; white-space: pre-wrap; word-break: break-word; direction: ltr; text-align: left; unicode-bidi: plaintext; }
-.accordion-body code { background: var(--accent-soft); padding: 2px 6px; border-radius: 6px; }
-.accordion-body ul, .accordion-body ol { margin: 0.8rem 0; padding-right: 1.2rem; }
-.accordion-body .task-list { list-style: none; padding: 0; margin: 0.8rem 0; }
-.accordion-body .task-list li { position: relative; margin: 0.45rem 0; padding-right: 1.6rem; }
-.accordion-body .task-list input[type="checkbox"] { position: absolute; right: 0; top: 0.35rem; margin: 0; transform: scale(1.05); }
-
-@media (max-width: 720px) {
-  nav .container { flex-direction: column; gap: 12px; }
-  .hero { min-height: auto; padding-top: 160px; }
-}
-  </style>
+:root { --bg:#f7f7f9;--surface:#fff;--surface-muted:#f0f1f4;--text:#1a1a2e;--text-muted:#6b7280;--accent:#2563eb;--accent-soft:#eff3ff;--border:#e2e4e9;--radius:14px;--shadow:0 1px 3px rgba(0,0,0,.04);--shadow-sm:0 1px 2px rgba(0,0,0,.03) }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.85}
+body[data-lang="ar"]{direction:rtl;text-align:right}
+body[data-lang="en"]{direction:ltr;text-align:left}
+.lang{display:none}
+body[data-lang="ar"] .lang-ar{display:block}
+body[data-lang="en"] .lang-en{display:block}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,247,249,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:14px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-weight:700;font-size:1.1rem}
+.nav-links{display:flex;gap:18px;align-items:center}
+.nav-link{text-decoration:none;color:var(--text-muted);font-size:.9rem}
+.nav-link:hover{color:var(--accent)}
+.nav-link.primary{background:var(--accent);color:#fff;padding:6px 16px;border-radius:999px;font-size:.85rem}
+.lang-toggle{background:var(--surface-muted);border:1px solid var(--border);padding:6px 14px;border-radius:999px;font-size:.85rem;cursor:pointer;font-weight:600}
+.hero{min-height:55vh;display:flex;align-items:center;padding-top:120px;padding-bottom:50px}
+.hero-eyebrow{font-size:.85rem;color:var(--text-muted);letter-spacing:.08em;text-transform:uppercase}
+.hero-title{font-size:clamp(2.2rem,4vw,3.5rem);margin:16px 0 20px}
+.hero-subtitle{max-width:640px;color:var(--text-muted);font-size:1.05rem}
+.hero-stats{margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
+.stat-value{font-size:1.8rem;font-weight:700;color:var(--accent)}
+.stat-label{font-size:.85rem;color:var(--text-muted);margin-top:4px}
+.v2-badge{display:inline-block;background:#059669;color:#fff;padding:4px 14px;border-radius:999px;font-size:.8rem;font-weight:600;margin-top:16px}
+section{padding:60px 0}
+.section-eyebrow{font-size:.85rem;color:var(--accent);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.section-title{font-size:1.8rem;font-weight:700;margin-bottom:12px}
+.section-description{color:var(--text-muted);max-width:600px;margin-bottom:28px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.card-title{font-size:1.05rem;font-weight:600;margin-bottom:8px}
+.card-text{color:var(--text-muted);font-size:.95rem}
+.highlight-card{border-color:var(--accent)}
+.accordion{margin-top:28px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface);box-shadow:var(--shadow-sm)}
+.accordion-item+.accordion-item{border-top:1px solid var(--border)}
+.accordion-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer}
+.accordion-title{display:flex;align-items:center;gap:12px;font-weight:600}
+.step-num{background:var(--accent-soft);color:var(--text);padding:6px 10px;border-radius:999px;font-size:.85rem}
+.accordion-chevron{transition:transform .2s ease}
+.accordion-item.open .accordion-chevron{transform:rotate(180deg)}
+.accordion-content{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.accordion-body{padding:0 20px 20px}
+.accordion-body h2{margin-top:1.2rem;font-size:1.3rem;color:var(--accent)}
+.accordion-body h3{margin-top:1rem;font-size:1.1rem}
+.accordion-body table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+.accordion-body th,.accordion-body td{border:1px solid var(--border);padding:10px 12px}
+.accordion-body th{background:var(--surface-muted)}
+.accordion-body blockquote{border-right:3px solid var(--accent);background:var(--accent-soft);padding:14px 18px;margin:1rem 0;border-radius:0 var(--radius) var(--radius) 0}
+body[data-lang="en"] .accordion-body blockquote{border-left:3px solid var(--accent);border-right:none;border-radius:var(--radius) 0 0 var(--radius)}
+.accordion-body pre{background:var(--surface-muted);color:var(--text);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;font-family:'IBM Plex Sans Arabic',monospace;white-space:pre-wrap;word-break:break-word;direction:ltr;text-align:left;unicode-bidi:plaintext}
+.accordion-body code{background:var(--accent-soft);padding:2px 6px;border-radius:6px}
+.accordion-body ul,.accordion-body ol{margin:.8rem 0;padding-right:1.2rem}
+body[data-lang="en"] .accordion-body ul,body[data-lang="en"] .accordion-body ol{padding-left:1.2rem;padding-right:0}
+.accordion-body .task-list{list-style:none;padding:0;margin:.8rem 0}
+.accordion-body .task-list li{position:relative;margin:.45rem 0;padding-right:1.6rem}
+body[data-lang="en"] .accordion-body .task-list li{padding-left:1.6rem;padding-right:0}
+.accordion-body .task-list input[type="checkbox"]{position:absolute;right:0;top:.35rem;margin:0;transform:scale(1.05)}
+body[data-lang="en"] .accordion-body .task-list input[type="checkbox"]{right:auto;left:0}
+@media(max-width:720px){nav .container{flex-direction:column;gap:12px}.hero{min-height:auto;padding-top:160px}}
+</style>
 </head>
-<body>
-  <nav>
-    <div class="container">
-      <div class="nav-brand">مصطفى زايد</div>
-      <div class="nav-links">
-        <a href="#hero" class="nav-link">الرئيسية</a>
-        <a href="#changes" class="nav-link">التعديلات</a>
-        <a href="#full" class="nav-link primary">الوثيقة</a>
-      </div>
-    </div>
-  </nav>
-
-  <section class="hero" id="hero">
-    <div class="container">
-      <p class="hero-eyebrow">GTM Strategy v2</p>
-      <h1 class="hero-title">مصطفى زايد — استراتيجية GTM v2</h1>
-      <p class="hero-subtitle">نسخة محدّثة بالكامل بناءً على فيدباك العميل — دورة بيع واقعية، أدوات automation، شراكات استشارية، ورسائل ثقة أولاً.</p>
-      <span class="v2-badge">v2 — ٢٢ فبراير ٢٠٢٦</span>
-      <div class="hero-stats">
-        <div class="stat">
-          <div class="stat-value">٣٠-٤٥</div>
-          <div class="stat-label">يوم دورة البيع</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">١٣</div>
-          <div class="stat-label">قسم في الوثيقة</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">Trust</div>
-          <div class="stat-label">الثقة أولاً</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value">أسبوع</div>
-          <div class="stat-label">أول نتائج</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="changes">
-    <div class="container">
-      <p class="section-eyebrow">v2 التعديلات</p>
-      <h2 class="section-title">ما تغيّر بناءً على الفيدباك</h2>
-      <div class="card-grid">
-        <div class="card highlight-card">
-          <h3 class="card-title">🏗️ ابدأ صغير</h3>
-          <p class="card-text">مبنى واحد أو مرحلة واحدة — اكسب الثقة أولاً، ثم وسّع.</p>
-        </div>
-        <div class="card">
-          <h3 class="card-title">⏱️ ٣٠-٤٥ يوم</h3>
-          <p class="card-text">دورة بيع واقعية بدل ١٠ أيام — عقود بالملايين تحتاج وقت.</p>
-        </div>
-        <div class="card">
-          <h3 class="card-title">🤖 Heyreach</h3>
-          <p class="card-text">LinkedIn automation + email warmup + CRM — أدوات محددة.</p>
-        </div>
-        <div class="card highlight-card">
-          <h3 class="card-title">🤝 شراكات استشارية</h3>
-          <p class="card-text">المكتب الاستشاري يوصي بمصطفى — أقوى قناة في المقاولات.</p>
-        </div>
-        <div class="card">
-          <h3 class="card-title">🔧 MEP = تنفيذ + تركيب</h3>
-          <p class="card-text">مش بس صيانة — بناء أنظمة كهرباء وتكييف وسباكة.</p>
-        </div>
-        <div class="card">
-          <h3 class="card-title">🏨 عملاء MEP موسّعين</h3>
-          <p class="card-text">مصانع + فنادق + مراكز تجارية + كمبوندات.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="full">
-    <div class="container">
-      <p class="section-eyebrow">الوثيقة الكاملة</p>
-      <h2 class="section-title">١٣ قسم — اضغط لفتح كل قسم</h2>
-      <div class="accordion">
-
+<body data-lang="ar">
+  <!-- ARABIC -->
+  <div class="lang lang-ar">
+    <nav><div class="container"><div class="nav-brand">مصطفى زايد</div><div class="nav-links"><a href="#hero-ar" class="nav-link">الرئيسية</a><a href="#changes-ar" class="nav-link">التعديلات</a><a href="#full-ar" class="nav-link primary">الوثيقة</a><button class="lang-toggle" data-lang-toggle data-lang-target="en">EN</button></div></div></nav>
+    <section class="hero" id="hero-ar"><div class="container"><p class="hero-eyebrow">GTM Strategy v2</p><h1 class="hero-title">مصطفى زايد — استراتيجية GTM v2</h1><p class="hero-subtitle">نسخة محدّثة بالكامل بناءً على فيدباك العميل — دورة بيع واقعية، أدوات automation، شراكات استشارية، ورسائل ثقة أولاً.</p><span class="v2-badge">v2 — ٢٢ فبراير ٢٠٢٦</span><div class="hero-stats"><div class="stat"><div class="stat-value">٣٠-٤٥</div><div class="stat-label">يوم دورة البيع</div></div><div class="stat"><div class="stat-value">١٣</div><div class="stat-label">قسم في الوثيقة</div></div><div class="stat"><div class="stat-value">Trust</div><div class="stat-label">الثقة أولاً</div></div><div class="stat"><div class="stat-value">أسبوع</div><div class="stat-label">أول نتائج</div></div></div></div></section>
+    <section id="changes-ar"><div class="container"><p class="section-eyebrow">v2 التعديلات</p><h2 class="section-title">ما تغيّر بناءً على الفيدباك</h2><div class="card-grid"><div class="card highlight-card"><h3 class="card-title">🏗️ ابدأ صغير</h3><p class="card-text">مبنى واحد أو مرحلة واحدة — اكسب الثقة أولاً.</p></div><div class="card"><h3 class="card-title">⏱️ ٣٠-٤٥ يوم</h3><p class="card-text">دورة بيع واقعية — عقود بالملايين تحتاج وقت.</p></div><div class="card"><h3 class="card-title">🤖 Heyreach</h3><p class="card-text">LinkedIn automation + email warmup + CRM.</p></div><div class="card highlight-card"><h3 class="card-title">🤝 شراكات استشارية</h3><p class="card-text">المكتب الاستشاري يوصي بمصطفى.</p></div><div class="card"><h3 class="card-title">🔧 MEP = تنفيذ + تركيب</h3><p class="card-text">مش بس صيانة — بناء أنظمة كاملة.</p></div><div class="card"><h3 class="card-title">🏨 عملاء موسّعين</h3><p class="card-text">مصانع + فنادق + مراكز تجارية + كمبوندات.</p></div></div></div></section>
+    <section id="full-ar"><div class="container"><p class="section-eyebrow">الوثيقة الكاملة</p><h2 class="section-title">١٣ قسم — اضغط لفتح</h2><div class="accordion">
         <div class="accordion-item">
           <div class="accordion-header">
             <div class="accordion-title">
@@ -1738,29 +1638,1609 @@ ____________</p>
 </ul>
 </div>
           </div>
+        </div></div></div></section>
+  </div>
+  <!-- ENGLISH -->
+  <div class="lang lang-en">
+    <nav><div class="container"><div class="nav-brand">Mustafa Zayed</div><div class="nav-links"><a href="#hero-en" class="nav-link">Home</a><a href="#changes-en" class="nav-link">Changes</a><a href="#full-en" class="nav-link primary">Document</a><button class="lang-toggle" data-lang-toggle data-lang-target="ar">عربي</button></div></div></nav>
+    <section class="hero" id="hero-en"><div class="container"><p class="hero-eyebrow">GTM Strategy v2</p><h1 class="hero-title">Mustafa Zayed — GTM Strategy v2</h1><p class="hero-subtitle">Fully updated based on client feedback — realistic sales cycle, automation tools, consultancy partnerships, trust-first messaging.</p><span class="v2-badge">v2 — Feb 22, 2026</span><div class="hero-stats"><div class="stat"><div class="stat-value">30-45</div><div class="stat-label">Day Sales Cycle</div></div><div class="stat"><div class="stat-value">13</div><div class="stat-label">Document Sections</div></div><div class="stat"><div class="stat-value">Trust</div><div class="stat-label">Trust-First</div></div><div class="stat"><div class="stat-value">1 Week</div><div class="stat-label">First Results</div></div></div></div></section>
+    <section id="changes-en"><div class="container"><p class="section-eyebrow">v2 Changes</p><h2 class="section-title">What Changed</h2><div class="card-grid"><div class="card highlight-card"><h3 class="card-title">🏗️ Start Small</h3><p class="card-text">One building or phase — earn trust first.</p></div><div class="card"><h3 class="card-title">⏱️ 30-45 Days</h3><p class="card-text">Realistic sales cycle for construction.</p></div><div class="card"><h3 class="card-title">🤖 Heyreach</h3><p class="card-text">LinkedIn automation + email warmup + CRM.</p></div><div class="card highlight-card"><h3 class="card-title">🤝 Consultancy Partners</h3><p class="card-text">Engineering firms recommend Mustafa.</p></div><div class="card"><h3 class="card-title">🔧 MEP = Build + Install</h3><p class="card-text">Full systems execution, not just maintenance.</p></div><div class="card"><h3 class="card-title">🏨 Expanded Clients</h3><p class="card-text">Factories + hotels + malls + compounds.</p></div></div></div></section>
+    <section id="full-en"><div class="container"><p class="section-eyebrow">Full Document</p><h2 class="section-title">13 Sections — Click to Expand</h2><div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">01</span>
+              <span>Section 1: Strategy</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><h2 id="executive-summary">Executive Summary</h2>
+<p><strong>Company:</strong> Mustafa — General Contracting + MEP Systems
+Execution <strong>Motion:</strong> Outbound-First (No Cold Calling)
+<strong>Positioning:</strong> “We don’t sell construction — we sell
+commitment to delivery.”</p>
+<h3 id="two-target-segments">Two Target Segments</h3>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 28%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr>
+<th>Segment</th>
+<th>Service</th>
+<th style="text-align: center;">Revenue Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🏗️ <strong>Small Real Estate Developers</strong></td>
+<td>Execution contractor (one building / one phase to start)</td>
+<td style="text-align: center;">Per project</td>
+</tr>
+<tr>
+<td>🏭 <strong>Commercial MEP Sector</strong></td>
+<td>MEP systems execution + installation (factories, hotels, malls,
+compounds)</td>
+<td style="text-align: center;">Per project / maintenance contract</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-changes-from-v1">Key Changes from v1</h3>
+<table>
+<colgroup>
+<col style="width: 53%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr>
+<th>❌ Was</th>
+<th>✅ Now</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“Executive Construction Wing” from day one</td>
+<td>Start with one building — earn trust first</td>
+</tr>
+<tr>
+<td>MEP = maintenance only</td>
+<td>MEP = execution + installation + maintenance</td>
+</tr>
+<tr>
+<td>MEP clients = factories only</td>
+<td>Factories + hotels + malls + compounds</td>
+</tr>
+<tr>
+<td>Sales cycle = 10 days</td>
+<td>Sales cycle = 30-45 days</td>
+</tr>
+<tr>
+<td>Cold calling as a channel</td>
+<td>No cold calling</td>
+</tr>
+<tr>
+<td>“Value-first” messaging with generic numbers</td>
+<td>“Trust-first” messaging built on real track record</td>
+</tr>
+<tr>
+<td>Decision maker = CEO only</td>
+<td>CEO + Projects Manager</td>
+</tr>
+<tr>
+<td>No automation tools</td>
+<td>Heyreach + email infrastructure defined</td>
+</tr>
+<tr>
+<td>No partnerships</td>
+<td>Engineering consultancy partnerships channel</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
 
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">02</span>
+              <span>Section 2: Target Segments</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><h2 id="segment-a-small-real-estate-developers">🏗️ Segment A: Small Real
+Estate Developers</h2>
+<p><strong>Pain Intensity:</strong> 🔴🔴🔴</p>
+<table>
+<colgroup>
+<col style="width: 55%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Who</strong></td>
+<td>Development companies building 1-5 projects per year</td>
+</tr>
+<tr>
+<td><strong>Decision Maker</strong></td>
+<td>Owner / CEO / <strong>Projects Manager</strong></td>
+</tr>
+<tr>
+<td><strong>Geography</strong></td>
+<td>Riyadh, Jeddah, Dammam</td>
+</tr>
+<tr>
+<td><strong>Core Pain</strong></td>
+<td><strong>Delivery delays + contractor failures</strong> — their
+biggest fear</td>
+</tr>
+<tr>
+<td><strong>Secondary Pain</strong></td>
+<td>Post-delivery defects, cost inflation, talent shortage</td>
+</tr>
+<tr>
+<td><strong>Buying Triggers</strong></td>
+<td>New land, previous contractor failed, project behind schedule</td>
+</tr>
+<tr>
+<td><strong>Emotional State</strong></td>
+<td><strong>Fear of repetition</strong> — burned by bad contractor,
+looking for reliable alternative</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Voice of Customer:</strong> &gt; “We tried 3 contractors —
+one abandoned the project mid-way. The second was 8 months late. We
+don’t know who to trust.”</p>
+<h3 id="start-small-logic">“Start Small” Logic</h3>
+<blockquote>
+<p><strong>⚠️ Critical:</strong> A developer won’t hand you all their
+projects on day one. Start with one building or one phase — prove
+on-time delivery — then expand.</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 35%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Scope</th>
+<th>Goal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Phase 1 (Prove)</strong></td>
+<td>One building or structural phase</td>
+<td>Prove on-time delivery</td>
+</tr>
+<tr>
+<td><strong>Phase 2 (Expand)</strong></td>
+<td>Full project</td>
+<td>After they’ve seen results</td>
+</tr>
+<tr>
+<td><strong>Phase 3 (Partnership)</strong></td>
+<td>Multiple concurrent projects</td>
+<td>Now they trust you — “Executive Wing”</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="segment-b-commercial-mep-sector-expanded">🏭 Segment B:
+Commercial MEP Sector (Expanded)</h2>
+<p><strong>Pain Intensity:</strong> 🔴🔴🔴</p>
+<table>
+<colgroup>
+<col style="width: 55%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Who</strong></td>
+<td>Owners and operators of factories, hotels, malls, residential
+compounds</td>
+</tr>
+<tr>
+<td><strong>Decision Maker</strong></td>
+<td>Owner / Operations Manager / Projects Manager</td>
+</tr>
+<tr>
+<td><strong>Geography</strong></td>
+<td>Riyadh, Jeddah (primary) + MODON industrial cities</td>
+</tr>
+<tr>
+<td><strong>Core Pain</strong></td>
+<td>Need <strong>MEP systems execution + installation</strong>
+(electrical, HVAC, plumbing, fire protection) — not just
+maintenance</td>
+</tr>
+<tr>
+<td><strong>Secondary Pain</strong></td>
+<td>Unexpected downtime, Civil Defense compliance, high energy
+costs</td>
+</tr>
+<tr>
+<td><strong>Buying Triggers</strong></td>
+<td>New factory build, hotel renovation, mall expansion, Civil Defense
+inspection</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mep-client-types-expanded">MEP Client Types (Expanded)</h3>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 21%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr>
+<th>Client Type</th>
+<th>Examples</th>
+<th style="text-align: center;">MEP Service Needed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Factories</strong></td>
+<td>MODON, industrial cities</td>
+<td style="text-align: center;">Industrial electrical, cooling, safety
+systems</td>
+</tr>
+<tr>
+<td><strong>Hotels</strong></td>
+<td>3-5 star hotels</td>
+<td style="text-align: center;">Central HVAC, fire systems,
+plumbing</td>
+</tr>
+<tr>
+<td><strong>Commercial Centers</strong></td>
+<td>Malls, office buildings</td>
+<td style="text-align: center;">Electrical, HVAC, fire safety</td>
+</tr>
+<tr>
+<td><strong>Compounds</strong></td>
+<td>Residential communities</td>
+<td style="text-align: center;">Complete MEP infrastructure</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="who-we-avoid">❌ Who We Avoid</h2>
+<table>
+<thead>
+<tr>
+<th>Bad Fit</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Giant developers (Roshn, NHC)</td>
+<td>Have internal execution teams</td>
+</tr>
+<tr>
+<td>Individual building one villa</td>
+<td>Too small</td>
+</tr>
+<tr>
+<td>Factory/hotel with internal MEP team</td>
+<td>Problem already solved</td>
+</tr>
+<tr>
+<td>Developer without approved financing</td>
+<td>Won’t start projects</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">03</span>
+              <span>Section 3: Sales Process</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><h2 id="sales-cycle-30-45-days">Sales Cycle: 30-45 Days</h2>
+<blockquote>
+<p><strong>⚠️ This is not SaaS.</strong> Multi-million riyal
+construction contracts need trust-building — not 10 days.</p>
+</blockquote>
+<pre><code>Week 1           Week 2-3            Week 4-5           Week 6
+LinkedIn +       First meeting →     Technical +         Contract
+WhatsApp         Site visit          Price proposal      signing</code></pre>
+<h3 id="detailed-stages">Detailed Stages</h3>
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+<col style="width: 21%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Stage</th>
+<th style="text-align: center;">Timeline</th>
+<th>Activity</th>
+<th>Channel</th>
+<th>Goal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. First Touch</strong></td>
+<td style="text-align: center;">Day 1-3</td>
+<td>LinkedIn connection + intro message</td>
+<td>LinkedIn (Heyreach)</td>
+<td>Open conversation</td>
+</tr>
+<tr>
+<td><strong>2. Relationship Building</strong></td>
+<td style="text-align: center;">Day 3-7</td>
+<td>Custom content + WhatsApp follow-up</td>
+<td>WhatsApp + LinkedIn</td>
+<td>Move to personal conversation</td>
+</tr>
+<tr>
+<td><strong>3. First Meeting</strong></td>
+<td style="text-align: center;">Day 7-14</td>
+<td>Presentation + portfolio + site visit</td>
+<td>Zoom or in-person</td>
+<td>Build trust</td>
+</tr>
+<tr>
+<td><strong>4. Client Site Visit</strong></td>
+<td style="text-align: center;">Day 14-21</td>
+<td>Visit client’s land/project + technical assessment</td>
+<td>In-person</td>
+<td>Show professionalism</td>
+</tr>
+<tr>
+<td><strong>5. Technical Proposal</strong></td>
+<td style="text-align: center;">Day 21-30</td>
+<td>Detailed technical proposal + timeline + guarantees</td>
+<td>Email + meeting</td>
+<td>Submit proposal</td>
+</tr>
+<tr>
+<td><strong>6. Negotiation &amp; Contract</strong></td>
+<td style="text-align: center;">Day 30-45</td>
+<td>Negotiate terms + sign</td>
+<td>In-person</td>
+<td>Close deal</td>
+</tr>
+</tbody>
+</table>
+<h3 id="detailed-sequence-no-cold-calling">Detailed Sequence (No Cold
+Calling)</h3>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 31%" />
+<col style="width: 31%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">Day</th>
+<th>Channel</th>
+<th>Message</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>LinkedIn</td>
+<td>Connection request + short note</td>
+<td>Via Heyreach</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td>LinkedIn</td>
+<td>Follow-up — share content (project photo or technical tip)</td>
+<td>After acceptance</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td>WhatsApp</td>
+<td>Personal intro + portfolio link</td>
+<td>Transition from LinkedIn</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td>LinkedIn</td>
+<td>Share case study or specific project result</td>
+<td>Build authority</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td>WhatsApp</td>
+<td>“I noticed you’re working on [X] — I have a technical note that
+might help”</td>
+<td>Tangible value</td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td>WhatsApp</td>
+<td>Invite for meeting / Mustafa project site visit</td>
+<td>Meeting request</td>
+</tr>
+<tr>
+<td style="text-align: center;">20</td>
+<td>Email</td>
+<td>Formal summary + project record + certificates</td>
+<td>Formalization</td>
+</tr>
+<tr>
+<td style="text-align: center;">25</td>
+<td>WhatsApp</td>
+<td>Post-meeting follow-up</td>
+<td>Follow-up</td>
+</tr>
+<tr>
+<td style="text-align: center;">30</td>
+<td>Email</td>
+<td>Formal technical proposal</td>
+<td>Proposal</td>
+</tr>
+<tr>
+<td style="text-align: center;">40-45</td>
+<td>In-person</td>
+<td>Negotiation + signing</td>
+<td>Close</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">04</span>
+              <span>Section 4: Tech Stack — Sales Tools</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><h2 id="linkedin-automation">LinkedIn Automation</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Role</th>
+<th style="text-align: center;">Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Heyreach</strong></td>
+<td>LinkedIn sequence automation (connect + messages + follow-up)</td>
+<td style="text-align: center;">$79/mo</td>
+</tr>
+<tr>
+<td><strong>LinkedIn Sales Navigator</strong></td>
+<td>Advanced search + filters + Lead Lists</td>
+<td style="text-align: center;">SAR 500-800/mo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="heyreach-setup">Heyreach Setup</h3>
+<pre><code>Sequence: Mustafa → Developer (30 days)
+Step 1 (Day 1): Connection Request + Note
+Step 2 (Day 3): If connected → Send Message 1 (intro + portfolio link)
+Step 3 (Day 8): Send Message 2 (case study)
+Step 4 (Day 15): Send Message 3 (meeting request)
+---
+Sequence: Mustafa → MEP Client (30 days)
+Step 1 (Day 1): Connection Request + Note
+Step 2 (Day 3): If connected → Send Message 1 (project reference)
+Step 3 (Day 8): Send Message 2 (site visit offer)
+Step 4 (Day 15): Send Message 3 (meeting request)</code></pre>
+<h2 id="email-infrastructure">Email Infrastructure</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Domain</strong></td>
+<td>Dedicated email domain (e.g., outreach.mustafa-ksa.com)</td>
+</tr>
+<tr>
+<td><strong>ESP</strong></td>
+<td>Google Workspace or Zoho Mail</td>
+</tr>
+<tr>
+<td><strong>Warmup</strong></td>
+<td>Instantly.ai or Warmbox — 14-day warmup before sending</td>
+</tr>
+<tr>
+<td><strong>Volume</strong></td>
+<td>Max 30 emails/day in first month</td>
+</tr>
+<tr>
+<td><strong>Signature</strong></td>
+<td>Name + title + mobile + portfolio link</td>
+</tr>
+</tbody>
+</table>
+<h2 id="crm">CRM</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Breakcold</strong> or <strong>HubSpot Free</strong></td>
+<td>Stage tracking + pipeline</td>
+</tr>
+<tr>
+<td><strong>Required Fields</strong></td>
+<td>Segment (Developer/MEP), sales stage, last contact date, lead
+source</td>
+</tr>
+</tbody>
+</table>
+<h2 id="other-tools">Other Tools</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>WhatsApp Business</strong></td>
+<td>Primary communication after LinkedIn</td>
+</tr>
+<tr>
+<td><strong>Canva</strong></td>
+<td>Portfolio PDF + LinkedIn content</td>
+</tr>
+<tr>
+<td><strong>Google Drive</strong></td>
+<td>Proposals + shared documents</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">05</span>
+              <span>Section 5: Partnerships — Engineering Consultancy Firms</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><blockquote>
+<p><strong>⚠️ Missing from v1.</strong> The consultancy firm designs the
+project then recommends contractors. This is the strongest channel in
+construction.</p>
+</blockquote>
+<h2 id="how-the-partnership-works">How the Partnership Works</h2>
+<pre><code>Engineering consultancy designs the project
+        ↓
+Developer asks: &quot;Who&#39;s a good contractor?&quot;
+        ↓
+Consultancy recommends Mustafa (because relationship exists)
+        ↓
+Mustafa submits proposal → wins the project</code></pre>
+<h2 id="partnership-building-plan">Partnership Building Plan</h2>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr>
+<th>Week</th>
+<th>Activity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-2</td>
+<td>Identify 10 engineering consultancies in Riyadh and Jeddah</td>
+</tr>
+<tr>
+<td>2-3</td>
+<td>LinkedIn + WhatsApp outreach — introduce Mustafa and track
+record</td>
+</tr>
+<tr>
+<td>3-4</td>
+<td>Introductory meeting + project portfolio presentation</td>
+</tr>
+<tr>
+<td>Monthly</td>
+<td>Regular follow-ups + updates on current projects</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-we-offer-the-consultancy">What We Offer the
+Consultancy</h2>
+<table>
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 56%" />
+</colgroup>
+<thead>
+<tr>
+<th>Value</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reliable execution partner</strong></td>
+<td>They can recommend us with confidence</td>
+</tr>
+<tr>
+<td><strong>Regular execution reports</strong></td>
+<td>Easy for consultancy to monitor the project</td>
+</tr>
+<tr>
+<td><strong>Specification compliance</strong></td>
+<td>We execute exactly per their design</td>
+</tr>
+<tr>
+<td><strong>Referral commission (optional)</strong></td>
+<td>2-3% of project value</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">06</span>
+              <span>Section 6: Messaging — Trust-First Approach</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><blockquote>
+<p><strong>⚠️ Key change:</strong> Old messages tried to lead with
+“value analysis” using generic numbers. In construction, trust is built
+with: <strong>real track record + on-time delivery + professional
+communication.</strong></p>
+</blockquote>
+<h3 id="principles">Principles</h3>
+<ol type="1">
+<li><strong>Don’t lead with generic numbers</strong> — lead with who you
+are and what you’ve delivered</li>
+<li><strong>Project photos are stronger than words</strong> — always
+attach portfolio</li>
+<li><strong>Trust before value</strong> — “We delivered 12 projects on
+time” beats “We saved 9 million”</li>
+<li><strong>Customize to their situation</strong> — mention their
+project / neighborhood / specific problem</li>
+</ol>
+<h2 id="linkedin-message-developer">LinkedIn Message — Developer</h2>
+<pre><code>Hello [Name], I&#39;m [Your name] from Mustafa Contracting.
+
+I noticed your projects in [area/city] — we have experience 
+with similar project types.
+
+We&#39;ve delivered [number] residential projects — the latest being 
+[project name/type] in [location], [number] units, delivered 
+fully on the agreed timeline.
+
+If you have an upcoming project and are looking for a contractor 
+committed to on-time delivery — I&#39;d be happy to send you our 
+project portfolio + references from previous clients.</code></pre>
+<h2 id="linkedin-message-mep-client">LinkedIn Message — MEP Client</h2>
+<pre><code>Hello [Name], I&#39;m [Your name] from Mustafa.
+
+We specialize in MEP systems execution and installation — 
+electrical, HVAC, plumbing, fire protection — for 
+[factories/hotels/commercial centers].
+
+Our latest project: [facility type] in [city] — complete 
+execution of [systems] within [timeframe].
+
+If you have a new project or renovation — I&#39;d be happy to 
+send you our work portfolio.</code></pre>
+<h2 id="whatsapp-follow-up-after-linkedin">WhatsApp Follow-up — After
+LinkedIn</h2>
+<pre><code>Hello [Name], we connected on LinkedIn 👋
+
+Here&#39;s our project portfolio — [number] projects with photos and details:
+[PDF Link]
+
++ Previous client references if you&#39;d like to verify.
+
+When&#39;s a good time for a 15-minute call?</code></pre>
+<h2 id="email-formal-post-meeting">Email — Formal Post-Meeting</h2>
+<pre><code>Subject: Meeting Summary — [Project Name]
+
+Dear [Name],
+
+Thank you for your time today.
+
+As discussed, attached:
+1. Our Company Profile
+2. Record of similar projects
+3. Classification certificate + insurance
+4. Client references (with their contact numbers, with permission)
+
+We&#39;ll prepare the technical proposal within [agreed timeframe].
+
+Best regards,
+[Name] — Mustafa Contracting
+[Mobile] | [Email]</code></pre>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">07</span>
+              <span>Section 7: Content Plan — LinkedIn</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><blockquote>
+<p><strong>Goal:</strong> Build authority and trust before and during
+outreach. Content supports the messages.</p>
+</blockquote>
+<h2 id="weekly-content-calendar">Weekly Content Calendar</h2>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 48%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">Day</th>
+<th>Content Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Sunday</strong></td>
+<td>📸 Project photo + short story</td>
+<td>“We delivered this project in [city] — 120 days from foundation to
+handover”</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Tuesday</strong></td>
+<td>💡 Technical tip</td>
+<td>“3 common mistakes in industrial electrical system execution”</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Thursday</strong></td>
+<td>📊 Stat or insight + commentary</td>
+<td>“70% of project delays are caused by poor subcontractor
+management”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="content-topics-3-months">Content Topics (3 Months)</h2>
+<h3 id="month-1-prove-capability">Month 1: Prove Capability</h3>
+<ul>
+<li>Before/After project photos (4 posts)</li>
+<li>“How we guarantee on-time delivery” — our internal process</li>
+<li>Short timelapse video of a project</li>
+<li>Client testimonial (written or video)</li>
+</ul>
+<h3 id="month-2-education-authority">Month 2: Education + Authority</h3>
+<ul>
+<li>Common mistakes in choosing a contractor</li>
+<li>Difference between classified and unclassified contractors</li>
+<li>“How to read a contractor’s quote” (series)</li>
+<li>MEP tips for factory/hotel owners</li>
+</ul>
+<h3 id="month-3-case-studies">Month 3: Case Studies</h3>
+<ul>
+<li>Detailed case study: Problem → Solution → Result</li>
+<li>“Why we chose this partner” — story from client perspective</li>
+<li>Numbers: total projects, on-time delivery rate, years of
+experience</li>
+</ul>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">08</span>
+              <span>Section 8: Timeline — 90 Days</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><h2 id="phase-1-one-week-launch-first-results">Phase 1: One Week —
+Launch &amp; First Results ⚡</h2>
+<blockquote>
+<p><strong>⚠️ Adjusted:</strong> Compressed from 4 weeks to 1 week.
+Goal: team sees results (contacts + replies + meetings) — not deal
+closures.</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 26%" />
+<col style="width: 18%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">Day</th>
+<th>Activity</th>
+<th>Owner</th>
+<th style="text-align: center;">Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Activate LinkedIn Navigator + Heyreach</td>
+<td>Sales team</td>
+<td style="text-align: center;">Tools ready</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td>Prepare portfolio PDF + project files</td>
+<td>Sales team</td>
+<td style="text-align: center;">Files ready to send</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Build first 100 prospect list (50 dev + 50 MEP)</td>
+<td>Sales team</td>
+<td style="text-align: center;">Lists ready</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td>Launch first Heyreach sequence</td>
+<td>Sales team</td>
+<td style="text-align: center;">100 LinkedIn connection requests</td>
+</tr>
+<tr>
+<td style="text-align: center;">3-5</td>
+<td>Follow up on replies + transition to WhatsApp</td>
+<td>Sales team</td>
+<td style="text-align: center;">15-25 conversations</td>
+</tr>
+<tr>
+<td style="text-align: center;">5-7</td>
+<td>Book first meetings</td>
+<td>Sales team</td>
+<td style="text-align: center;">3-5 meetings booked</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td>Publish first LinkedIn post</td>
+<td>Content team</td>
+<td style="text-align: center;">Start building authority</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Week 1 KPIs:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th style="text-align: center;">Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LinkedIn connection requests</td>
+<td style="text-align: center;">100</td>
+</tr>
+<tr>
+<td>Acceptance rate</td>
+<td style="text-align: center;">&gt; 30%</td>
+</tr>
+<tr>
+<td>Messages sent</td>
+<td style="text-align: center;">50+</td>
+</tr>
+<tr>
+<td>Replies</td>
+<td style="text-align: center;">10-15</td>
+</tr>
+<tr>
+<td>Meetings booked</td>
+<td style="text-align: center;">3-5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="phase-2-week-2-4-build-pipeline">Phase 2: Week 2-4 — Build
+Pipeline</h2>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr>
+<th>Week</th>
+<th>Activity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>100 additional connections + 5 meetings + first 3 LinkedIn
+posts</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Expand list to 300 + start consultancy partnerships (reach out to 5
+firms)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>First proposals + follow-ups + email domain warmup</td>
+</tr>
+</tbody>
+</table>
+<p><strong>End of Month 1 KPIs:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th style="text-align: center;">Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prospects contacted</td>
+<td style="text-align: center;">300</td>
+</tr>
+<tr>
+<td>Meetings</td>
+<td style="text-align: center;">15+</td>
+</tr>
+<tr>
+<td>Proposals</td>
+<td style="text-align: center;">5+</td>
+</tr>
+<tr>
+<td>Consultancy firms contacted</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td>LinkedIn posts</td>
+<td style="text-align: center;">8</td>
+</tr>
+</tbody>
+</table>
+<h2 id="phase-3-month-2-3-close-first-deals">Phase 3: Month 2-3 — Close
+First Deals</h2>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Goal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Expand to 500+ prospects</td>
+<td>Wider coverage</td>
+</tr>
+<tr>
+<td>Follow up on submitted proposals</td>
+<td>Close 2-3 deals</td>
+</tr>
+<tr>
+<td>Activate email outreach (after warmup)</td>
+<td>Additional channel</td>
+</tr>
+<tr>
+<td>Partnership with 2+ consultancy firms</td>
+<td>Referrals</td>
+</tr>
+<tr>
+<td>Continuous LinkedIn content (3 posts/week)</td>
+<td>Authority</td>
+</tr>
+<tr>
+<td>Client referral program</td>
+<td>Additional lead source</td>
+</tr>
+</tbody>
+</table>
+<p><strong>90-Day KPIs:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th style="text-align: center;">Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prospects contacted</td>
+<td style="text-align: center;">500+</td>
+</tr>
+<tr>
+<td>Meetings</td>
+<td style="text-align: center;">40+</td>
+</tr>
+<tr>
+<td>Proposals</td>
+<td style="text-align: center;">15+</td>
+</tr>
+<tr>
+<td>Deals closed</td>
+<td style="text-align: center;">2-3</td>
+</tr>
+<tr>
+<td>Consultancy partnerships</td>
+<td style="text-align: center;">3+</td>
+</tr>
+<tr>
+<td>Pipeline value</td>
+<td style="text-align: center;">SAR 5M+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">09</span>
+              <span>Section 9: Channel Architecture</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><h2 id="priority-order">Priority Order</h2>
+<pre><code>🔴 Primary     → LinkedIn (Heyreach) + WhatsApp
+🟠 Supporting   → Email (after 14-day warmup)
+🟡 Partnerships → Engineering consultancy firms
+🔵 Content      → LinkedIn Content (3 posts/week)
+⚪ Formal       → Email (proposals + post-meeting)
+❌ Removed      → Cold calling (not available)</code></pre>
+<h2 id="monthly-budget">Monthly Budget</h2>
+<table>
+<thead>
+<tr>
+<th>Channel</th>
+<th style="text-align: center;">Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LinkedIn Sales Navigator</td>
+<td style="text-align: center;">SAR 500-800</td>
+</tr>
+<tr>
+<td>Heyreach</td>
+<td style="text-align: center;">$79 (~SAR 300)</td>
+</tr>
+<tr>
+<td>WhatsApp Business API</td>
+<td style="text-align: center;">SAR 300-500</td>
+</tr>
+<tr>
+<td>Email warmup (Instantly.ai)</td>
+<td style="text-align: center;">$30 (~SAR 115)</td>
+</tr>
+<tr>
+<td>Canva Pro (content)</td>
+<td style="text-align: center;">$13 (~SAR 50)</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td style="text-align: center;"><strong>SAR 1,265-1,765/mo</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">10</span>
+              <span>Section 10: Building Trust — Essential Elements</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><blockquote>
+<p><strong>⚠️ Trust is the most important currency in
+construction.</strong> Before any PVP or value — you must prove
+reliability.</p>
+</blockquote>
+<h2 id="required-trust-elements">Required Trust Elements</h2>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 32%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr>
+<th>Element</th>
+<th>Details</th>
+<th style="text-align: center;">Priority</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Project Portfolio</strong></td>
+<td>PDF with 5-10 projects, before/after photos + numbers</td>
+<td style="text-align: center;">🔴</td>
+</tr>
+<tr>
+<td><strong>Classification Certificate</strong></td>
+<td>Official contractor classification</td>
+<td style="text-align: center;">🔴</td>
+</tr>
+<tr>
+<td><strong>Client References</strong></td>
+<td>3-5 previous clients with contact numbers (with permission)</td>
+<td style="text-align: center;">🔴</td>
+</tr>
+<tr>
+<td><strong>Insurance</strong></td>
+<td>Valid project insurance certificate</td>
+<td style="text-align: center;">🟠</td>
+</tr>
+<tr>
+<td><strong>Delivery Record</strong></td>
+<td>On-time delivery rate (e.g., 85% of projects delivered on time)</td>
+<td style="text-align: center;">🟠</td>
+</tr>
+<tr>
+<td><strong>Post-Delivery Warranty</strong></td>
+<td>Defined warranty period (1 year? 2 years?) for defects</td>
+<td style="text-align: center;">🟠</td>
+</tr>
+<tr>
+<td><strong>Company Profile</strong></td>
+<td>Professional Company Profile (Arabic + English)</td>
+<td style="text-align: center;">🟡</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-worries-the-developer-how-we-answer">What Worries the
+Developer (&amp; How We Answer)</h2>
+<table>
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 64%" />
+</colgroup>
+<thead>
+<tr>
+<th>Fear</th>
+<th>Our Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“The contractor will abandon the project mid-way”</td>
+<td>“We have a bank guarantee + clear contract + references you can
+verify”</td>
+</tr>
+<tr>
+<td>“Delivery will be late”</td>
+<td>“85% of our projects were delivered on time or early — here are the
+references”</td>
+</tr>
+<tr>
+<td>“Problems will appear after delivery”</td>
+<td>“We have a [X] year warranty on defects + maintenance team”</td>
+</tr>
+<tr>
+<td>“I don’t know you”</td>
+<td>“Here’s our project portfolio + 3 clients you can call right
+now”</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">11</span>
+              <span>Section 11: Data Sources</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><h2 id="linkedin-sales-navigator-primary-all-segments">LinkedIn Sales
+Navigator (Primary — All Segments)</h2>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr>
+<th>Segment</th>
+<th>Search Filters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Developers</td>
+<td>Industry: Real Estate/Construction, Size: 1-50, Title:
+CEO/Owner/Projects Manager, Geo: KSA</td>
+</tr>
+<tr>
+<td>MEP — Factories</td>
+<td>Industry: Manufacturing, Size: 11-200, Title: Owner/Operations
+Manager, Geo: Industrial Cities</td>
+</tr>
+<tr>
+<td>MEP — Hotels</td>
+<td>Industry: Hospitality, Title: GM/Operations Director, Geo:
+Riyadh/Jeddah</td>
+</tr>
+<tr>
+<td>MEP — Commercial</td>
+<td>Industry: Real Estate/Retail, Title: Facilities Manager/Owner, Geo:
+Riyadh/Jeddah</td>
+</tr>
+</tbody>
+</table>
+<h2 id="blue-pages-secondary-factoriesmaintenance">Blue Pages (Secondary
+— Factories/Maintenance)</h2>
+<blockquote>
+<p>Useful for maintenance and operations sector (55% WhatsApp, 50%
+LinkedIn). Weak for real estate (only 25 companies with 15%
+WhatsApp).</p>
+</blockquote>
+<h2 id="google-maps-supporting">Google Maps (Supporting)</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Search</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“factory” + [industrial city]</td>
+<td>Phone + location + reviews</td>
+</tr>
+<tr>
+<td>“hotel” + [city]</td>
+<td>Hotel names needing MEP</td>
+</tr>
+<tr>
+<td>“real estate development company” + [city]</td>
+<td>Cross-reference with LinkedIn</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">12</span>
+              <span>Section 12: Performance Metrics</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th style="text-align: center;">Week 1</th>
+<th style="text-align: center;">Month 1</th>
+<th style="text-align: center;">90 Days</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LinkedIn requests</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">300</td>
+<td style="text-align: center;">700+</td>
+</tr>
+<tr>
+<td>Replies</td>
+<td style="text-align: center;">10-15</td>
+<td style="text-align: center;">50+</td>
+<td style="text-align: center;">150+</td>
+</tr>
+<tr>
+<td>Meetings</td>
+<td style="text-align: center;">3-5</td>
+<td style="text-align: center;">15+</td>
+<td style="text-align: center;">40+</td>
+</tr>
+<tr>
+<td>Proposals</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">5+</td>
+<td style="text-align: center;">15+</td>
+</tr>
+<tr>
+<td>Deals closed</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">2-3</td>
+</tr>
+<tr>
+<td>Pipeline</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">SAR 2M+</td>
+<td style="text-align: center;">SAR 5M+</td>
+</tr>
+<tr>
+<td>Consultancy partnerships</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">5 contacted</td>
+<td style="text-align: center;">3 active</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">13</span>
+              <span>Section 13: Questions for Mustafa</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><blockquote>
+<p><strong>⚠️ We cannot run effective outreach without these
+answers.</strong> <strong>Time needed: ≈ 1 hour.</strong></p>
+</blockquote>
+<h2 id="track-record">1. Track Record 🔴</h2>
+<p><strong>Total projects completed?</strong> ____________</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Project Type</th>
+<th>Location</th>
+<th style="text-align: center;">Units/Area</th>
+<th style="text-align: center;">Value (SAR)</th>
+<th style="text-align: center;">On Time?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td>5</td>
+<td></td>
+<td></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ever worked with a real estate developer?</strong> - [ ] Yes
+— who? ____________ - [ ] No — but completed residential projects</p>
+<p><strong>Ever executed MEP systems (not just maintenance)?</strong> -
+[ ] Yes — what type? (electrical / HVAC / plumbing / fire) ____________
+- [ ] No</p>
+<p><strong>On-time delivery rate:</strong> _______%</p>
+<h2 id="company-data">2. Company Data 🔴</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Official name (Arabic + English)</td>
+<td></td>
+</tr>
+<tr>
+<td>Contractor classification</td>
+<td></td>
+</tr>
+<tr>
+<td>Year established</td>
+<td></td>
+</tr>
+<tr>
+<td>Team size (engineers + technicians)</td>
+<td></td>
+</tr>
+<tr>
+<td>Cities of operation</td>
+<td></td>
+</tr>
+<tr>
+<td>Website</td>
+<td></td>
+</tr>
+<tr>
+<td>LinkedIn</td>
+<td></td>
+</tr>
+<tr>
+<td>Post-delivery warranty (how many years?)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="competitors">3. Competitors 🔴</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Competitor Name</th>
+<th style="text-align: center;">Size vs. You</th>
+<th>Strength</th>
+<th>Weakness</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td style="text-align: center;"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td style="text-align: center;"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td style="text-align: center;"></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="sales-cycle">4. Sales Cycle 🟠</h2>
+<p><strong>Last 5 clients — how long from first contact to
+contract?</strong> ____________</p>
+<p><strong>Who typically signs the contract?</strong> ____________</p>
+<p><strong>Biggest reason clients refuse or delay?</strong>
+____________</p>
+<h2 id="required-files">5. Required Files 🟡</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />Project photos (before/after) — at
+least 5</label></li>
+<li><label><input type="checkbox" />Company Profile PDF</label></li>
+<li><label><input type="checkbox" />Classification
+certificate</label></li>
+<li><label><input type="checkbox" />Insurance certificate</label></li>
+<li><label><input type="checkbox" />Client references (3 names + numbers
+with permission)</label></li>
+<li><label><input type="checkbox" />High-resolution logo</label></li>
+</ul>
+</div>
+          </div>
+        </div></div></div></section>
+  </div>
   <script>
-document.querySelectorAll('.accordion-header').forEach(header => {
-  header.addEventListener('click', () => {
-    const item = header.parentElement;
-    const content = item.querySelector('.accordion-content');
-    const isOpen = item.classList.contains('open');
-    
-    document.querySelectorAll('.accordion-item').forEach(ai => {
-      ai.classList.remove('open');
-      ai.querySelector('.accordion-content').style.maxHeight = null;
-    });
-    
-    if (!isOpen) {
-      item.classList.add('open');
-      content.style.maxHeight = content.scrollHeight + 'px';
-    }
-  });
-});
+document.querySelectorAll('[data-lang-toggle]').forEach(function(btn){btn.addEventListener('click',function(){var t=btn.getAttribute('data-lang-target');document.body.setAttribute('data-lang',t);document.querySelectorAll('.accordion-item').forEach(function(ai){ai.classList.remove('open');ai.querySelector('.accordion-content').style.maxHeight=null});window.scrollTo(0,0)});});
+document.querySelectorAll('.accordion-header').forEach(function(header){header.addEventListener('click',function(){var item=header.parentElement;var content=item.querySelector('.accordion-content');var accordion=item.closest('.accordion');var isOpen=item.classList.contains('open');accordion.querySelectorAll('.accordion-item').forEach(function(ai){ai.classList.remove('open');ai.querySelector('.accordion-content').style.maxHeight=null});if(!isOpen){item.classList.add('open');content.style.maxHeight=content.scrollHeight+'px'}});});
   </script>
 </body>
 </html>
