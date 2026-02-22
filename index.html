@@ -4,48 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="googlebot" content="noindex, nofollow" />
-  <title>Mustafa Zayed — GTM Strategy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <title>مصطفى زايد — استراتيجية GTM v2</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-
 :root {
   --bg: #f7f7f9;
   --surface: #ffffff;
-  --surface-muted: #fbfbfc;
-  --text: #1a1a1a;
-  --text-muted: #4a4a4a;
-  --border: #e6e6eb;
-  --accent: #111111;
-  --accent-soft: #efefef;
-  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.06);
-  --shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  --surface-muted: #f0f1f4;
+  --text: #1a1a2e;
+  --text-muted: #6b7280;
+  --accent: #2563eb;
+  --accent-soft: #eff3ff;
+  --border: #e2e4e9;
   --radius: 14px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.03);
+  --green: #059669;
+  --red: #dc2626;
+  --orange: #f59e0b;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html {
-  background: var(--bg);
-  scroll-behavior: smooth;
-}
-
 body {
-  font-family: 'IBM Plex Sans Arabic', sans-serif;
-  font-size: 1rem;
+  font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+  background: var(--bg);
   color: var(--text);
-  background: radial-gradient(circle at top right, #ffffff 0%, #f7f7f9 45%, #eef0f3 100%);
   line-height: 1.85;
+  direction: rtl;
+  text-align: right;
 }
-
-body[data-lang="ar"] { direction: rtl; text-align: right; }
-body[data-lang="en"] { direction: ltr; text-align: left; }
-
-.lang { display: none; }
-body[data-lang="ar"] .lang-ar { display: block; }
-body[data-lang="en"] .lang-en { display: block; }
 
 .container {
   max-width: 1100px;
@@ -62,79 +50,62 @@ nav {
   background: rgba(247, 247, 249, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
+  padding: 14px 0;
 }
 
 nav .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
 }
 
 .nav-brand {
   font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
+  font-size: 1.1rem;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+.nav-links { display: flex; gap: 18px; align-items: center; }
 
-.nav-link,
-.lang-toggle {
-  border: 1px solid transparent;
-  background: transparent;
-  color: var(--text);
+.nav-link {
   text-decoration: none;
-  font-size: 0.95rem;
-  padding: 8px 12px;
-  border-radius: 999px;
-  transition: all 0.2s ease;
-  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition: color 0.15s;
 }
-
-.nav-link:hover,
-.lang-toggle:hover {
-  background: var(--accent-soft);
-  border-color: var(--border);
-}
-
+.nav-link:hover { color: var(--accent); }
 .nav-link.primary {
   background: var(--accent);
   color: #fff;
-}
-
-section {
-  padding: 80px 0;
-  scroll-margin-top: 120px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
 }
 
 .hero {
-  min-height: 85vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
-  padding: 140px 0 80px;
+  padding-top: 120px;
+  padding-bottom: 60px;
 }
 
 .hero-eyebrow {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .hero-title {
-  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
   margin: 16px 0 20px;
+  color: var(--text);
 }
 
 .hero-subtitle {
   max-width: 640px;
   color: var(--text-muted);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 .hero-stats {
@@ -149,95 +120,73 @@ section {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px;
-  box-shadow: var(--shadow-sm);
 }
 
-.stat-value { font-size: 1.4rem; font-weight: 700; }
-.stat-label { color: var(--text-muted); font-size: 0.9rem; }
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+section {
+  padding: 60px 0;
+}
 
 .section-eyebrow {
   font-size: 0.85rem;
-  color: var(--text-muted);
-  letter-spacing: 0.15em;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
 .section-title {
-  font-size: 2rem;
-  margin: 12px 0 16px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
 .section-description {
   color: var(--text-muted);
-  max-width: 720px;
+  max-width: 600px;
+  margin-bottom: 28px;
 }
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
-  margin-top: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
 }
 
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 20px;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-
-.card-title { font-size: 1.1rem; margin-bottom: 8px; }
-.card-text { color: var(--text-muted); }
-
-.highlight-card { border-color: var(--accent); }
-
-.message-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
   padding: 24px;
   box-shadow: var(--shadow);
-  margin-top: 24px;
 }
 
-.message-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-
-.message-title { font-weight: 600; }
-.message-tag {
-  font-size: 0.8rem;
-  background: var(--accent-soft);
-  padding: 4px 10px;
-  border-radius: 999px;
-}
-
-.message-body p { margin: 0.75em 0; }
-
-.message-body table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0.75rem 0;
-}
-
-.message-body th,
-.message-body td {
-  border: 1px solid var(--border);
-  padding: 8px 10px;
-  text-align: right;
-}
-
-body[data-lang="en"] .message-body th,
-body[data-lang="en"] .message-body td {
-  text-align: left;
-}
+.card-title { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
+.card-text { color: var(--text-muted); font-size: 0.95rem; }
+.highlight-card { border-color: var(--accent); }
 
 .accordion {
   margin-top: 28px;
@@ -293,11 +242,8 @@ body[data-lang="en"] .message-body td {
   padding: 0 20px 20px;
 }
 
-.accordion-body h1,
-.accordion-body h2,
-.accordion-body h3 {
-  margin-top: 1.2rem;
-}
+.accordion-body h2 { margin-top: 1.2rem; font-size: 1.3rem; color: var(--accent); }
+.accordion-body h3 { margin-top: 1rem; font-size: 1.1rem; }
 
 .accordion-body table {
   width: 100%;
@@ -322,12 +268,6 @@ body[data-lang="en"] .message-body td {
   border-radius: 0 var(--radius) var(--radius) 0;
 }
 
-body[data-lang="en"] .accordion-body blockquote {
-  border-left: 3px solid var(--accent);
-  border-right: none;
-  border-radius: var(--radius) 0 0 var(--radius);
-}
-
 .accordion-body pre {
   background: var(--surface-muted);
   color: var(--text);
@@ -348,16 +288,9 @@ body[data-lang="en"] .accordion-body blockquote {
   border-radius: 6px;
 }
 
-.accordion-body ul,
-.accordion-body ol {
+.accordion-body ul, .accordion-body ol {
   margin: 0.8rem 0;
   padding-right: 1.2rem;
-}
-
-body[data-lang="en"] .accordion-body ul,
-body[data-lang="en"] .accordion-body ol {
-  padding-left: 1.2rem;
-  padding-right: 0;
 }
 
 .accordion-body .task-list {
@@ -370,8 +303,6 @@ body[data-lang="en"] .accordion-body ol {
   position: relative;
   margin: 0.45rem 0;
   padding-right: 1.6rem;
-  text-align: right;
-  unicode-bidi: plaintext;
 }
 
 .accordion-body .task-list input[type="checkbox"] {
@@ -382,1510 +313,1141 @@ body[data-lang="en"] .accordion-body ol {
   transform: scale(1.05);
 }
 
-body[data-lang="ar"] .accordion-body .task-list li {
-  padding-right: 1.6rem;
-  padding-left: 0;
-}
-
-body[data-lang="en"] .accordion-body .task-list li {
-  padding-left: 1.6rem;
-  padding-right: 0;
-  text-align: left;
-}
-
-body[data-lang="en"] .accordion-body .task-list input[type="checkbox"] {
-  right: auto;
-  left: 0;
+.v2-badge {
+  background: var(--green);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 @media (max-width: 720px) {
-  nav .container {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .hero {
-    min-height: auto;
-    padding-top: 160px;
-  }
+  nav .container { flex-direction: column; gap: 12px; }
+  .hero { min-height: auto; padding-top: 160px; }
 }
-
   </style>
 </head>
-<body data-lang="ar">
-  <div class="lang lang-ar">
-    <nav>
-      <div class="container">
-        <div class="nav-brand">مصطفى زايد</div>
-        <div class="nav-links">
-          <a href="#hero-ar" class="nav-link">الرئيسية</a>
-          <a href="#highlights-ar" class="nav-link">الأقسام</a>
-          <a href="#valuepacks-ar" class="nav-link">الرسائل</a>
-          <a href="#full-ar" class="nav-link primary">الوثيقة</a>
-          <button class="lang-toggle" data-lang-toggle data-lang-target="en">EN</button>
+<body>
+  <nav>
+    <div class="container">
+      <div class="nav-brand">مصطفى زايد</div>
+      <div class="nav-links">
+        <a href="#hero" class="nav-link">الرئيسية</a>
+        <a href="#changes" class="nav-link">التعديلات</a>
+        <a href="#full" class="nav-link primary">الوثيقة</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="container">
+      <p class="hero-eyebrow">GTM Strategy v2</p>
+      <h1 class="hero-title">مصطفى زايد — استراتيجية GTM v2</h1>
+      <p class="hero-subtitle">نسخة محدّثة بالكامل — بناءً على فيدباك العميل. Trust-first approach + دورة بيع واقعية + أدوات automation.</p>
+      <span class="v2-badge">v2 — محدّث ٢٢ فبراير ٢٠٢٦</span>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-value">٣٠-٤٥</div>
+          <div class="stat-label">يوم دورة البيع (مش ١٠)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">Heyreach</div>
+          <div class="stat-label">LinkedIn Automation</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">Trust</div>
+          <div class="stat-label">الثقة أولاً مش الأرقام</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">أسبوع</div>
+          <div class="stat-label">Phase 1 مضغوط</div>
         </div>
       </div>
-    </nav>
+    </div>
+  </section>
 
-    <section class="hero" id="hero-ar">
-      <div class="container">
-        <p class="hero-eyebrow">GTM Strategy</p>
-        <h1 class="hero-title">مصطفى زايد — استراتيجية GTM كاملة</h1>
-        <p class="hero-subtitle">وثيقة تنفيذية موجزة للمطورين العقاريين والمصانع.</p>
-        <div class="hero-stats">
-          <div class="stat">
-            <div class="stat-value">300K</div>
-            <div class="stat-label">وحدة سكنية مطلوبة سنوياً</div>
-          </div>
-          <div class="stat">
-            <div class="stat-value">36+</div>
-            <div class="stat-label">مدينة صناعية ضمن MODON</div>
-          </div>
-          <div class="stat">
-            <div class="stat-value">5–50K</div>
-            <div class="stat-label">تكلفة توقف المصنع بالساعة (ر.س)</div>
-          </div>
-          <div class="stat">
-            <div class="stat-value">269</div>
-            <div class="stat-label">مهنة تحت التوطين</div>
-          </div>
+  <section id="changes">
+    <div class="container">
+      <p class="section-eyebrow">التعديلات</p>
+      <h2 class="section-title">ما تغيّر في النسخة الثانية</h2>
+      <p class="section-description">١٢ تعديل بناءً على فيدباك العميل — كل نقطة اتعالجت.</p>
+      <div class="card-grid">
+        <div class="card highlight-card">
+          <h3 class="card-title">ابدأ صغير</h3>
+          <p class="card-text">بدل "جناح تنفيذي" كامل — ابدأ بمبنى واحد واكسب الثقة.</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">دورة بيع واقعية</h3>
+          <p class="card-text">٣٠-٤٥ يوم بدل ١٠ أيام — عقود بالملايين تحتاج وقت.</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Heyreach + Email Infra</h3>
+          <p class="card-text">أدوات automation محددة — LinkedIn sequences + email warmup.</p>
+        </div>
+        <div class="card highlight-card">
+          <h3 class="card-title">شراكات مكاتب استشارية</h3>
+          <p class="card-text">قناة جديدة — المكتب الاستشاري يوصي بمصطفى لعملائه.</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">MEP = بناء + تركيب</h3>
+          <p class="card-text">مش بس صيانة — تنفيذ أنظمة كهرباء وتكييف وسباكة.</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">عملاء MEP موسّعين</h3>
+          <p class="card-text">مصانع + فنادق + مراكز تجارية + كمبوندات.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="overview-ar">
-      <div class="container">
-        <p class="section-eyebrow">الفرصة</p>
-        <h2 class="section-title">لماذا الآن؟</h2>
-        <p class="section-description">أكبر فرصة تنفيذ في السوق السعودي: طلب سكني ضخم، ضغط على المطورين الصغار، ومخاطر تشغيلية عالية للمصانع.</p>
-        <div class="card-grid">
-          <div class="card highlight-card">
-            <h3 class="card-title">طلب سكني متسارع</h3>
-            <p class="card-text">300 ألف وحدة سنوياً، والسوق يحتاج طاقة تنفيذ مضاعفة.</p>
-          </div>
-          <div class="card">
-            <h3 class="card-title">ضغط المطور الصغير</h3>
-            <p class="card-text">الكبار يسيطرون بالحجم — الصغار يحتاجون سرعة التنفيذ.</p>
-          </div>
-          <div class="card">
-            <h3 class="card-title">تكلفة توقف المصانع</h3>
-            <p class="card-text">كل ساعة توقف تعني خسائر مالية وعقود مهددة.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="highlights-ar">
-      <div class="container">
-        <p class="section-eyebrow">تقسيمة سريعة</p>
-        <h2 class="section-title">الأقسام الأساسية قبل التفاصيل</h2>
-        <p class="section-description">أهم المحاور في شكل كاردات واضحة قبل الوثيقة الكاملة.</p>
-        <div class="card-grid">
-          <div class="card highlight-card">
-            <h3 class="card-title">البيانات الأساسية</h3>
-            <p class="card-text">حجم الطلب السكني، تكلفة توقف المصانع، والتوطين بالأرقام.</p>
-          </div>
-          <div class="card">
-            <h3 class="card-title">الشخصيات المستهدفة</h3>
-            <p class="card-text">مطور عقاري طموح + مدير مصنع تحت الضغط، مع دوافع شراء واضحة.</p>
-          </div>
-          <div class="card">
-            <h3 class="card-title">الإشارات القابلة للرصد</h3>
-            <p class="card-text">وظائف شاغرة، نقص صيانة، مشاريع محدودة، وإشارات تشغيلية قوية.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="valuepacks-ar">
-      <div class="container">
-        <p class="section-eyebrow">رسالة جاهزة</p>
-        <h2 class="section-title">مثال رسالة جاهزة للإرسال</h2>
-        <p class="section-description">مصممة كرسالة مباشرة — مختصرة، واضحة، وتركّز على قيمة قابلة للاستخدام فوراً.</p>
-        <div class="message-card">
-          <div class="message-header">
-            <span class="message-title">رسالة لينكدإن — مطور</span>
-            <span class="message-tag">رسالة</span>
-          </div>
-          <div class="message-body">
-            <p>حياك الله أستاذ [الاسم]، شكراً على القبول.</p>
-            <p>شفت مشاريعكم في [الحي] — جمّعت مقارنة تكلفة بناء لمشاريع مشابهة في الرياض (Q1 2026):</p>
-            <table>
-              <thead>
-                <tr>
-                  <th>البند</th>
-                  <th>متوسط السوق ر/م²</th>
-                  <th>أفضل سعر ر/م²</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>هيكل</td>
-                  <td>١٬٤٥٠</td>
-                  <td>١٬١٨٠</td>
-                </tr>
-                <tr>
-                  <td>تشطيب</td>
-                  <td>٨٥٠</td>
-                  <td>٦٥٠</td>
-                </tr>
-                <tr>
-                  <td>MEP</td>
-                  <td>٣٨٠</td>
-                  <td>٢٩٠</td>
-                </tr>
-              </tbody>
-            </table>
-            <p>الفرق في مشروع ١٠٠ شقة = ~٩ مليون ريال.</p>
-            <p>عندي ملف كامل فيه ١٢ بند — أرسله لك؟</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="full-ar">
-      <div class="container">
-        <p class="section-eyebrow">الوثيقة الكاملة</p>
-        <h2 class="section-title">استراتيجية مصطفى كاملة — بتقسيم واضح</h2>
-        <div class="accordion">
+  <section id="full">
+    <div class="container">
+      <p class="section-eyebrow">الوثيقة الكاملة</p>
+      <h2 class="section-title">الاستراتيجية بتقسيم واضح</h2>
+      <div class="accordion">
 
         <div class="accordion-item">
           <div class="accordion-header">
             <div class="accordion-title">
               <span class="step-num">01</span>
-              <span>الجزء 1: الاستراتيجية</span>
+              <span>Mustafa KSA — GTM Strategy v2</span>
             </div>
             <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </div>
           <div class="accordion-content">
-            <div class="accordion-body"><h2 id="الملخص-التنفيذي">الملخص التنفيذي</h2>
-<p><strong>الشركة:</strong> مصطفى زايد — شركة مقاولات (مصطفى)
-<strong>الحركة:</strong> تواصل خارجي أولاً <strong>التموضع:</strong> “نحن
-لا نبيع البناء — نحن نبيع طاقة التنفيذ.”</p>
-<h3 id="شريحتان-مستهدفتان">شريحتان مستهدفتان</h3>
-<table>
-<colgroup>
-<col style="width: 27%" />
-<col style="width: 27%" />
-<col style="width: 45%" />
-</colgroup>
-<thead>
-<tr>
-<th>الشريحة</th>
-<th>الخدمة</th>
-<th style="text-align: center;">نموذج الإيراد</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🏗️ <strong>مطورون عقاريون صغار</strong></td>
-<td>الجناح التنفيذي للبناء (جناح تنفيذي)</td>
-<td style="text-align: center;">لكل مشروع</td>
-</tr>
-<tr>
-<td>🏭 <strong>المصانع</strong></td>
-<td>إشراف بنية تحتية MEP (كهرباء/مياه/تكييف/سلامة)</td>
-<td style="text-align: center;">اشتراك شهري</td>
-</tr>
-</tbody>
-</table>
-<h3 id="لماذا-هذه-الشرائح-الآن">لماذا هذه الشرائح الآن؟</h3>
-<blockquote>
-<p><strong>السعودية تحتاج 300 ألف وحدة سكنية سنوياً.</strong> المطورون
-الصغار يرون الطلب، لكن طاقة التنفيذ تقف في الطريق.</p>
-<p><strong>المطورون العملاقون المدعومون من الصندوق يسيطرون.</strong>
-روشن وحدها تستهدف 400 ألف منزل. الصغار لا ينافسون بالحجم — ينافسون
-بالسرعة.</p>
-<p><strong>توقف المصنع يكلف 5–50 ألف ريال في الساعة.</strong> عطل
-كهربائي واحد يعني خسارة طلبات وعقود.</p>
-<p><strong>الدفاع المدني لا ينذرك — يغلقك.</strong> تفتيش السلامة
-إلزامي.</p>
-<p><strong>269 مهنة تحت التوطين.</strong> كفاءات MEP تقلّصت. لا تبنِ فريقاً
-من الصفر — شارك فريقاً جاهزاً.</p>
-</blockquote>
-<hr />
-</div>
+            <div class="accordion-body"><p><strong>شركة مقاولات + MEP | Outbound للمطورين العقاريين وقطاع MEP
+التجاري</strong> <strong>Last Updated:</strong> 2026-02-22 (v2 — بعد
+فيدباك العميل)</p>
+<hr></div>
           </div>
         </div>
-        
 
         <div class="accordion-item">
           <div class="accordion-header">
             <div class="accordion-title">
               <span class="step-num">02</span>
-              <span>الجزء 2: الشرائح المبنية على الألم</span>
+              <span>القسم ١: الاستراتيجية</span>
             </div>
             <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </div>
           <div class="accordion-content">
-            <div class="accordion-body"><h2 id="الشريحة-a-مطورون-عقاريون-صغار-أساسية">🏗️ الشريحة A: مطورون
-عقاريون صغار (أساسية)</h2>
-<p><strong>حدّة الألم:</strong> 🔴🔴🔴 حرجة</p>
+            <div class="accordion-body"><h2 id="الملخص-التنفيذي">الملخص التنفيذي</h2>
+<p><strong>الشركة:</strong> مصطفى — مقاولات عامة + تنفيذ أنظمة MEP
+<strong>النموذج:</strong> Outbound-First (بدون كولد كولينج)
+<strong>التموضع:</strong> “نحن لا نبيع بناء — نحن نبيع التزام
+بالتسليم.”</p>
+<h3 id="الشريحتان-المستهدفتان">الشريحتان المستهدفتان</h3>
 <table>
 <colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
+<col style="width: 30%" />
+<col style="width: 26%" />
+<col style="width: 43%" />
 </colgroup>
 <thead>
 <tr>
-<th>البُعد</th>
-<th>التفاصيل</th>
+<th>الشريحة</th>
+<th>الخدمة</th>
+<th style="text-align: center;">نموذج الدخل</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>من هم</strong></td>
-<td>شركات تطوير صغيرة تبني 1–5 مشاريع سكنية/متعددة الاستخدامات
-سنوياً</td>
+<td>🏗️ <strong>مطورون عقاريون صغار</strong></td>
+<td>مقاول تنفيذ (مبنى واحد / مرحلة واحدة كبداية)</td>
+<td style="text-align: center;">لكل مشروع</td>
 </tr>
 <tr>
-<td><strong>صانع القرار</strong></td>
-<td>المالك / المدير التنفيذي / المدير العام</td>
-</tr>
-<tr>
-<td><strong>الجغرافيا</strong></td>
-<td>الرياض، جدة، الدمام، ومدن ثانوية صاعدة</td>
-</tr>
-<tr>
-<td><strong>الألم الأساسي</strong></td>
-<td><strong>عنق زجاجة في التنفيذ</strong> — يملكون الأرض والتمويل
-والمبيعات، لكنهم لا يستطيعون تشغيل أكثر من 1–5 مشاريع بالتوازي</td>
-</tr>
-<tr>
-<td><strong>ألم ثانوي</strong></td>
-<td>منافسة مطورين مدعومين من الصندوق، ارتفاع تكاليف البناء (+4% في
-2026)، تعقيد تنظيمي</td>
-</tr>
-<tr>
-<td><strong>محفزات الشراء</strong></td>
-<td>شراء أرض جديدة، رخصة تطوير جديدة، البحث عن مدير مشاريع</td>
-</tr>
-<tr>
-<td><strong>الحالة الشعورية</strong></td>
-<td>طموح محبط — يرون طلب رؤية 2030 ولا يستطيعون استغلاله</td>
+<td>🏭 <strong>قطاع MEP التجاري</strong></td>
+<td>تنفيذ + تركيب أنظمة MEP (مصانع، فنادق، مراكز تجارية، كمبوندات)</td>
+<td style="text-align: center;">لكل مشروع / عقد صيانة</td>
 </tr>
 </tbody>
 </table>
-<p><strong>صوت العميل:</strong> &gt; “عندنا ثلاث أراضٍ جاهزة ومعتمدة، بس
-ما نقدر نبدأ فيها كلها لأنه ما عندنا فريق تنفيذي يقدر يشرف على أكثر من
-مشروعين في الوقت نفسه.”</p>
-<p><strong>ملاءمة الخدمة:</strong> الجناح التنفيذي للبناء - مصطفى = ذراع
-تنفيذ خارجي للمطور - تنفيذ كامل: هيكل + تشطيبات + إشراف + تسليم - المطور
-يركز على الأرض والتمويل والمبيعات</p>
-<hr />
-<h2 id="الشريحة-b-المصانع-أساسية">🏭 الشريحة B: المصانع (أساسية)</h2>
-<p><strong>حدّة الألم:</strong> 🔴🔴🔴 حرجة</p>
+<h3 id="تعديلات-مهمة-عن-النسخة-السابقة">تعديلات مهمة عن النسخة
+السابقة</h3>
 <table>
 <colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
+<col style="width: 53%" />
+<col style="width: 46%" />
 </colgroup>
 <thead>
 <tr>
-<th>البُعد</th>
-<th>التفاصيل</th>
+<th>❌ كان</th>
+<th>✅ صار</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>من هم</strong></td>
-<td>مالكو المصانع ومديرو التشغيل في مدن صناعية (MODON)</td>
+<td>“جناح تنفيذي” كامل من البداية</td>
+<td>ابدأ بمبنى واحد أو مرحلة واحدة — اكسب الثقة أولاً</td>
 </tr>
 <tr>
-<td><strong>صانع القرار</strong></td>
-<td>مالك المصنع / مدير العمليات</td>
+<td>MEP = صيانة فقط</td>
+<td>MEP = تنفيذ + تركيب + صيانة</td>
 </tr>
 <tr>
-<td><strong>الجغرافيا</strong></td>
-<td>مدن MODON (أكثر من 36)، الجبيل، ينبع، المدن الصناعية بالرياض</td>
+<td>عملاء MEP = مصانع فقط</td>
+<td>مصانع + فنادق + مراكز تجارية + كمبوندات</td>
 </tr>
 <tr>
-<td><strong>الألم الأساسي</strong></td>
-<td><strong>توقفات مفاجئة</strong> — أعطال كهرباء، انقطاعات مياه، انهيار
-بنية تحتية</td>
+<td>Sales cycle = ١٠ أيام</td>
+<td>Sales cycle = ٣٠-٤٥ يوم</td>
 </tr>
 <tr>
-<td><strong>ألم ثانوي</strong></td>
-<td>التزام الدفاع المدني، نقص الكفاءات (التوطين)، ارتفاع تكلفة
-الطاقة</td>
+<td>كولد كولينج كقناة</td>
+<td>بدون كولد كولينج</td>
 </tr>
 <tr>
-<td><strong>محفزات الشراء</strong></td>
-<td>عطل معدات، إشعار تفتيش الدفاع المدني، توسّع المصنع</td>
+<td>رسائل “قيمة أولاً” بأرقام عامة</td>
+<td>رسائل “ثقة أولاً” مبنية على سجل أعمال حقيقي</td>
 </tr>
 <tr>
-<td><strong>الحالة الشعورية</strong></td>
-<td>قلق تشغيلي — يحتاج مراقبة بنية تحتية موثوقة</td>
+<td>صانع القرار = CEO فقط</td>
+<td>CEO + مدير المشاريع</td>
+</tr>
+<tr>
+<td>بدون أدوات automation</td>
+<td>Heyreach + email infrastructure محددة</td>
+</tr>
+<tr>
+<td>بدون شراكات</td>
+<td>مسار شراكات مع مكاتب استشارات هندسية</td>
 </tr>
 </tbody>
 </table>
-<p><strong>صوت العميل:</strong> &gt; “الكهرباء فصلت الأسبوع الماضي ست
-ساعات وخسرنا طلبية كاملة. مو بس الخسارة المادية — العميل سحب العقد.”</p>
-<p><strong>ملاءمة الخدمة:</strong> إشراف بنية تحتية MEP - اشتراك شهري
-للكهرباء والمياه والتكييف والسلامة - استجابة طارئة خلال أقل من 4 ساعات -
-الصيانة الوقائية تكلف جزءاً من إصلاح الطوارئ</p>
-<hr />
-<h2 id="من-نبتعد-عنهم">❌ من نبتعد عنهم</h2>
-<table>
-<thead>
-<tr>
-<th>شريحة غير مناسبة</th>
-<th>لماذا نبتعد</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>مطور عملاق (مثل روشن وNHC)</td>
-<td>لديه طاقة تنفيذ داخلية</td>
-</tr>
-<tr>
-<td>فرد يبني فيلا واحدة</td>
-<td>مشروع واحد صغير جداً</td>
-</tr>
-<tr>
-<td>مصنع لديه فريق MEP داخلي</td>
-<td>حلّ المشكلة بالفعل</td>
-</tr>
-<tr>
-<td>مطور بلا تمويل</td>
-<td>لا يبدأ المشاريع</td>
-</tr>
-<tr>
-<td>مشتري معدات فقط</td>
-<td>نحن نبيع خدمة لا معدات</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
+<hr></div>
           </div>
         </div>
-        
 
         <div class="accordion-item">
           <div class="accordion-header">
             <div class="accordion-title">
               <span class="step-num">03</span>
-              <span>الجزء 3: حقائق وجودية مدعومة بالبيانات (EDPs)</span>
+              <span>القسم ٢: الشرائح المستهدفة</span>
             </div>
             <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </div>
           <div class="accordion-content">
-            <div class="accordion-body"><h2 id="edp-1-انفجار-الطلب-السكني">EDP #1: انفجار الطلب السكني</h2>
+            <div class="accordion-body"><h2 id="الشريحة-a-مطورون-عقاريون-صغار">🏗️ الشريحة A: مطورون عقاريون
+صغار</h2>
+<p><strong>حدّة الألم:</strong> 🔴🔴🔴</p>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr>
+<th>البُعد</th>
+<th>التفاصيل</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>من هم</strong></td>
+<td>شركات تطوير تبني ١-٥ مشاريع سنوياً</td>
+</tr>
+<tr>
+<td><strong>صانع القرار</strong></td>
+<td>المالك / المدير التنفيذي / <strong>مدير المشاريع</strong></td>
+</tr>
+<tr>
+<td><strong>الجغرافيا</strong></td>
+<td>الرياض، جدة، الدمام</td>
+</tr>
+<tr>
+<td><strong>الألم الأساسي</strong></td>
+<td><strong>تأخر التسليم + تعثر المقاولين</strong> — أكبر مخاوفهم</td>
+</tr>
+<tr>
+<td><strong>الألم الثانوي</strong></td>
+<td>مشاكل ما بعد التسليم (عيوب، ضمانات)، تضخم تكاليف، نقص كفاءات</td>
+</tr>
+<tr>
+<td><strong>محفزات الشراء</strong></td>
+<td>أرض جديدة، مقاول سابق تعثر، مشروع متأخر عن الجدول</td>
+</tr>
+<tr>
+<td><strong>الحالة الشعورية</strong></td>
+<td><strong>قلق من التكرار</strong> — مرّ بتجربة سيئة مع مقاول ويبحث عن
+بديل موثوق</td>
+</tr>
+</tbody>
+</table>
+<p><strong>صوت العميل:</strong> &gt; “جربنا ٣ مقاولين — واحد ترك المشروع
+في النص. الثاني تأخر ٨ أشهر. مو عارف أثق بمين.”</p>
+<h3 id="منطق-ابدأ-صغير">منطق “ابدأ صغير”</h3>
 <blockquote>
-<p>السعودية تحتاج 300 ألف وحدة سكنية سنوياً. حجم السوق: 164.85 مليار
-دولار. قروض جديدة بقيمة 27.77 مليار ريال (+25.6% سنوياً). أكثر من 106
-آلاف عقد سكني خلال 6 أشهر.</p>
+<p><strong>⚠️ مهم جداً:</strong> المطور مش هيسلمك كل مشاريعه من أول يوم.
+لازم تبدأ بمبنى واحد أو مرحلة واحدة — تثبت التزامك بالموعد — ثم
+توسّع.</p>
 </blockquote>
-<p><strong>الخطاف:</strong> “السعودية تحتاج 300 ألف وحدة سنوياً — كم
-مشروع تقدر تنفذ هذه السنة؟”</p>
-<h2 id="edp-2-ضغط-المطور-الصغير">EDP #2: ضغط المطور الصغير</h2>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 33%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr>
+<th>المرحلة</th>
+<th>النطاق</th>
+<th>الهدف</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>الأولى (إثبات)</strong></td>
+<td>مبنى واحد أو مرحلة هيكل</td>
+<td>أثبت إنك تسلّم بالموعد</td>
+</tr>
+<tr>
+<td><strong>الثانية (توسع)</strong></td>
+<td>مشروع كامل</td>
+<td>بعد ما شاف النتيجة بنفسه</td>
+</tr>
+<tr>
+<td><strong>الثالثة (شراكة)</strong></td>
+<td>عدة مشاريع بالتوازي</td>
+<td>الآن صار يثق فيك — “الجناح التنفيذي”</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="الشريحة-b-قطاع-mep-التجاري-موسع">🏭 الشريحة B: قطاع MEP التجاري
+(موسّع)</h2>
+<p><strong>حدّة الألم:</strong> 🔴🔴🔴</p>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr>
+<th>البُعد</th>
+<th>التفاصيل</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>من هم</strong></td>
+<td>مالكو ومشغلو مصانع، فنادق، مراكز تجارية، كمبوندات سكنية</td>
+</tr>
+<tr>
+<td><strong>صانع القرار</strong></td>
+<td>المالك / مدير العمليات / مدير المشاريع</td>
+</tr>
+<tr>
+<td><strong>الجغرافيا</strong></td>
+<td>الرياض، جدة (الأساسية) + مدن صناعية (MODON)</td>
+</tr>
+<tr>
+<td><strong>الألم الأساسي</strong></td>
+<td>يحتاج <strong>تنفيذ وتركيب أنظمة MEP</strong> (كهرباء، مياه، تكييف،
+إطفاء) — مش بس صيانة</td>
+</tr>
+<tr>
+<td><strong>الألم الثانوي</strong></td>
+<td>توقفات مفاجئة، التزام دفاع مدني، تكلفة طاقة مرتفعة</td>
+</tr>
+<tr>
+<td><strong>محفزات الشراء</strong></td>
+<td>بناء مصنع جديد، تجديد فندق، توسعة مركز تجاري، تفتيش دفاع مدني</td>
+</tr>
+</tbody>
+</table>
+<h3 id="عملاء-mep-موسعين">عملاء MEP (موسّعين)</h3>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 19%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>نوع العميل</th>
+<th>أمثلة</th>
+<th style="text-align: center;">خدمة MEP المطلوبة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>مصانع</strong></td>
+<td>MODON، مدن صناعية</td>
+<td style="text-align: center;">تنفيذ أنظمة كهرباء صناعية، تبريد، أنظمة
+سلامة</td>
+</tr>
+<tr>
+<td><strong>فنادق</strong></td>
+<td>فنادق ٣-٥ نجوم</td>
+<td style="text-align: center;">تنفيذ تكييف مركزي، أنظمة حريق،
+سباكة</td>
+</tr>
+<tr>
+<td><strong>مراكز تجارية</strong></td>
+<td>مولات، مباني مكاتب</td>
+<td style="text-align: center;">أنظمة كهرباء، تكييف، إطفاء</td>
+</tr>
+<tr>
+<td><strong>كمبوندات</strong></td>
+<td>مجمعات سكنية</td>
+<td style="text-align: center;">بنية تحتية MEP كاملة</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="من-نبتعد-عنهم">❌ من نبتعد عنهم</h2>
+<table>
+<thead>
+<tr>
+<th>شريحة غير مناسبة</th>
+<th>لماذا</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>مطور عملاق (روشن، NHC)</td>
+<td>عنده فريق تنفيذ داخلي</td>
+</tr>
+<tr>
+<td>فرد يبني فيلا واحدة</td>
+<td>مشروع صغير جداً</td>
+</tr>
+<tr>
+<td>مصنع/فندق عنده فريق MEP داخلي</td>
+<td>حلّ مشكلته</td>
+</tr>
+<tr>
+<td>مطور بلا تمويل معتمد</td>
+<td>ما يبدأ مشاريع</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="القسم-٣-عملية-البيع-sales-process">القسم ٣: عملية البيع (Sales
+Process)</h1>
+<h2 id="دورة-البيع-٣٠-٤٥-يوم">دورة البيع: ٣٠-٤٥ يوم</h2>
 <blockquote>
-<p>روشن تستهدف 400 ألف منزل. NHC أكبر مطور في المملكة. المطورون الصغار
-لا ينافسون بالحجم — ينافسون بالسرعة.</p>
+<p><strong>⚠️ ده مش SaaS.</strong> عقود مقاولات بالملايين تحتاج بناء ثقة
+— مش ١٠ أيام.</p>
 </blockquote>
-<p><strong>الخطاف:</strong> “روشن وNHC يأخذون السوق. الحل ليس منافستهم
-بالحجم — الحل أن تسرّع التنفيذ.”</p>
-<h2 id="edp-3-أزمة-توقف-المصانع">EDP #3: أزمة توقف المصانع</h2>
+<pre><code>الأسبوع ١        الأسبوع ٢-٣          الأسبوع ٤-٥         الأسبوع ٦
+LinkedIn +       اجتماع أول →        عرض فني +           التعاقد
+WhatsApp         زيارة موقع          عرض سعر</code></pre>
+<h3 id="المراحل-بالتفصيل">المراحل بالتفصيل</h3>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 17%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr>
+<th>المرحلة</th>
+<th style="text-align: center;">المدة</th>
+<th>النشاط</th>
+<th>القناة</th>
+<th>الهدف</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>١. التواصل الأول</strong></td>
+<td style="text-align: center;">يوم ١-٣</td>
+<td>LinkedIn connection + رسالة تعريفية</td>
+<td>LinkedIn (Heyreach)</td>
+<td>فتح المحادثة</td>
+</tr>
+<tr>
+<td><strong>٢. بناء العلاقة</strong></td>
+<td style="text-align: center;">يوم ٣-٧</td>
+<td>محتوى مخصص + متابعة واتساب</td>
+<td>WhatsApp + LinkedIn</td>
+<td>الانتقال للمحادثة الشخصية</td>
+</tr>
+<tr>
+<td><strong>٣. الاجتماع الأول</strong></td>
+<td style="text-align: center;">يوم ٧-١٤</td>
+<td>عرض تقديمي + سجل أعمال + زيارة مشروع مصطفى</td>
+<td>Zoom أو حضوري</td>
+<td>بناء الثقة</td>
+</tr>
+<tr>
+<td><strong>٤. زيارة موقع العميل</strong></td>
+<td style="text-align: center;">يوم ١٤-٢١</td>
+<td>زيارة أرض/مشروع العميل + تقييم فني</td>
+<td>حضوري</td>
+<td>إظهار الاحترافية</td>
+</tr>
+<tr>
+<td><strong>٥. العرض الفني</strong></td>
+<td style="text-align: center;">يوم ٢١-٣٠</td>
+<td>عرض فني مفصل + جدول زمني + ضمانات</td>
+<td>إيميل + اجتماع</td>
+<td>تقديم العرض</td>
+</tr>
+<tr>
+<td><strong>٦. التفاوض والتعاقد</strong></td>
+<td style="text-align: center;">يوم ٣٠-٤٥</td>
+<td>مفاوضة شروط + توقيع</td>
+<td>حضوري</td>
+<td>إغلاق الصفقة</td>
+</tr>
+</tbody>
+</table>
+<h3 id="الـ-sequence-المفصل-بدون-كولد-كولينج">الـ Sequence المفصل (بدون
+كولد كولينج)</h3>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 25%" />
+<col style="width: 28%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">اليوم</th>
+<th>القناة</th>
+<th>الرسالة</th>
+<th>ملاحظة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">١</td>
+<td>LinkedIn</td>
+<td>طلب اتصال + رسالة قصيرة</td>
+<td>عبر Heyreach</td>
+</tr>
+<tr>
+<td style="text-align: center;">٣</td>
+<td>LinkedIn</td>
+<td>متابعة — مشاركة محتوى (صورة مشروع أو نصيحة فنية)</td>
+<td>بعد القبول</td>
+</tr>
+<tr>
+<td style="text-align: center;">٥</td>
+<td>WhatsApp</td>
+<td>تعريف شخصي + رابط البورتفوليو</td>
+<td>انتقال من LinkedIn</td>
+</tr>
+<tr>
+<td style="text-align: center;">٨</td>
+<td>LinkedIn</td>
+<td>مشاركة case study أو نتيجة مشروع محدد</td>
+<td>بناء authority</td>
+</tr>
+<tr>
+<td style="text-align: center;">١٢</td>
+<td>WhatsApp</td>
+<td>“شفت إنكم تشتغلون على [X] — عندي ملاحظة فنية ممكن تفيد”</td>
+<td>قيمة ملموسة</td>
+</tr>
+<tr>
+<td style="text-align: center;">١٥</td>
+<td>WhatsApp</td>
+<td>دعوة لاجتماع / زيارة مشروع مصطفى</td>
+<td>طلب meeting</td>
+</tr>
+<tr>
+<td style="text-align: center;">٢٠</td>
+<td>Email</td>
+<td>ملخص رسمي + سجل مشاريع + شهادات</td>
+<td>formalization</td>
+</tr>
+<tr>
+<td style="text-align: center;">٢٥</td>
+<td>WhatsApp</td>
+<td>متابعة لما بعد الاجتماع</td>
+<td>follow-up</td>
+</tr>
+<tr>
+<td style="text-align: center;">٣٠</td>
+<td>Email</td>
+<td>عرض فني رسمي</td>
+<td>proposal</td>
+</tr>
+<tr>
+<td style="text-align: center;">٤٠-٤٥</td>
+<td>حضوري</td>
+<td>تفاوض + توقيع</td>
+<td>close</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="القسم-٤-tech-stack-أدوات-المبيعات">القسم ٤: Tech Stack — أدوات
+المبيعات</h1>
+<h2 id="linkedin-automation">LinkedIn Automation</h2>
+<table>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 30%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr>
+<th>الأداة</th>
+<th>الدور</th>
+<th style="text-align: center;">التكلفة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Heyreach</strong></td>
+<td>أتمتة sequences على LinkedIn (اتصال + رسائل + متابعة)</td>
+<td style="text-align: center;">$79/شهر</td>
+</tr>
+<tr>
+<td><strong>LinkedIn Sales Navigator</strong></td>
+<td>بحث متقدم + فلاتر + Lead Lists</td>
+<td style="text-align: center;">SAR 500-800/شهر</td>
+</tr>
+</tbody>
+</table>
+<h3 id="إعداد-heyreach">إعداد Heyreach</h3>
+<pre><code>Sequence: Mustafa → Developer (30 days)
+Step 1 (Day 1): Connection Request + Note
+Step 2 (Day 3): If connected → Send Message 1 (intro + portfolio link)
+Step 3 (Day 8): Send Message 2 (case study)
+Step 4 (Day 15): Send Message 3 (meeting request)
+---
+Sequence: Mustafa → MEP Client (30 days)
+Step 1 (Day 1): Connection Request + Note
+Step 2 (Day 3): If connected → Send Message 1 (project reference)
+Step 3 (Day 8): Send Message 2 (site visit offer)
+Step 4 (Day 15): Send Message 3 (meeting request)</code></pre>
+<h2 id="email-infrastructure">Email Infrastructure</h2>
+<table>
+<thead>
+<tr>
+<th>المكوّن</th>
+<th>التفاصيل</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Domain</strong></td>
+<td>نطاق مخصص للإيميل (مثل: outreach.mustafa-ksa.com)</td>
+</tr>
+<tr>
+<td><strong>ESP</strong></td>
+<td>Google Workspace أو Zoho Mail</td>
+</tr>
+<tr>
+<td><strong>Warmup</strong></td>
+<td>Instantly.ai أو Warmbox — تسخين ١٤ يوم قبل الإرسال</td>
+</tr>
+<tr>
+<td><strong>عدد الإيميلات</strong></td>
+<td>حد أقصى ٣٠ إيميل/يوم في أول شهر</td>
+</tr>
+<tr>
+<td><strong>التوقيع</strong></td>
+<td>اسم + منصب + رقم جوال + رابط بورتفوليو</td>
+</tr>
+</tbody>
+</table>
+<h2 id="crm">CRM</h2>
+<table>
+<colgroup>
+<col style="width: 53%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr>
+<th>الأداة</th>
+<th>الدور</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Breakcold</strong> أو <strong>HubSpot Free</strong></td>
+<td>تتبع المراحل + pipeline</td>
+</tr>
+<tr>
+<td><strong>حقول مطلوبة</strong></td>
+<td>الشريحة (مطور/MEP)، مرحلة البيع، تاريخ آخر تواصل، مصدر الليد</td>
+</tr>
+</tbody>
+</table>
+<h2 id="أدوات-أخرى">أدوات أخرى</h2>
+<table>
+<thead>
+<tr>
+<th>الأداة</th>
+<th>الدور</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>WhatsApp Business</strong></td>
+<td>التواصل الأساسي بعد LinkedIn</td>
+</tr>
+<tr>
+<td><strong>Canva</strong></td>
+<td>بورتفوليو PDF + محتوى LinkedIn</td>
+</tr>
+<tr>
+<td><strong>Google Drive</strong></td>
+<td>عروض أسعار + مستندات مشاركة</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="القسم-٥-مسار-الشراكات-مكاتب-الاستشارات-الهندسية">القسم ٥: مسار
+الشراكات — مكاتب الاستشارات الهندسية</h1>
 <blockquote>
-<p>التوقف غير المخطط يكلف 5–50 ألف ريال في الساعة. الأعطال الكهربائية
-السبب الأول لتوقف الإنتاج في الصناعة الخفيفة والمتوسطة.</p>
+<p><strong>⚠️ قناة مفقودة في النسخة السابقة.</strong> المكتب الاستشاري
+يصمم المشروع ثم يوصي المطور بالمقاول. ده أقوى قناة في المقاولات.</p>
 </blockquote>
-<p><strong>الخطاف:</strong> “عطل كهربائي واحد كلّف مصنع 50 ألف ريال في 6
-ساعات. كم تكلفك ساعة التوقف؟”</p>
-<h2 id="edp-4-التزام-الدفاع-المدني">EDP #4: التزام الدفاع المدني</h2>
+<h2 id="كيف-تعمل-الشراكة">كيف تعمل الشراكة</h2>
+<pre><code>المكتب الاستشاري يصمم المشروع
+        ↓
+المطور يسأل: &quot;مين مقاول كويس؟&quot;
+        ↓
+المكتب يوصي بمصطفى (لأن العلاقة مبنية)
+        ↓
+مصطفى يقدم عرض → يفوز بالمشروع</code></pre>
+<h2 id="خطة-بناء-الشراكات">خطة بناء الشراكات</h2>
+<table>
+<thead>
+<tr>
+<th>الأسبوع</th>
+<th>النشاط</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>١-٢</td>
+<td>حصر ١٠ مكاتب استشارات هندسية في الرياض وجدة</td>
+</tr>
+<tr>
+<td>٢-٣</td>
+<td>تواصل LinkedIn + واتساب — تعريف بمصطفى وسجل أعماله</td>
+</tr>
+<tr>
+<td>٣-٤</td>
+<td>اجتماع تعارف + عرض ملف المشاريع</td>
+</tr>
+<tr>
+<td>شهري</td>
+<td>متابعة دورية + مشاركة updates عن المشاريع الحالية</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ما-نقدمه-للمكتب-الاستشاري">ما نقدمه للمكتب الاستشاري</h2>
+<table>
+<thead>
+<tr>
+<th>القيمة</th>
+<th>التفاصيل</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>شريك تنفيذ موثوق</strong></td>
+<td>يقدرون يوصون بنا بثقة لعملائهم</td>
+</tr>
+<tr>
+<td><strong>تقارير تنفيذ دورية</strong></td>
+<td>المكتب يتابع المشروع بسهولة</td>
+</tr>
+<tr>
+<td><strong>التزام بالمواصفات</strong></td>
+<td>ننفذ بالظبط حسب تصميمهم</td>
+</tr>
+<tr>
+<td><strong>عمولة إحالة (اختياري)</strong></td>
+<td>٢-٣٪ من قيمة المشروع</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="القسم-٦-الرسائل-trust-first-approach">القسم ٦: الرسائل —
+Trust-First Approach</h1>
 <blockquote>
-<p>التفتيش إلزامي ويتكرر بوتيرة أعلى. غياب الالتزام يعني إغلاقاً تشغيلياً
-ومسؤولية قانونية.</p>
+<p><strong>⚠️ تعديل جوهري:</strong> الرسائل القديمة كانت تحاول تقدم
+“تحليل قيمة” بأرقام عامة. في قطاع المقاولات، الثقة تتبنى بـ: <strong>سجل
+أعمال حقيقي + التزام بالمواعيد + احترافية التواصل.</strong></p>
 </blockquote>
-<p><strong>الخطاف:</strong> “الدفاع المدني لا يعطي إنذاراً — يعطي أمر
-إغلاق. متى آخر مرة فحصت لوحة الكهرباء؟”</p>
-<h2 id="edp-5-فراغ-الكفاءات">EDP #5: فراغ الكفاءات</h2>
+<h3 id="المبادئ">المبادئ</h3>
+<ol type="1">
+<li><strong>ما تبدأ بأرقام عامة</strong> — ابدأ بمن أنت وإيش سلمت</li>
+<li><strong>صور المشاريع أقوى من أي كلام</strong> — دائماً ارفق
+بورتفوليو</li>
+<li><strong>الثقة قبل القيمة</strong> — “سلّمنا ١٢ مشروع بالموعد” أقوى من
+“وفّرنا ٩ مليون”</li>
+<li><strong>التخصيص حسب موقفهم</strong> — اذكر مشروعهم / حيّهم / مشكلتهم
+المحددة</li>
+</ol>
+<h2 id="رسالة-linkedin-مطور-عقاري">رسالة LinkedIn — مطور عقاري</h2>
+<pre><code>حياك الله أستاذ [الاسم]، أنا [اسمك] من مصطفى للمقاولات.
+
+أشوف شغلكم في [الحي/المدينة] — عندنا تجربة في نفس النوع من المشاريع.
+
+سلّمنا [عدد] مشاريع سكنية — آخرها [اسم/نوع المشروع] في [الموقع]،
+[عدد] وحدة، سُلّم بالكامل بالموعد المتفق عليه.
+
+لو عندكم مشروع قادم وتبحثون عن مقاول يلتزم بالتسليم — يسعدني أرسل لك
+ملف مشاريعنا + مراجع عملاء سابقين.</code></pre>
+<p><strong>ليش تشتغل:</strong> - بدأ بالتعريف (مين أنا) ✅ - ذكر سجل
+أعمال فعلي (عدد مشاريع + تسليم بالموعد) ✅ - ما فيها أرقام تكلفة عامة ❌
+(شلناها) - تقدم إثبات (ملف مشاريع + مراجع) ✅ - الطلب خفيف (أرسل ملف)
+✅</p>
+<h2 id="رسالة-linkedin-عميل-mep">رسالة LinkedIn — عميل MEP</h2>
+<pre><code>حياك الله أستاذ [الاسم]، أنا [اسمك] من مصطفى.
+
+متخصصين في تنفيذ وتركيب أنظمة MEP — كهرباء، تكييف، سباكة،
+أنظمة حريق — لـ [مصانع/فنادق/مراكز تجارية].
+
+آخر مشروع سلمناه: [نوع المنشأة] في [المدينة] — تنفيذ كامل لأنظمة
+[الأنظمة] خلال [المدة].
+
+لو عندكم مشروع جديد أو تجديد — يسعدني أرسل لكم ملف أعمالنا.</code></pre>
+<h2 id="متابعة-whatsapp-بعد-linkedin">متابعة WhatsApp — بعد
+LinkedIn</h2>
+<pre><code>حياك أستاذ {{1}}، تواصلنا على لينكدإن 👋
+
+هذا ملف مشاريعنا — فيه [عدد] مشاريع مع صور وتفاصيل:
+[رابط PDF]
+
++ مراجع عملاء سابقين لو تحب تتأكد.
+
+متى يناسبك نتكلم ١٥ دقيقة؟</code></pre>
+<h2 id="رسالة-email-رسمية-بعد-الاجتماع">رسالة Email — رسمية بعد
+الاجتماع</h2>
+<pre><code>الموضوع: ملخص اجتماعنا — مشروع [اسم المشروع]
+
+الأستاذ [الاسم] المحترم،
+
+شكراً على وقتكم اليوم.
+
+كما اتفقنا، مرفق:
+١. ملف مشاريعنا (Company Profile)
+٢. سجل المشاريع المشابهة لمشروعكم
+٣. شهادة التصنيف + التأمين
+٤. مراجع عملاء (مع أرقام التواصل بإذنهم)
+
+سنجهز العرض الفني خلال [المدة المتفق عليها].
+
+مع التقدير،
+[الاسم] — مصطفى للمقاولات
+[الجوال] | [الإيميل]</code></pre>
+<hr>
+<h1 id="القسم-٧-خطة-المحتوى-linkedin-content-plan">القسم ٧: خطة المحتوى
+— LinkedIn Content Plan</h1>
 <blockquote>
-<p>269 مهنة تحت التوطين. مشاريع نيوم والبحر الأحمر تسحب أفضل المهندسين.
-الصغار يتركون على الهامش.</p>
+<p><strong>الهدف:</strong> بناء authority وثقة قبل وأثناء الـ outreach.
+المحتوى يدعم الرسائل.</p>
 </blockquote>
-<p><strong>الخطاف:</strong> “مشاريع نيوم والبحر الأحمر سحبت أفضل
-المهندسين. بدلاً من البحث الطويل — استعن بفريق جاهز.”</p>
-<hr />
-</div>
+<h2 id="تقويم-المحتوى-الأسبوعي">تقويم المحتوى الأسبوعي</h2>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 48%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">اليوم</th>
+<th>نوع المحتوى</th>
+<th>مثال</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>الأحد</strong></td>
+<td>📸 صورة مشروع + قصة قصيرة</td>
+<td>“سلمنا هذا المشروع في [المدينة] — ١٢٠ يوم من الأساسات للتسليم”</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>الثلاثاء</strong></td>
+<td>💡 نصيحة فنية</td>
+<td>“٣ أخطاء شائعة في تنفيذ الأنظمة الكهربائية الصناعية”</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>الخميس</strong></td>
+<td>📊 رقم أو إحصائية + تعليق</td>
+<td>“٧٠٪ من تأخر المشاريع بسبب سوء إدارة المقاولين الباطن”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="مواضيع-المحتوى-٣-أشهر">مواضيع المحتوى (٣ أشهر)</h2>
+<h3 id="الشهر-١-إثبات-القدرة">الشهر ١: إثبات القدرة</h3>
+<ul>
+<li>Before/After صور مشاريع (٤ بوستات)</li>
+<li>“كيف نضمن التسليم بالموعد” — العملية الداخلية</li>
+<li>Timelapse فيديو قصير لمشروع</li>
+<li>شهادة عميل (مكتوبة أو فيديو)</li>
+</ul>
+<h3 id="الشهر-٢-تعليم-authority">الشهر ٢: تعليم + Authority</h3>
+<ul>
+<li>أخطاء شائعة في اختيار المقاول</li>
+<li>الفرق بين مقاول مصنف وغير مصنف</li>
+<li>“كيف تقرأ عرض سعر مقاول” (سلسلة)</li>
+<li>نصائح MEP لأصحاب المصانع</li>
+</ul>
+<h3 id="الشهر-٣-حالات-دراسية">الشهر ٣: حالات دراسية</h3>
+<ul>
+<li>Case study تفصيلي: المشكلة → الحل → النتيجة</li>
+<li>“لماذا اخترنا الشريك هذا” — قصة من منظور العميل</li>
+<li>أرقام: عدد المشاريع، نسبة التسليم بالموعد، سنوات الخبرة</li>
+</ul>
+<hr>
+<h1 id="القسم-٨-الخطة-الزمنية-٩٠-يوم">القسم ٨: الخطة الزمنية — ٩٠
+يوم</h1>
+<h2 id="المرحلة-١-أسبوع-واحد-الانطلاق-والنتائج-الأولى">المرحلة ١: أسبوع
+واحد — الانطلاق والنتائج الأولى ⚡</h2>
+<blockquote>
+<p><strong>⚠️ تعديل:</strong> ضُغطت من ٤ أسابيع لأسبوع واحد. الهدف:
+الفريق يشوف نتائج (تواصلات + ردود + اجتماعات) — مش تقفيل deals.</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 19%" />
+<col style="width: 21%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;">اليوم</th>
+<th>النشاط</th>
+<th>المسؤول</th>
+<th style="text-align: center;">النتيجة المتوقعة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">١</td>
+<td>تفعيل LinkedIn Navigator + Heyreach</td>
+<td>فريق مبيعات</td>
+<td style="text-align: center;">الأدوات جاهزة</td>
+</tr>
+<tr>
+<td style="text-align: center;">١</td>
+<td>تجهيز بورتفوليو PDF + ملف مشاريع</td>
+<td>فريق مبيعات</td>
+<td style="text-align: center;">ملفات جاهزة للإرسال</td>
+</tr>
+<tr>
+<td style="text-align: center;">٢</td>
+<td>بناء أول ١٠٠ قائمة prospects (٥٠ مطور + ٥٠ MEP)</td>
+<td>فريق مبيعات</td>
+<td style="text-align: center;">القوائم جاهزة</td>
+</tr>
+<tr>
+<td style="text-align: center;">٢</td>
+<td>إطلاق أول Heyreach sequence</td>
+<td>فريق مبيعات</td>
+<td style="text-align: center;">١٠٠ طلب اتصال LinkedIn</td>
+</tr>
+<tr>
+<td style="text-align: center;">٣-٥</td>
+<td>متابعة الردود + انتقال لـ WhatsApp</td>
+<td>فريق مبيعات</td>
+<td style="text-align: center;">١٥-٢٥ محادثة</td>
+</tr>
+<tr>
+<td style="text-align: center;">٥-٧</td>
+<td>حجز أول اجتماعات</td>
+<td>فريق مبيعات</td>
+<td style="text-align: center;">٣-٥ اجتماعات محجوزة</td>
+</tr>
+<tr>
+<td style="text-align: center;">٧</td>
+<td>نشر أول بوست LinkedIn</td>
+<td>فريق محتوى</td>
+<td style="text-align: center;">بداية بناء الـ authority</td>
+</tr>
+</tbody>
+</table>
+<p><strong>KPIs الأسبوع الأول:</strong></p>
+<table>
+<thead>
+<tr>
+<th>المؤشر</th>
+<th style="text-align: center;">الهدف</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>طلبات اتصال LinkedIn</td>
+<td style="text-align: center;">١٠٠</td>
+</tr>
+<tr>
+<td>نسبة القبول</td>
+<td style="text-align: center;">&gt; ٣٠٪</td>
+</tr>
+<tr>
+<td>رسائل مرسلة</td>
+<td style="text-align: center;">٥٠+</td>
+</tr>
+<tr>
+<td>ردود</td>
+<td style="text-align: center;">١٠-١٥</td>
+</tr>
+<tr>
+<td>اجتماعات محجوزة</td>
+<td style="text-align: center;">٣-٥</td>
+</tr>
+</tbody>
+</table>
+<h2 id="المرحلة-٢-أسبوع-٢-٤-بناء-pipeline">المرحلة ٢: أسبوع ٢-٤ — بناء
+Pipeline</h2>
+<table>
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr>
+<th>الأسبوع</th>
+<th>النشاط</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>٢</td>
+<td>١٠٠ طلب اتصال إضافي + ٥ اجتماعات + أول ٣ بوستات LinkedIn</td>
+</tr>
+<tr>
+<td>٣</td>
+<td>توسيع القائمة لـ ٣٠٠ + بداية شراكات مكاتب استشارية (تواصل مع ٥
+مكاتب)</td>
+</tr>
+<tr>
+<td>٤</td>
+<td>أول عروض أسعار + متابعة + تسخين email domain</td>
+</tr>
+</tbody>
+</table>
+<p><strong>KPIs نهاية الشهر الأول:</strong></p>
+<table>
+<thead>
+<tr>
+<th>المؤشر</th>
+<th style="text-align: center;">الهدف</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prospects contacted</td>
+<td style="text-align: center;">٣٠٠</td>
+</tr>
+<tr>
+<td>اجتماعات</td>
+<td style="text-align: center;">١٥+</td>
+</tr>
+<tr>
+<td>عروض أسعار</td>
+<td style="text-align: center;">٥+</td>
+</tr>
+<tr>
+<td>مكاتب استشارية متواصل معها</td>
+<td style="text-align: center;">٥</td>
+</tr>
+<tr>
+<td>بوستات LinkedIn</td>
+<td style="text-align: center;">٨</td>
+</tr>
+</tbody>
+</table>
+<h2 id="المرحلة-٣-شهر-٢-٣-إغلاق-أول-صفقات">المرحلة ٣: شهر ٢-٣ — إغلاق
+أول صفقات</h2>
+<table>
+<thead>
+<tr>
+<th>النشاط</th>
+<th>الهدف</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>توسيع لـ ٥٠٠+ prospect</td>
+<td>تغطية أوسع</td>
+</tr>
+<tr>
+<td>متابعة العروض المقدمة</td>
+<td>إقفال ٢-٣ deals</td>
+</tr>
+<tr>
+<td>تفعيل email outreach (بعد تسخين)</td>
+<td>قناة إضافية</td>
+</tr>
+<tr>
+<td>شراكة مع ٢+ مكاتب استشارية</td>
+<td>إحالات</td>
+</tr>
+<tr>
+<td>محتوى LinkedIn مستمر (٣ بوستات/أسبوع)</td>
+<td>authority</td>
+</tr>
+<tr>
+<td>برنامج إحالات عملاء</td>
+<td>مصدر leads إضافي</td>
+</tr>
+</tbody>
+</table>
+<p><strong>KPIs نهاية ٩٠ يوم:</strong></p>
+<table>
+<thead>
+<tr>
+<th>المؤشر</th>
+<th style="text-align: center;">الهدف</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prospects contacted</td>
+<td style="text-align: center;">٥٠٠+</td>
+</tr>
+<tr>
+<td>اجتماعات</td>
+<td style="text-align: center;">٤٠+</td>
+</tr>
+<tr>
+<td>عروض أسعار</td>
+<td style="text-align: center;">١٥+</td>
+</tr>
+<tr>
+<td>deals closed</td>
+<td style="text-align: center;">٢-٣</td>
+</tr>
+<tr>
+<td>شراكات مكاتب استشارية</td>
+<td style="text-align: center;">٣+</td>
+</tr>
+<tr>
+<td>pipeline value</td>
+<td style="text-align: center;">SAR ٥M+</td>
+</tr>
+</tbody>
+</table>
+<hr></div>
           </div>
         </div>
-        
 
         <div class="accordion-item">
           <div class="accordion-header">
             <div class="accordion-title">
               <span class="step-num">04</span>
-              <span>الجزء 4: شخصيات المشتري</span>
+              <span>القسم ٩: هندسة القنوات</span>
             </div>
             <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
           </div>
           <div class="accordion-content">
-            <div class="accordion-body"><h2 id="الشخصية-1-خالد-المطور-الطموح">الشخصية 1: خالد — المطور
-الطموح</h2>
-<table>
-<colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
-</colgroup>
-<thead>
-<tr>
-<th>السمة</th>
-<th>التفاصيل</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>العمر</strong></td>
-<td>42</td>
-</tr>
-<tr>
-<td><strong>المنصب</strong></td>
-<td>المدير التنفيذي / المالك لشركة تطوير عقاري صغيرة</td>
-</tr>
-<tr>
-<td><strong>الشركة</strong></td>
-<td>8–15 موظفاً، 2–3 مشاريع نشطة</td>
-</tr>
-<tr>
-<td><strong>الألم</strong></td>
-<td>سقف طاقة التنفيذ — يملك الأرض والتمويل ولا يبني بالسرعة
-المطلوبة</td>
-</tr>
-<tr>
-<td><strong>المحفز</strong></td>
-<td>اشترى أرضاً جديدة وتمويله معتمد ولا يملك فريق تنفيذ</td>
-</tr>
-<tr>
-<td><strong>المخاوف</strong></td>
-<td>ترك المقاول للمشروع، تضخم التكاليف، فشل اشتراطات SBC، تأخر
-التسليم</td>
-</tr>
-<tr>
-<td><strong>شروط الثقة</strong></td>
-<td>تصنيف المقاول، سجل المشاريع، الالتزام بالمواعيد</td>
-</tr>
-<tr>
-<td><strong>القنوات</strong></td>
-<td>لينكدإن → واتساب → تويتر/إكس → الصفحات الزرقاء → عقار</td>
-</tr>
-</tbody>
-</table>
-<p><strong>SPICED:</strong> - <strong>S:</strong> 3 مشاريع نشطة، 5 أراضٍ
-تنتظر - <strong>P:</strong> لا يستطيع تجاوز 3 مشاريع في الوقت نفسه -
-<strong>I:</strong> يخسر 5–10 ملايين ريال سنوياً لكل أرض واقفة -
-<strong>C:</strong> أرض جديدة وتمويل معتمد - <strong>D:</strong> شراكة
-تنفيذية لا تعاقد جزئي</p>
-<hr />
-<h2 id="الشخصية-2-فهد-مدير-مصنع-تحت-الضغط">الشخصية 2: فهد — مدير مصنع
-تحت الضغط</h2>
-<table>
-<colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
-</colgroup>
-<thead>
-<tr>
-<th>السمة</th>
-<th>التفاصيل</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>العمر</strong></td>
-<td>47</td>
-</tr>
-<tr>
-<td><strong>المنصب</strong></td>
-<td>مالك مصنع / مدير عمليات</td>
-</tr>
-<tr>
-<td><strong>الشركة</strong></td>
-<td>50–150 عاملاً، في MODON، بلا فريق MEP داخلي</td>
-</tr>
-<tr>
-<td><strong>الألم</strong></td>
-<td>صيانة تفاعلية → توقفات مفاجئة → خسارة إنتاج</td>
-</tr>
-<tr>
-<td><strong>المحفز</strong></td>
-<td>تفتيش دفاع مدني خلال 30 يوماً أو عطل حديث</td>
-</tr>
-<tr>
-<td><strong>المخاوف</strong></td>
-<td>إغلاق، غرامات، حريق كهربائي، تلوث مياه، مسؤولية جنائية</td>
-</tr>
-<tr>
-<td><strong>شروط الثقة</strong></td>
-<td>شهادات MEP، معرفة الدفاع المدني، SLA للطوارئ، مراجع مصانع</td>
-</tr>
-<tr>
-<td><strong>القنوات</strong></td>
-<td>واتساب → لينكدإن → MODON → جوجل (عند الطوارئ)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>SPICED:</strong> - <strong>S:</strong> مصنع متوسط، 50–150
-عاملاً، بلا فريق MEP داخلي - <strong>P:</strong> صيانة تفاعلية = 2–3
-أضعاف التكلفة + توقفات - <strong>I:</strong> 5–50 ألف ريال/ساعة + فقد
-عملاء + مخاطرة امتثال - <strong>C:</strong> إشعار تفتيش أو عطل حديث -
-<strong>D:</strong> اشتراك وقائي، لا إصلاح بعد الكارثة</p>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">05</span>
-              <span>الجزء 5: القوى الخارجية</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="قوى-تخلق-استعجالا">قوى تخلق استعجالاً</h2>
-<table>
-<colgroup>
-<col style="width: 28%" />
-<col style="width: 72%" />
-</colgroup>
-<thead>
-<tr>
-<th>القوة</th>
-<th>أثرها على شرائحنا</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>هدف الإسكان في رؤية 2030</strong></td>
-<td>300 ألف وحدة سنوياً → من يوسع التنفيذ يفوز</td>
-</tr>
-<tr>
-<td><strong>تنويع الصناعة (NIDLP)</strong></td>
-<td>أكثر من 36 مدينة صناعية → مصانع أكثر تحتاج إشراف MEP</td>
-</tr>
-<tr>
-<td><strong>تيسير نقدي</strong></td>
-<td>سايبور منخفض → رأس مال يتحرك → المطورون مستعدون للبناء</td>
-</tr>
-<tr>
-<td><strong>تشديد SBC</strong></td>
-<td>الامتثال إلزامي → المطورون يحتاجون شريكاً ملتزماً</td>
-</tr>
-<tr>
-<td><strong>تفتيش الدفاع المدني</strong></td>
-<td>خطر الإغلاق → طلب أعلى على إشراف البنية التحتية</td>
-</tr>
-</tbody>
-</table>
-<h2 id="قوى-تخلق-ترددا">قوى تخلق تردداً</h2>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr>
-<th>القوة</th>
-<th>ردّنا</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>تضخم تكاليف المواد (+4%)</strong></td>
-<td>“تنفيذ أكثر كفاءة يحمي هامشك”</td>
-</tr>
-<tr>
-<td><strong>فراغ الكفاءات</strong></td>
-<td>“لا توظّف — شارك فريقاً جاهزاً”</td>
-</tr>
-<tr>
-<td><strong>سيطرة المطورين الكبار</strong></td>
-<td>“لن تتفوق على روشن بالحجم — تفوق عليها بالسرعة”</td>
-</tr>
-<tr>
-<td><strong>ثقافة الصيانة التفاعلية</strong></td>
-<td>“الوقاية تكلف ثلث الطوارئ”</td>
-</tr>
-</tbody>
-</table>
-<h2 id="قوى-ثقافية">قوى ثقافية</h2>
-<table>
-<colgroup>
-<col style="width: 43%" />
-<col style="width: 56%" />
-</colgroup>
-<thead>
-<tr>
-<th>القوة</th>
-<th>الدلالة</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>ثقافة واتساب للأعمال</strong></td>
-<td>98% معدل فتح — لينكدإن للاكتشاف، واتساب للعلاقة</td>
-</tr>
-<tr>
-<td><strong>الثقة تأتي من السجل</strong></td>
-<td>سجل مشاريع + مراجع أهم من الاسم التجاري</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">06</span>
-              <span>الجزء 6: مصادر البيانات والإشارات</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="مصدر-البيانات-1-الصفحات-الزرقاء-bluepages.com.sa">مصدر البيانات
-#1: الصفحات الزرقاء (bluepages.com.sa)</h2>
-<blockquote>
-<p>أكبر موسوعة تجارية صناعية لمشتركي الغرف التجارية في السعودية</p>
-</blockquote>
-<p><strong>ما نحصل عليه:</strong> اسم الشركة، واتساب، بريد إلكتروني،
-لينكدإن، موقع، مدينة، وصف</p>
-<h3 id="التحقق-من-البيانات-22-فبراير-2026">⚠️ التحقق من البيانات (22
-فبراير 2026)</h3>
-<blockquote>
-<p>الأرقام الكبيرة (4,563 عقارات) هي كل الشركات المسجلة. الاشتراكات
-الفعّالة والمدفوعة أقل بكثير:</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>الفئة</th>
-<th style="text-align: center;">نشط ومدفوع</th>
-<th style="text-align: center;">واتساب</th>
-<th style="text-align: center;">لينكدإن</th>
-<th style="text-align: center;">موقع</th>
-<th style="text-align: center;">بريد</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>عقارات (1335)</td>
-<td style="text-align: center;"><strong>25</strong></td>
-<td style="text-align: center;">15% ❌</td>
-<td style="text-align: center;">10% ❌</td>
-<td style="text-align: center;">60%</td>
-<td style="text-align: center;">65%</td>
-</tr>
-<tr>
-<td>تشغيل وصيانة (649)</td>
-<td style="text-align: center;"><strong>26</strong></td>
-<td style="text-align: center;">55% ✅</td>
-<td style="text-align: center;">50% ✅</td>
-<td style="text-align: center;">80%</td>
-<td style="text-align: center;">95%</td>
-</tr>
-<tr>
-<td>بلاستيك (566)</td>
-<td style="text-align: center;"><strong>10</strong></td>
-<td style="text-align: center;">30%</td>
-<td style="text-align: center;">10%</td>
-<td style="text-align: center;">80%</td>
-<td style="text-align: center;">100%</td>
-</tr>
-<tr>
-<td>أغذية (467)</td>
-<td style="text-align: center;"><strong>5</strong></td>
-<td style="text-align: center;">0% ❌</td>
-<td style="text-align: center;">0% ❌</td>
-<td style="text-align: center;">60%</td>
-<td style="text-align: center;">60%</td>
-</tr>
-</tbody>
-</table>
-<h3 id="الاستنتاج">الاستنتاج</h3>
-<table>
-<colgroup>
-<col style="width: 21%" />
-<col style="width: 35%" />
-<col style="width: 42%" />
-</colgroup>
-<thead>
-<tr>
-<th>الشريحة</th>
-<th style="text-align: center;">المصدر الأساسي</th>
-<th style="text-align: center;">المصدر الثانوي</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>المطورون</strong></td>
-<td style="text-align: center;"><strong>LinkedIn Sales
-Navigator</strong></td>
-<td style="text-align: center;">الصفحات الزرقاء (25 شركة فقط) +
-جوجل</td>
-</tr>
-<tr>
-<td><strong>المصانع (تشغيل وصيانة)</strong></td>
-<td style="text-align: center;"><strong>الصفحات الزرقاء</strong> (بيانات
-غنية)</td>
-<td style="text-align: center;">لينكدإن + جوجل مابس</td>
-</tr>
-<tr>
-<td><strong>المصانع (صناعية)</strong></td>
-<td style="text-align: center;"><strong>جوجل مابس +
-لينكدإن</strong></td>
-<td style="text-align: center;">الصفحات الزرقاء (أعداد قليلة)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>واجهة API:</strong></p>
-<pre><code>GET https://bluepages.com.sa/api/companies/getAll/paginate
-  ?limit=20&amp;page=1&amp;city=true
-  &amp;categories[]=CATEGORY_ID
-  &amp;packages[]=2&amp;...&amp;packages[]=8
-  &amp;about_to_expire=not_expired&amp;status=true</code></pre>
-<p><strong>معرّفات المدن:</strong> 4=الرياض، 2=جدة، 5=الدمام</p>
-<hr />
-<h2 id="مصدر-البيانات-2-linkedin-sales-navigator">مصدر البيانات #2:
-LinkedIn Sales Navigator</h2>
-<p><strong>بحث المطورين:</strong> الصناعة=العقار/الإنشاء، الحجم=1–50،
-المنصب=CEO/Owner، الجغرافيا=السعودية <strong>بحث المصانع:</strong>
-الصناعة=التصنيع، الحجم=11–200، المنصب=Owner/Manager، الجغرافيا=المدن
-الصناعية</p>
-<hr />
-<h2 id="مصدر-البيانات-3-google-maps">مصدر البيانات #3: Google Maps</h2>
-<p><strong>المصانع:</strong> “مصنع” + اسم المدينة الصناعية → هاتف، موقع،
-تقييمات <strong>المطورون:</strong> “شركة تطوير عقاري” + المدينة → مطابقة
-مع الصفحات الزرقاء</p>
-<hr />
-<h2 id="مسار-الإثراء-enrichment">مسار الإثراء (Enrichment)</h2>
-<pre><code>الصفحات الزرقاء → قائمة أولية (اسم، واتساب، لينكدإن، موقع)
-      ↓
-فلترة: استبعاد الشركات 500+ موظف
-      ↓
-إثراء من الموقع:
-  مطور → صفحة &quot;مشاريعنا&quot;: عدد المشاريع ونوعها
-  مصنع → صفحة صيانة؟ نوع المصنع؟
-      ↓
-إثراء من لينكدإن:
-  حجم الشركة، وظائف شاغرة، ملف المالك/CEO
-      ↓
-تصنيف: L1–L4 حسب الإشارات
-      ↓
-تخصيص الرسالة رسالة بالبيانات</code></pre>
-<hr />
-<h2 id="مستويات-الإشارة-ما-يمكن-رصده-فعلا">مستويات الإشارة — ما يمكن
-رصده فعلاً</h2>
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 22%" />
-<col style="width: 22%" />
-<col style="width: 34%" />
-</colgroup>
-<thead>
-<tr>
-<th>المستوى</th>
-<th>الإشارة</th>
-<th>المصدر</th>
-<th style="text-align: center;">واقعي؟</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🔴 L1 ساخن</td>
-<td>إعلان وظيفة مدير مشاريع (مطور)</td>
-<td>لينكدإن</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>🔴 L1 ساخن</td>
-<td>إعلان فني صيانة (مصنع)</td>
-<td>لينكدإن</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>🔴 L1 ساخن</td>
-<td>الموقع يعرض 2–3 مشاريع فقط</td>
-<td>موقع الشركة</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>🔴 L1 ساخن</td>
-<td>مصنع بلا صفحة صيانة</td>
-<td>موقع الشركة</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>🟠 L2 دافئ</td>
-<td>صفحة زرقاء + تطابق لينكدإن</td>
-<td>الصفحات الزرقاء + لينكدإن</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>🟠 L2 دافئ</td>
-<td>مصنع في منطقة MODON</td>
-<td>جوجل مابس / الصفحات الزرقاء</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>🟡 L3 فاتر</td>
-<td>نشاط في مجموعات لينكدإن</td>
-<td>لينكدإن</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>🔵 L4 بارد</td>
-<td>توافق ICP دون بيانات إثراء</td>
-<td>Sales Navigator</td>
-<td style="text-align: center;">✅</td>
-</tr>
-</tbody>
-</table>
-<h3 id="إشارات-لن-نستخدمها">❌ إشارات لن نستخدمها</h3>
-<table>
-<thead>
-<tr>
-<th>الإشارة</th>
-<th>لماذا لا</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>مراقبة مناقصات اعتماد (Etimad)</td>
-<td>مناقصات حكومية لا تخص القطاع الخاص</td>
-</tr>
-<tr>
-<td>جدول تفتيش الدفاع المدني</td>
-<td>غير متاح للعامة</td>
-</tr>
-<tr>
-<td>متابعة رخص بلدي</td>
-<td>غير قابل للأتمتة</td>
-</tr>
-<tr>
-<td>إعلانات شراكات NHC</td>
-<td>نادرة وغير قابلة للتوسع</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">07</span>
-              <span>الجزء 7: عروض القيمة الخارجية (رسالة) — عربية — تقييم 9–10/10</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><blockquote>
-<p>كل رسالة يقدم <strong>بيانات يمكن للعميل استخدامها فوراً</strong>
-قبل أي اجتماع أو طلب.</p>
-</blockquote>
-<h2 id="باقة-قيمة-d1-معيار-التكلفة-مطور-l1-ساخن-910">رسالة D1: معيار
-التكلفة (مطور — L1 ساخن) ⭐ 9/10</h2>
-<blockquote>
-<p>أستاذ [الاسم]، شفت مشاريعكم في حي [الحي] — [عدد] مشاريع سكنية.</p>
-<p>جمّعت لكم <strong>مقارنة تكلفة البناء</strong> لمشاريع مشابهة في
-الرياض (Q1 2026):</p>
-<table>
-<thead>
-<tr>
-<th>البند</th>
-<th style="text-align: center;">متوسط السوق ريال/م²</th>
-<th style="text-align: center;">أفضل سعر ريال/م²</th>
-<th style="text-align: center;">الفرق</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>هيكل (خرسانة + حديد)</td>
-<td style="text-align: center;">١٬٤٥٠</td>
-<td style="text-align: center;">١٬١٨٠</td>
-<td style="text-align: center;">-١٩٪</td>
-</tr>
-<tr>
-<td>تشطيب متوسط</td>
-<td style="text-align: center;">٨٥٠</td>
-<td style="text-align: center;">٦٥٠</td>
-<td style="text-align: center;">-٢٤٪</td>
-</tr>
-<tr>
-<td>توصيلات MEP</td>
-<td style="text-align: center;">٣٨٠</td>
-<td style="text-align: center;">٢٩٠</td>
-<td style="text-align: center;">-٢٤٪</td>
-</tr>
-<tr>
-<td>إشراف + إدارة مشروع</td>
-<td style="text-align: center;">١٢٠</td>
-<td style="text-align: center;">٨٥</td>
-<td style="text-align: center;">-٢٩٪</td>
-</tr>
-</tbody>
-</table>
-<p><strong>المجموع:</strong> مشروع ١٠٠ شقة × ١٥٠م² = الفرق بين ٤٢ مليون
-و ٣٣ مليون ريال. الفرق ليس في المواد — الفرق في إدارة التنفيذ
-والباطن.</p>
-<p>عندي ملف كامل فيه تفصيل ١٢ بند — أرسله لك؟</p>
-</blockquote>
-<p><strong>القيمة المقدَّمة:</strong> جدول مقارنة تكلفة جاهز للاستخدام في
-الميزانية فوراً.</p>
-<hr />
-<h2 id="باقة-قيمة-d2-حساب-التوظيف-مقابل-التعهيد-مطور-l1-ساخن-910">باقة
-قيمة D2: حساب التوظيف مقابل التعهيد (مطور — L1 ساخن) ⭐ 9/10</h2>
-<blockquote>
-<p>أستاذ [الاسم]، شفت إنكم تبحثون عن مدير مشاريع.</p>
-<p>📊 <strong>بيانات سوق التوظيف الهندسي في الرياض (فبراير
-2026):</strong> - متوسط راتب مدير مشاريع سعودي بخبرة +5 سنوات:
-<strong>18–25 ألف/شهر</strong> - متوسط وقت التوظيف: <strong>3–6
-أشهر</strong> (مع التوطين) - معدل الدوران: <strong>35٪</strong> (مشاريع
-نيوم والبحر الأحمر تسحب الكفاءات)</p>
-<p>يعني: <strong>توظيف مدير واحد = 280 ألف/سنة + 3–6 أشهر
-انتظار.</strong> وإذا غادر بعد 8 أشهر، تعود لنقطة الصفر.</p>
-<p><strong>البديل:</strong> فريق تنفيذي متكامل (مدير مشاريع + مهندس موقع
-+ مراقب جودة) جاهز خلال أسبوع. التكلفة تدخل في عقد التنفيذ.</p>
-</blockquote>
-<p><strong>القيمة المقدَّمة:</strong> معايير رواتب وتكلفة واضحة لاتخاذ
-قرار التوظيف.</p>
-<hr />
-<h2 id="باقة-قيمة-d3-حاسبة-الأرض-الواقفة-مطور-l2-دافئ-910">رسالة D3:
-حاسبة الأرض الواقفة (مطور — L2 دافئ) ⭐ 9/10</h2>
-<blockquote>
-<p>أستاذ [الاسم]، عندي بيانات قد تفيدك:</p>
-<p>📊 <strong>تكلفة الأرض الواقفة في [المدينة] (2026):</strong></p>
-<table>
-<thead>
-<tr>
-<th>البند</th>
-<th style="text-align: center;">التكلفة السنوية</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>رسوم الأراضي البيضاء (2.5% من القيمة)</td>
-<td style="text-align: center;">حسب التقييم</td>
-</tr>
-<tr>
-<td>تكلفة الفرصة البديلة (عائد 8%)</td>
-<td style="text-align: center;">8% من قيمة الأرض</td>
-</tr>
-<tr>
-<td>ارتفاع تكلفة البناء (+4% سنوياً)</td>
-<td style="text-align: center;">زيادة على المشروع</td>
-</tr>
-</tbody>
-</table>
-<p><strong>الحساب:</strong> أرض قيمتها 10 ملايين ريال واقفة سنة =
-<strong>خسارة 1.05 مليون ريال</strong> (رسوم + فرصة بديلة). كل شهر تأخير
-يرفع الرقم.</p>
-<p>عملت ملف <strong>“حاسبة تكلفة الأرض الواقفة”</strong> — تدخل قيمة
-أرضك ويطلع لك الرقم الحقيقي شهرياً. أرسله لك؟</p>
-</blockquote>
-<p><strong>القيمة المقدَّمة:</strong> أداة حسابية يمكن استخدامها لأي
-أرض.</p>
-<hr />
-<h2 id="باقة-قيمة-f1-تقرير-تكلفة-التوقف-مصنع-l1-ساخن-910">رسالة F1:
-تقرير تكلفة التوقف (مصنع — L1 ساخن) ⭐ 9/10</h2>
-<blockquote>
-<p>أستاذ [الاسم]، شفت مصنعكم في [المنطقة الصناعية] — متخصصين في [نوع
-الصناعة].</p>
-<p>📊 <strong>تكلفة التوقف غير المخطط (مصانع متوسطة،
-2025–2026):</strong></p>
-<table>
-<thead>
-<tr>
-<th>سبب التوقف</th>
-<th style="text-align: center;">متوسط الوقت</th>
-<th style="text-align: center;">متوسط التكلفة</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>عطل لوحة توزيع كهربائية</td>
-<td style="text-align: center;">4–8 ساعات</td>
-<td style="text-align: center;">20,000 – 80,000 ر.س</td>
-</tr>
-<tr>
-<td>انفجار أنبوب مياه صناعي</td>
-<td style="text-align: center;">2–6 ساعات</td>
-<td style="text-align: center;">10,000 – 40,000 ر.س</td>
-</tr>
-<tr>
-<td>عطل نظام تبريد</td>
-<td style="text-align: center;">3–12 ساعة</td>
-<td style="text-align: center;">15,000 – 100,000 ر.س</td>
-</tr>
-<tr>
-<td>إغلاق دفاع مدني</td>
-<td style="text-align: center;">1–7 أيام</td>
-<td style="text-align: center;">50,000 – 500,000 ر.س</td>
-</tr>
-</tbody>
-</table>
-<p><strong>70٪ من الحالات يمكن تفاديها بفحص وقائي ربع سنوي تكلفته 5,000
-ر.س.</strong></p>
-</blockquote>
-<p><strong>القيمة المقدَّمة:</strong> جدول تكاليف توقف حسب نوع العطل.</p>
-<hr />
-<h2 id="باقة-قيمة-f2-شيك-لست-الدفاع-المدني-مصنع-l1-ساخن-1010">رسالة
-F2: شيك لست الدفاع المدني (مصنع — L1 ساخن) ⭐ 10/10</h2>
-<blockquote>
-<p>أستاذ [الاسم]، شركتكم مسجلة في [المنطقة الصناعية].</p>
-<p>جهّزت <strong>شيك لست تفتيش الدفاع المدني</strong> — 32 بنداً مقسماً على
-4 أقسام:</p>
-<p><strong>📋 الأقسام:</strong> 1. <strong>الكهرباء (10 بنود):</strong>
-لوحات توزيع، تأريض، أحمال، كابلات 2. <strong>السلامة (8 بنود):</strong>
-طفايات، رشاشات، إنذار، مخارج طوارئ 3. <strong>المياه والصرف (7
-بنود):</strong> أنابيب، خزانات، صرف صناعي 4. <strong>التهوية والبيئة (7
-بنود):</strong> شفاطات، تكييف، تهوية صناعية</p>
-<p><strong>كل بند فيه:</strong> المعيار المطلوب ✅ + المخالفة والغرامة
-⚠️ + طريقة الفحص الذاتي 🔧</p>
-<p>الشيك لست مجانية — أرسلها لك PDF؟ ملاحظة: لو حسيت إن بنداً أو بندين
-يحتاجان متخصصاً، نقدر نساعد. بس الشيك لست لك بالكامل.</p>
-</blockquote>
-<p><strong>القيمة المقدَّمة:</strong> قائمة تحقق ذاتية كاملة بلا شرط.</p>
-<hr />
-<h2 id="باقة-قيمة-f3-معيار-الطاقة-مصنع-l2-دافئ-910">رسالة F3: معيار
-الطاقة (مصنع — L2 دافئ) ⭐ 9/10</h2>
-<blockquote>
-<p>أستاذ [الاسم]، مصنعكم يعمل في مجال [نوع الصناعة].</p>
-<p>📊 <strong>معيار استهلاك الكهرباء (مصانع [نوع الصناعة]):</strong></p>
-<table>
-<thead>
-<tr>
-<th>الحجم</th>
-<th style="text-align: center;">استهلاك شهري (kWh)</th>
-<th style="text-align: center;">تكلفة شهرية (ر.س)</th>
-<th style="text-align: center;">بعد ترشيد 20%</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>صغير (20–50 عاملاً)</td>
-<td style="text-align: center;">80,000</td>
-<td style="text-align: center;">14,400</td>
-<td style="text-align: center;">11,520</td>
-</tr>
-<tr>
-<td>متوسط (50–150 عاملاً)</td>
-<td style="text-align: center;">250,000</td>
-<td style="text-align: center;">45,000</td>
-<td style="text-align: center;">36,000</td>
-</tr>
-<tr>
-<td>كبير (150+ عاملاً)</td>
-<td style="text-align: center;">600,000</td>
-<td style="text-align: center;">108,000</td>
-<td style="text-align: center;">86,400</td>
-</tr>
-</tbody>
-</table>
-<p><strong>أسباب الفقد الأربعة:</strong> لوحات قديمة (8–12٪)، كابلات غير
-مناسبة (5–8٪)، تبريد دون صيانة (10–15٪)، إضاءة تقليدية (3–5٪)</p>
-<p>نقدر نسوي <strong>فحص أحمال</strong> خلال ساعتين — وتخرج بأرقامك
-مقارنة بالمعيار.</p>
-</blockquote>
-<p><strong>القيمة المقدَّمة:</strong> معيار استهلاك واضح لمقارنة
-الأداء.</p>
-<hr />
-<h2 id="باقة-قيمة-s1-خريطة-التوطين-للشريحتين-l3-فاتر-910">رسالة S1:
-خريطة التوطين (للشريحتين — L3 فاتر) ⭐ 9/10</h2>
-<blockquote>
-<p>📊 <strong>تأثير التوطين على المقاولات والمصانع (2026):</strong></p>
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 18%" />
-<col style="width: 15%" />
-<col style="width: 15%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr>
-<th>المهنة</th>
-<th style="text-align: center;">نسبة التوطين</th>
-<th style="text-align: center;">متوسط الراتب (سعودي)</th>
-<th style="text-align: center;">الراتب سابقاً (وافد)</th>
-<th style="text-align: center;">الزيادة</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>مهندس كهرباء</td>
-<td style="text-align: center;">75٪</td>
-<td style="text-align: center;">12,000</td>
-<td style="text-align: center;">5,500</td>
-<td style="text-align: center;">+118٪</td>
-</tr>
-<tr>
-<td>فني صيانة</td>
-<td style="text-align: center;">30٪</td>
-<td style="text-align: center;">7,000</td>
-<td style="text-align: center;">3,500</td>
-<td style="text-align: center;">+100٪</td>
-</tr>
-<tr>
-<td>مدير مشاريع</td>
-<td style="text-align: center;">100٪</td>
-<td style="text-align: center;">20,000</td>
-<td style="text-align: center;">8,000</td>
-<td style="text-align: center;">+150٪</td>
-</tr>
-<tr>
-<td>مراقب جودة</td>
-<td style="text-align: center;">50٪</td>
-<td style="text-align: center;">9,000</td>
-<td style="text-align: center;">4,000</td>
-<td style="text-align: center;">+125٪</td>
-</tr>
-</tbody>
-</table>
-<p><strong>النتيجة:</strong> تكلفة الفريق التنفيذي ارتفعت 120٪ + زمن
-التوظيف تضاعف + معدل دوران 35٪. الشركات التي تستمر هي التي تشترك في فرق
-تنفيذية بدل بناء فريق من الصفر.</p>
-</blockquote>
-<p><strong>القيمة المقدَّمة:</strong> مقارنة رواتب مباشرة تفيد قرارات
-التوظيف.</p>
-<hr />
-<h2 id="خريطة-نشر-باقة-قيمة">خريطة نشر رسالة</h2>
-<table>
-<thead>
-<tr>
-<th>رسالة</th>
-<th>الشريحة</th>
-<th style="text-align: center;">الإشارة</th>
-<th>ماذا يحصل العميل قبل أي اجتماع</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>D1: معيار التكلفة</td>
-<td>مطور</td>
-<td style="text-align: center;">L1</td>
-<td>📊 مقارنة تكلفة بناء (ريال/م²)</td>
-</tr>
-<tr>
-<td>D2: حساب التوظيف</td>
-<td>مطور</td>
-<td style="text-align: center;">L1</td>
-<td>📊 معايير رواتب + عائد التعهيد</td>
-</tr>
-<tr>
-<td>D3: الأرض الواقفة</td>
-<td>مطور</td>
-<td style="text-align: center;">L2</td>
-<td>🧮 حاسبة تكلفة الأرض الواقفة</td>
-</tr>
-<tr>
-<td>F1: تقرير التوقف</td>
-<td>مصنع</td>
-<td style="text-align: center;">L1</td>
-<td>📊 تكلفة توقف حسب نوع العطل</td>
-</tr>
-<tr>
-<td>F2: شيك لست الدفاع المدني</td>
-<td>مصنع</td>
-<td style="text-align: center;">L1</td>
-<td>📋 32 بنداً للتقييم الذاتي</td>
-</tr>
-<tr>
-<td>F3: معيار الطاقة</td>
-<td>مصنع</td>
-<td style="text-align: center;">L2</td>
-<td>📊 مقارنة استهلاك الكهرباء</td>
-</tr>
-<tr>
-<td>S1: خريطة التوطين</td>
-<td>الشريحتان</td>
-<td style="text-align: center;">L3</td>
-<td>📊 مقارنة رواتب + بيانات توظيف</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">08</span>
-              <span>الجزء 8: قوالب الرسائل الخارجية</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="طلب-اتصال-لينكدإن-مطور">طلب اتصال لينكدإن — مطور</h2>
-<pre><code>السلام عليكم أستاذ [الاسم]، أشوف شغلكم في التطوير العقاري ممتاز. حاب أتواصل — عندنا تجربة مشتركة في المجال.</code></pre>
-<h2 id="طلب-اتصال-لينكدإن-مصنع">طلب اتصال لينكدإن — مصنع</h2>
-<pre><code>السلام عليكم أستاذ [الاسم]، نشتغل مع مصانع في المنطقة الصناعية على البنية التحتية. تشرفنا بالتواصل.</code></pre>
-<h2 id="رسالة-لينكدإن-مطور-بعد-القبول-تسليم-باقة-قيمة-d1">رسالة لينكدإن
-— مطور (بعد القبول — تسليم رسالة D1)</h2>
-<pre><code>حياك الله أستاذ [الاسم]، شكراً على القبول.
-
-شفت مشاريعكم في [الحي] — جمّعت مقارنة تكلفة بناء لمشاريع مشابهة في الرياض (Q1 2026):
-
-| البند | متوسط السوق ر/م² | أفضل سعر ر/م² |
-| هيكل | ١٬٤٥٠ | ١٬١٨٠ |
-| تشطيب | ٨٥٠ | ٦٥٠ |
-| MEP | ٣٨٠ | ٢٩٠ |
-
-الفرق في مشروع ١٠٠ شقة = ~٩ مليون ريال.
-
-عندي ملف كامل فيه ١٢ بند — أرسله لك؟</code></pre>
-<h2 id="رسالة-لينكدإن-مصنع-بعد-القبول-تسليم-باقة-قيمة-f2">رسالة لينكدإن
-— مصنع (بعد القبول — تسليم رسالة F2)</h2>
-<pre><code>حياك الله أستاذ [الاسم]، شكراً على القبول.
-
-جهّزت شيك لست تفتيش الدفاع المدني — ٣٢ بند:
-١. كهرباء (١٠ بنود)
-٢. سلامة (٨ بنود)
-٣. مياه وصرف (٧ بنود)
-٤. تهوية وبيئة (٧ بنود)
-
-كل بند فيه المعيار + الغرامة + طريقة الفحص الذاتي.
-
-أرسلها لك PDF؟ مجانية بالكامل وملكك تستعملها كل ربع.</code></pre>
-<h2 id="واتساب-متابعة-مطور">واتساب — متابعة مطور</h2>
-<pre><code>حياك الله أستاذ {{1}}، تواصلنا على لينكدإن 👋
-
-هذا ملف مقارنة تكاليف البناء اللي ذكرته — ١٢ بند بأسعار Q1 2026.
-
-[PDF مرفق]
-
-لو تحب نفصّلها على مشاريعكم، نحدد ١٥ دقيقة ونراجعها سوا.</code></pre>
-<h2 id="واتساب-متابعة-مصنع">واتساب — متابعة مصنع</h2>
-<pre><code>السلام عليكم أستاذ {{1}} 👋
-
-هذي شيك لست الدفاع المدني اللي ذكرتها — ٣٢ بند PDF.
-
-[PDF مرفق]
-
-لو لقيت بنود تحتاج متخصص — كهرباء، مياه، أو سلامة — نقدر نساعد. بس الشيك لست لك بالكامل.</code></pre>
-<h2 id="سكربت-اتصال-بارد-مطور">سكربت اتصال بارد — مطور</h2>
-<pre><code>السلام عليكم أستاذ [الاسم]، معك [اسمك] من مصطفى.
-
-تواصلنا على لينكدإن — أرسلت لك مقارنة تكاليف البناء. شفتها؟
-
-[لو شافها] ممتاز — أي بنود حسيت إنها تختلف عن اللي عندكم؟
-[لو ما شافها] ما يهم — المهم: كم مشروع عندكم شغال حالياً؟
-
-نشتغل كجناح تنفيذي — مشروعك التالي نتولاه من الأساسات للتسليم.
-
-هل عندك ١٥ دقيقة هذا الأسبوع؟</code></pre>
-<h2 id="سكربت-اتصال-بارد-مصنع">سكربت اتصال بارد — مصنع</h2>
-<pre><code>السلام عليكم أستاذ [الاسم]، معك [اسمك] من مصطفى.
-
-أرسلت لك شيك لست تفتيش الدفاع المدني — ٣٢ بند. شفتها؟
-
-[لو شافها] أي بنود حسيت إنها تحتاج فحص متخصص؟
-[لو ما شافها] ما يهم — سؤال: عندكم فريق صيانة داخلي؟ ولا بنظام الطوارئ؟
-
-[لو طوارئ] أغلب المصانع اللي تشتغل بهالنظام تدفع ٢–٣ أضعاف.
-
-نقدم فحص مجاني — ساعتين وتطلع بتقرير كامل. متى يناسبك؟</code></pre>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">09</span>
-              <span>الجزء 9: قوائم الكلمات المفتاحية العربية</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="كلمات-مطورين">كلمات مطورين</h2>
-<table>
-<thead>
-<tr>
-<th>المصطلح العربي</th>
-<th>المعنى الإنجليزي</th>
-<th>النية</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>مقاول للمطورين العقاريين</td>
-<td>Contractor for developers</td>
-<td>تجارية</td>
-</tr>
-<tr>
-<td>شريك تنفيذي مشاريع سكنية</td>
-<td>Residential execution partner</td>
-<td>تجارية</td>
-</tr>
-<tr>
-<td>مقاول بناء فلل بالجملة</td>
-<td>Bulk villa contractor</td>
-<td>تجارية</td>
-</tr>
-<tr>
-<td>تنفيذ مشاريع عقارية</td>
-<td>RE project execution</td>
-<td>تجارية</td>
-</tr>
-<tr>
-<td>مقاول بناء مصنف الرياض</td>
-<td>Classified contractor Riyadh</td>
-<td>تجارية</td>
-</tr>
-<tr>
-<td>تكلفة بناء مشروع سكني</td>
-<td>Residential build cost</td>
-<td>معلوماتية</td>
-</tr>
-</tbody>
-</table>
-<h2 id="كلمات-المصانع">كلمات المصانع</h2>
-<table>
-<thead>
-<tr>
-<th>المصطلح العربي</th>
-<th>المعنى الإنجليزي</th>
-<th>النية</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>صيانة كهرباء مصانع</td>
-<td>Factory electrical maintenance</td>
-<td>تجارية</td>
-</tr>
-<tr>
-<td>إشراف بنية تحتية مصانع</td>
-<td>Factory infra supervision</td>
-<td>تجارية</td>
-</tr>
-<tr>
-<td>صيانة مصانع الرياض</td>
-<td>Factory maintenance Riyadh</td>
-<td>تجارية</td>
-</tr>
-<tr>
-<td>فحص لوحات كهرباء صناعية</td>
-<td>Industrial panel inspection</td>
-<td>تجارية</td>
-</tr>
-<tr>
-<td>التزام الدفاع المدني مصانع</td>
-<td>Civil Defense compliance</td>
-<td>معلوماتية</td>
-</tr>
-<tr>
-<td>تكلفة توقف مصنع</td>
-<td>Factory downtime cost</td>
-<td>معلوماتية</td>
-</tr>
-</tbody>
-</table>
-<h2 id="كلمات-سلبية">كلمات سلبية</h2>
-<table>
-<thead>
-<tr>
-<th>المصطلح العربي</th>
-<th>سبب الاستبعاد</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>وظائف صيانة</td>
-<td>باحثون عن عمل</td>
-</tr>
-<tr>
-<td>مقاول رخيص</td>
-<td>باحثو أقل سعر</td>
-</tr>
-<tr>
-<td>معدات كهربائية للبيع</td>
-<td>مشترو معدات</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">10</span>
-              <span>الجزء 10: هندسة القنوات</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="أولوية-القنوات">أولوية القنوات</h2>
-<pre><code>🔴 بناء القوائم  → الصفحات الزرقاء + LinkedIn Sales Navigator + Google Maps
-🟠 اللمسة الأولى → رسالة لينكدإن مخصصة (رسالة)
-🟡 المتابعة     → واتساب (ملف أعمال/شيك لست)
-🔵 الاجتماع      → اتصال بارد بعد التهيئة
-⚪ العرض         → بريد إلكتروني بعد الاجتماع
-💡 العلامة       → محتوى لينكدإن (منشوران أسبوعياً بالعربية)</code></pre>
-<h2 id="تسلسل-التواصل-خلال-10-أيام">تسلسل التواصل خلال 10 أيام</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">اليوم</th>
-<th>القناة</th>
-<th>الإجراء</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td>لينكدإن</td>
-<td>طلب اتصال</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td>لينكدإن</td>
-<td>رسالة مع رسالة مخصص</td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td>واتساب</td>
-<td>ملف أعمال PDF / شيك لست تدقيق</td>
-</tr>
-<tr>
-<td style="text-align: center;">6</td>
-<td>اتصال بارد</td>
-<td>الإشارة للينكدإن → تقييم مجاني</td>
-</tr>
-<tr>
-<td style="text-align: center;">8</td>
-<td>بريد إلكتروني</td>
-<td>عرض رسمي (لو حصل الاجتماع)</td>
-</tr>
-<tr>
-<td style="text-align: center;">10</td>
-<td>واتساب</td>
-<td>متابعة أخيرة + محتوى EDP</td>
-</tr>
-</tbody>
-</table>
+            <div class="accordion-body"><h2 id="ترتيب-الأولوية">ترتيب الأولوية</h2>
+<pre><code>🔴 الأساسي     → LinkedIn (Heyreach) + WhatsApp
+🟠 داعم         → Email (بعد تسخين ١٤ يوم)
+🟡 شراكات      → مكاتب استشارات هندسية
+🔵 محتوى       → LinkedIn Content (٣ بوستات/أسبوع)
+⚪ رسمي        → Email (عروض + متابعة بعد الاجتماع)
+❌ محذوف       → كولد كولينج (غير متاح)</code></pre>
 <h2 id="الميزانية-الشهرية">الميزانية الشهرية</h2>
 <table>
 <thead>
@@ -1896,640 +1458,293 @@ F2: شيك لست الدفاع المدني (مصنع — L1 ساخن) ⭐ 10/10
 </thead>
 <tbody>
 <tr>
-<td>LinkedIn Navigator</td>
-<td style="text-align: center;">500–800 ر.س</td>
+<td>LinkedIn Sales Navigator</td>
+<td style="text-align: center;">SAR 500-800</td>
+</tr>
+<tr>
+<td>Heyreach</td>
+<td style="text-align: center;">$79 (~SAR 300)</td>
 </tr>
 <tr>
 <td>WhatsApp Business API</td>
-<td style="text-align: center;">300–500 ر.س</td>
+<td style="text-align: center;">SAR 300-500</td>
 </tr>
 <tr>
-<td>الصفحات الزرقاء</td>
-<td style="text-align: center;">مجاني</td>
+<td>Email warmup (Instantly.ai)</td>
+<td style="text-align: center;">$30 (~SAR 115)</td>
 </tr>
 <tr>
-<td>Google Maps</td>
-<td style="text-align: center;">مجاني</td>
+<td>Canva Pro (للمحتوى)</td>
+<td style="text-align: center;">$13 (~SAR 50)</td>
 </tr>
 <tr>
-<td>الاتصالات الباردة</td>
-<td style="text-align: center;">200–500 ر.س</td>
-</tr>
-<tr>
-<td><strong>الإجمالي</strong></td>
-<td style="text-align: center;"><strong>1,000–1,800
-ر.س/شهر</strong></td>
+<td><strong>المجموع</strong></td>
+<td style="text-align: center;"><strong>SAR
+1,265-1,765/شهر</strong></td>
 </tr>
 </tbody>
 </table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">11</span>
-              <span>الجزء 11: تقويم تواصل خارجي لـ 90 يوماً</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="المرحلة-1-الأيام-130-تأسيس-وبداية-القناة">المرحلة 1: الأيام 1–30
-— تأسيس وبداية القناة</h2>
-<p><strong>الهدف:</strong> بناء البنية التحتية، تجهيز القوائم، تشغيل
-التسلسلات، حجز 10+ اجتماعات</p>
-<table>
-<colgroup>
-<col style="width: 46%" />
-<col style="width: 53%" />
-</colgroup>
-<thead>
-<tr>
-<th>الأسبوع</th>
-<th>التركيز</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>الأسبوع 1</td>
-<td>إعداد LinkedIn Navigator، استخراج الصفحات الزرقاء، قائمة أولية (50
-مطور + 50 مصنع)، ملف أعمال</td>
-</tr>
-<tr>
-<td>الأسبوع 2</td>
-<td>إطلاق التسلسلات (100 عميل محتمل)، متابعات واتساب</td>
-</tr>
-<tr>
-<td>الأسبوع 3–4</td>
-<td>سباق اتصالات باردة (50+ مكالمة)، 10 اجتماعات أولى، أول عروض</td>
-</tr>
-</tbody>
-</table>
-<p><strong>المؤشرات:</strong> 100 تواصلنا معهم، &gt; 15% ردود، 10+
-اجتماعات، 3+ عروض</p>
-<h2 id="المرحلة-2-الأيام-3160-تسريع">المرحلة 2: الأيام 31–60 —
-تسريع</h2>
-<p><strong>الهدف:</strong> توسيع القوائم إلى 250+، إغلاق أول صفقات</p>
-<table>
-<colgroup>
-<col style="width: 46%" />
-<col style="width: 53%" />
-</colgroup>
-<thead>
-<tr>
-<th>الأسبوع</th>
-<th>التركيز</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>الأسبوع 5–6</td>
-<td>توسيع القائمة (150 مطور + 100 مصنع)، إضافة فئات جديدة في الصفحات
-الزرقاء، إطلاق إعلانات جوجل</td>
-</tr>
-<tr>
-<td>الأسبوع 7–8</td>
-<td>20 مكالمة يومياً، صفقات أولى في التفاوض، اختبار A/B لرسائل
-لينكدإن</td>
-</tr>
-</tbody>
-</table>
-<p><strong>المؤشرات:</strong> 250+ تواصلنا معهم، &gt; 20% ردود، 25+
-اجتماعات، خط مبيعات 5M+، إغلاق 1–2 صفقة</p>
-<h2 id="المرحلة-3-الأيام-6190-خط-مبيعات-كامل">المرحلة 3: الأيام 61–90 —
-خط مبيعات كامل</h2>
-<p><strong>الهدف:</strong> 500+ تواصل، 5+ صفقات، إحالات نشطة</p>
-<table>
-<colgroup>
-<col style="width: 46%" />
-<col style="width: 53%" />
-</colgroup>
-<thead>
-<tr>
-<th>الأسبوع</th>
-<th>التركيز</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>الأسبوع 9–10</td>
-<td>500+ عميل محتمل، برنامج إحالات، قيادة فكر على لينكدإن، فعاليات
-قطاعية</td>
-</tr>
-<tr>
-<td>الأسبوع 11–12</td>
-<td>مراجعة الخط بالكامل، إغلاق 3–5+ صفقات، خطة الربع القادم</td>
-</tr>
-</tbody>
-</table>
-<p><strong>المؤشرات:</strong> 500+ تواصل، &gt; 25% ردود، 50+ اجتماعات،
-خط مبيعات 10M+، 5+ صفقات</p>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">12</span>
-              <span>الجزء 12: مؤشرات النجاح</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><table>
-<thead>
-<tr>
-<th>المؤشر</th>
-<th style="text-align: center;">اليوم 30</th>
-<th style="text-align: center;">اليوم 60</th>
-<th style="text-align: center;">اليوم 90</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>تواصلنا معهم</td>
-<td style="text-align: center;">100+</td>
-<td style="text-align: center;">250+</td>
-<td style="text-align: center;">500+</td>
-</tr>
-<tr>
-<td>معدل الرد</td>
-<td style="text-align: center;">&gt; 15%</td>
-<td style="text-align: center;">&gt; 20%</td>
-<td style="text-align: center;">&gt; 25%</td>
-</tr>
-<tr>
-<td>الاجتماعات</td>
-<td style="text-align: center;">10+</td>
-<td style="text-align: center;">25+</td>
-<td style="text-align: center;">50+</td>
-</tr>
-<tr>
-<td>العروض المرسلة</td>
-<td style="text-align: center;">3+</td>
-<td style="text-align: center;">8+</td>
-<td style="text-align: center;">15+</td>
-</tr>
-<tr>
-<td>قيمة خط المبيعات</td>
-<td style="text-align: center;">2M+ ر.س</td>
-<td style="text-align: center;">5M+ ر.س</td>
-<td style="text-align: center;">10M+ ر.س</td>
-</tr>
-<tr>
-<td>الصفقات المغلقة</td>
-<td style="text-align: center;">1+</td>
-<td style="text-align: center;">3+</td>
-<td style="text-align: center;">5+</td>
-</tr>
-</tbody>
-</table>
-<h2 id="اقتصاديات-الوحدة">اقتصاديات الوحدة</h2>
-<table>
-<thead>
-<tr>
-<th>المؤشر</th>
-<th>الهدف</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>متوسط الصفقة (مطور)</td>
-<td>500K+ ر.س لكل مشروع</td>
-</tr>
-<tr>
-<td>متوسط الصفقة (مصنع)</td>
-<td>5K+ ر.س/شهر</td>
-</tr>
-<tr>
-<td>لينكدإن → رد</td>
-<td>15–25%</td>
-</tr>
-<tr>
-<td>رد → اجتماع</td>
-<td>40–50%</td>
-</tr>
-<tr>
-<td>اجتماع → عرض</td>
-<td>60–70%</td>
-</tr>
-<tr>
-<td>عرض → إغلاق</td>
-<td>20–30%</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">13</span>
-              <span>الجزء 13: قائمة الإطلاق</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><ul class="task-list">
-<li><label><input type="checkbox" />تفعيل LinkedIn Sales
-Navigator</label></li>
-<li><label><input type="checkbox" />استخراج بيانات الصفحات الزرقاء: 50
-مطور + 50 مصنع</label></li>
-<li><label><input type="checkbox" />إثراء كل عميل محتمل (موقع +
-لينكدإن)</label></li>
-<li><label><input type="checkbox" />تحسين ملف لينكدإن (عربي + إنجليزي،
-رابط ملف الأعمال)</label></li>
-<li><label><input type="checkbox" />تجهيز واتساب بيزنس (4 قوالب
-مُعتمدة)</label></li>
-<li><label><input type="checkbox" />إعداد CRM مع وسوم الشرائح
-(مطور/مصنع) + مستويات الإشارة (L1–L4)</label></li>
-<li><label><input type="checkbox" />تجهيز ملف أعمال PDF (مشاريع مطورين +
-أعمال MEP للمصانع)</label></li>
-<li><label><input type="checkbox" />تصميم شيك لست تدقيق MEP
-مجاني</label></li>
-<li><label><input type="checkbox" />تجهيز نموذج تقييم طاقة تنفيذ
-المشاريع</label></li>
-<li><label><input type="checkbox" />تدريب فريق الاتصالات
-الباردة</label></li>
-<li><label><input type="checkbox" />توقيع بريد إلكتروني مع رابط ملف
-الأعمال</label></li>
-</ul>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">14</span>
-              <span>الجزء 14: قائمة الإثراء</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="لكل-عميل-مطور">لكل عميل مطور</h2>
-<ul class="task-list">
-<li><label><input type="checkbox" />زيارة الموقع → عدّ المشاريع في
-“مشاريعنا”</label></li>
-<li><label><input type="checkbox" />تدوين أنواع المشاريع
-والمواقع</label></li>
-<li><label><input type="checkbox" />لينكدإن → حجم الشركة</label></li>
-<li><label><input type="checkbox" />لينكدإن → وظائف مدير
-مشاريع/مهندس؟</label></li>
-<li><label><input type="checkbox" />العثور على ملف المالك/CEO لإرسال
-الرسالة</label></li>
-<li><label><input type="checkbox" />تأكيد رقم واتساب من الصفحات
-الزرقاء</label></li>
-<li><label><input type="checkbox" /><strong>التقييم:</strong> L1 / L2 /
-L3 / L4</label></li>
-</ul>
-<h2 id="لكل-عميل-مصنع">لكل عميل مصنع</h2>
-<ul class="task-list">
-<li><label><input type="checkbox" />الصفحات الزرقاء → نوع المصنع من
-الوصف</label></li>
-<li><label><input type="checkbox" />جوجل مابس → المدينة
-الصناعية</label></li>
-<li><label><input type="checkbox" />الموقع → هل توجد صفحة
-صيانة؟</label></li>
-<li><label><input type="checkbox" />لينكدإن → حجم الشركة + وظائف
-صيانة؟</label></li>
-<li><label><input type="checkbox" />العثور على المالك/المدير لإرسال
-الرسالة</label></li>
-<li><label><input type="checkbox" />تأكيد واتساب من الصفحات
-الزرقاء</label></li>
-<li><label><input type="checkbox" /><strong>التقييم:</strong> L1 / L2 /
-L3 / L4</label></li>
-</ul>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">15</span>
-              <span>الجزء 15: أنماط يجب تجنبها</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><table>
-<thead>
-<tr>
-<th>❌ سيئ</th>
-<th>✅ جيد</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>إرسال رسائل موحّدة للجميع</td>
-<td>تخصيص الرسالة ببيانات الإثراء</td>
-</tr>
-<tr>
-<td>بدء الحديث بالسعر</td>
-<td>ابدأ بسؤال يفتح القيمة</td>
-</tr>
-<tr>
-<td>اتصال بارد بلا تهيئة</td>
-<td>لينكدإن أولاً ثم الاتصال</td>
-</tr>
-<tr>
-<td>إرسال عرض طويل دون حديث</td>
-<td>العرض بعد محادثة</td>
-</tr>
-<tr>
-<td>تجاهل متابعة واتساب</td>
-<td>لينكدإن → واتساب خلال 48 ساعة</td>
-</tr>
-<tr>
-<td>النشر بالإنجليزية فقط</td>
-<td>العربية تعطي 3–5x تفاعل</td>
-</tr>
-<tr>
-<td>“نتشرف بتقديم خدماتنا…”</td>
-<td>“كم مشروع تقدر تنفذ هذه السنة؟”</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">16</span>
-              <span>الجزء 16: فجوات التحقق — ما الناقص قبل البداية</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><blockquote>
-<p>⚠️ <strong>الأجزاء 1–15 هي الاستراتيجية. توجد بيانات أساسية ناقصة يجب
-تعبئتها قبل أي تواصل خارجي.</strong> كل فجوة مرتبطة بـ رسالة أو ملف
-سيتأثر مباشرة.</p>
-</blockquote>
-<h2 id="الفجوة-1-أرقام-باقة-قيمة-غير-مثبتة">🔴 الفجوة 1: أرقام رسالة
-غير مثبتة</h2>
-<p><strong>المشكلة:</strong> جدول تكلفة البناء في رسالة D1 (أول
-رسالة للمطورين) فيه أرقام تقريبية — ليست من مشاريع مصطفى الفعلية. لو سأل
-العميل “من أين الرقم؟” لا يوجد جواب واضح.</p>
-<p><strong>الحل:</strong> مصطفى يعبّي جدول التكلفة في القسم 17.</p>
-<p><strong>يتأثر:</strong> رسالة D1 (معيار التكلفة) + رسالة D2
-(حساب التوظيف) + رسالة S1 (خريطة التوطين)</p>
-<hr />
-<h2 id="الفجوة-2-سجل-الأعمال-غير-مثبت">🔴 الفجوة 2: سجل الأعمال غير
-مثبت</h2>
-<p><strong>المشكلة:</strong> نبيع مصطفى كـ “جناح تنفيذي” — لكن لا نعرف
-هل اشتغل فعلاً بهذا الموديل.</p>
-<table>
-<colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
-</colgroup>
-<thead>
-<tr>
-<th>لو كانت الإجابة</th>
-<th>التأثير</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>لديه سجل أعمال مع مطورين</td>
-<td>✅ نضع دراسة حالة حقيقية في رسالة</td>
-</tr>
-<tr>
-<td>لديه مشاريع لكن ليست مع مطورين</td>
-<td>⚠️ نعدّل رسالة: “نفذنا مشاريع سكنية” بدل “نشتغل مع مطورين”</td>
-</tr>
-<tr>
-<td>بلا مشاريع واضحة</td>
-<td>❌ نغيّر التموضع أو نبدأ ببايلوت مخفّض</td>
-</tr>
-</tbody>
-</table>
-<p><strong>الحل:</strong> مصطفى يجاوب على قسم سجل الأعمال في الجزء
-17.</p>
-<hr />
-<h2 id="الفجوة-3-لا-توجد-معلومات-منافسة">🔴 الفجوة 3: لا توجد معلومات
-منافسة</h2>
-<p><strong>المشكلة:</strong> لا نعرف المنافسين الحقيقيين. هل يوجد من
-يقدم “جناح تنفيذي” في السعودية أم مصطفى أول؟</p>
-<p><strong>الحل:</strong> مصطفى يجيب على أسئلة المنافسين في الجزء
-17.</p>
-<hr />
-<h2 id="الفجوة-4-بيانات-الصفحات-الزرقاء-ضعيفة-للمطورين">🟠 الفجوة 4:
-بيانات الصفحات الزرقاء ضعيفة للمطورين</h2>
-<p><strong>المشكلة:</strong> (مثبت في البيانات — انظر الجزء 6) - عقارات:
-<strong>25 شركة فقط</strong> بنسبة واتساب 15% — لا تكفي كمصدر أساسي -
-تشغيل وصيانة: <strong>26 شركة</strong> بنسبة واتساب 55% — جيدة</p>
-<p><strong>الحل:</strong> LinkedIn Sales Navigator هو المصدر الأساسي
-للمطورين. الصفحات الزرقاء للمصانع فقط.</p>
-<hr />
-<h2 id="الفجوة-5-دورة-البيع-مجهولة">🟠 الفجوة 5: دورة البيع مجهولة</h2>
-<p><strong>المشكلة:</strong> لا نعرف المدة من أول تواصل حتى التوقيع.
-أرقام الجزء 12 افتراضات وليست بيانات.</p>
-<p><strong>الحل:</strong> مصطفى يجاوب على أسئلة دورة البيع في الجزء
-17.</p>
-<hr />
-<h2 id="ترتيب-الأولوية">ترتيب الأولوية</h2>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>الفجوة</th>
-<th style="text-align: center;">لازم قبل أي تواصل؟</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>أرقام التكلفة</td>
-<td style="text-align: center;">✅ لازم</td>
-</tr>
-<tr>
-<td>2</td>
-<td>سجل الأعمال</td>
-<td style="text-align: center;">✅ لازم</td>
-</tr>
-<tr>
-<td>3</td>
-<td>المنافسين</td>
-<td style="text-align: center;">✅ لازم</td>
-</tr>
-<tr>
-<td>4</td>
-<td>الصفحات الزرقاء (مُعالجة)</td>
-<td style="text-align: center;">➖</td>
-</tr>
-<tr>
-<td>5</td>
-<td>دورة البيع</td>
-<td style="text-align: center;">مهم لكنه غير معطل</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">17</span>
-              <span>الجزء 17: أسئلة لمصطفى — جمع البيانات</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><blockquote>
-<p><strong>⏱️ الوقت المطلوب: ≈ ساعة واحدة</strong> <strong>⚠️ بدون
-الأقسام المعلّمة 🔴 لا نستطيع بدء الحملة.</strong></p>
-</blockquote>
-<hr />
-<h2 id="أرقام-التكلفة-الحقيقية">1) أرقام التكلفة الحقيقية 🔴</h2>
+<hr>
+<h1 id="القسم-١٠-بناء-الثقة-عناصر-أساسية">القسم ١٠: بناء الثقة — عناصر
+أساسية</h1>
 <blockquote>
-<p>نستخدم هذه الأرقام في أول رسالة للمطورين — جدول مقارنة تكلفة
-بناء.</p>
+<p><strong>⚠️ الثقة هي العملة الأهم في المقاولات.</strong> قبل أي PVP أو
+value — لازم تثبت إنك موثوق.</p>
 </blockquote>
-<h3 id="تكلفة-البناء-من-مشاريع-مصطفى-الفعلية">تكلفة البناء (من مشاريع
-مصطفى الفعلية)</h3>
-<table>
-<thead>
-<tr>
-<th>البند</th>
-<th style="text-align: center;">سعر مصطفى (ريال/م²)</th>
-<th style="text-align: center;">متوسط السوق تقريباً (ريال/م²)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>هيكل (خرسانة + حديد)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>تشطيب متوسط</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>تشطيب فاخر</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>توصيلات MEP (كهرباء + مياه + تكييف)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>إشراف + إدارة مشروع</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>أعمال ترابية + أساسات</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>واجهات خارجية</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>تكلفة إجمالية تقريبية للمتر المربع</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<h3 id="مثال-مشروع-حقيقي-آخر-مشروع-سلمتوه">مثال مشروع حقيقي (آخر مشروع
-سلمتوه)</h3>
-<table>
-<thead>
-<tr>
-<th>البيان</th>
-<th>الجواب</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>اسم المشروع أو نوعه (فلل / شقق / تجاري)</td>
-<td></td>
-</tr>
-<tr>
-<td>الموقع (حي + مدينة)</td>
-<td></td>
-</tr>
-<tr>
-<td>المساحة الإجمالية (م²)</td>
-<td></td>
-</tr>
-<tr>
-<td>عدد الوحدات</td>
-<td></td>
-</tr>
-<tr>
-<td>التكلفة الإجمالية (ريال)</td>
-<td></td>
-</tr>
-<tr>
-<td>المدة المتفق عليها</td>
-<td></td>
-</tr>
-<tr>
-<td>المدة الفعلية</td>
-<td></td>
-</tr>
-<tr>
-<td>هل سُلّم بالموعد؟</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="سجل-الأعمال">2) سجل الأعمال 🔴</h2>
-<h3 id="المشاريع-السابقة">المشاريع السابقة</h3>
-<p><strong>كم مشروع أنجزتم إجمالاً؟</strong> ____________</p>
+<h2 id="عناصر-الثقة-المطلوبة">عناصر الثقة المطلوبة</h2>
 <table>
 <colgroup>
-<col style="width: 3%" />
-<col style="width: 15%" />
-<col style="width: 9%" />
-<col style="width: 15%" />
-<col style="width: 16%" />
-<col style="width: 8%" />
-<col style="width: 30%" />
+<col style="width: 28%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr>
+<th>العنصر</th>
+<th>التفاصيل</th>
+<th style="text-align: center;">الأولوية</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>بورتفوليو مشاريع</strong></td>
+<td>PDF فيه ٥-١٠ مشاريع بصور before/after + أرقام</td>
+<td style="text-align: center;">🔴</td>
+</tr>
+<tr>
+<td><strong>شهادة التصنيف</strong></td>
+<td>تصنيف المقاولات الرسمي</td>
+<td style="text-align: center;">🔴</td>
+</tr>
+<tr>
+<td><strong>مراجع عملاء</strong></td>
+<td>٣-٥ عملاء سابقين بأرقام تواصلهم (بإذنهم)</td>
+<td style="text-align: center;">🔴</td>
+</tr>
+<tr>
+<td><strong>التأمين</strong></td>
+<td>شهادة تأمين مشاريع سارية</td>
+<td style="text-align: center;">🟠</td>
+</tr>
+<tr>
+<td><strong>سجل التسليم</strong></td>
+<td>نسبة التسليم بالموعد (مثلاً: ٨٥٪ من مشاريعنا سُلّمت بالموعد)</td>
+<td style="text-align: center;">🟠</td>
+</tr>
+<tr>
+<td><strong>ضمان ما بعد التسليم</strong></td>
+<td>فترة ضمان محددة (سنة؟ سنتين؟) على العيوب</td>
+<td style="text-align: center;">🟠</td>
+</tr>
+<tr>
+<td><strong>ملف تعريفي رسمي</strong></td>
+<td>Company Profile بتصميم احترافي (عربي + إنجليزي)</td>
+<td style="text-align: center;">🟡</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ماذا-يقلق-المطور-وكيف-نجاوب">ماذا يقلق المطور (وكيف نجاوب)</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>الخوف</th>
+<th>جوابنا</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“المقاول هيترك المشروع في النص”</td>
+<td>“عندنا ضمان بنكي + عقد واضح + مراجع تتأكد منها”</td>
+</tr>
+<tr>
+<td>“التسليم هيتأخر”</td>
+<td>“٨٥٪ من مشاريعنا سُلّمت بالموعد أو قبله — إليك المراجع”</td>
+</tr>
+<tr>
+<td>“بعد التسليم هتظهر مشاكل”</td>
+<td>“عندنا ضمان [X] سنة على العيوب + فريق صيانة”</td>
+</tr>
+<tr>
+<td>“ما أعرفكم”</td>
+<td>“ده ملف مشاريعنا + ٣ عملاء تقدر تتصل بهم الآن”</td>
+</tr>
+</tbody>
+</table>
+<hr></div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">05</span>
+              <span>القسم ١١: مصادر البيانات</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><h2 id="linkedin-sales-navigator-primary-للجميع">LinkedIn Sales
+Navigator (Primary — للجميع)</h2>
+<table>
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
+<tr>
+<th>الشريحة</th>
+<th>فلاتر البحث</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>مطورون</td>
+<td>Industry: Real Estate/Construction, Size: 1-50, Title:
+CEO/Owner/مدير مشاريع, Geo: KSA</td>
+</tr>
+<tr>
+<td>MEP — مصانع</td>
+<td>Industry: Manufacturing, Size: 11-200, Title: Owner/Operations
+Manager, Geo: Industrial Cities</td>
+</tr>
+<tr>
+<td>MEP — فنادق</td>
+<td>Industry: Hospitality, Title: GM/Operations Director, Geo:
+Riyadh/Jeddah</td>
+</tr>
+<tr>
+<td>MEP — تجاري</td>
+<td>Industry: Real Estate/Retail, Title: Facilities Manager/Owner, Geo:
+Riyadh/Jeddah</td>
+</tr>
+</tbody>
+</table>
+<h2 id="blue-pages-secondary-للمصانع">Blue Pages (Secondary —
+للمصانع)</h2>
+<blockquote>
+<p>بيانات مفيدة لقطاع الصيانة والتشغيل (55% واتساب، 50% لينكدإن). ضعيفة
+للعقارات (25 شركة فقط بـ 15% واتساب).</p>
+</blockquote>
+<h2 id="google-maps-supporting">Google Maps (Supporting)</h2>
+<table>
+<thead>
+<tr>
+<th>البحث</th>
+<th>النتيجة</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“مصنع” + [مدينة صناعية]</td>
+<td>رقم + موقع + تقييمات</td>
+</tr>
+<tr>
+<td>“فندق” + [مدينة]</td>
+<td>أسماء فنادق محتاجة MEP</td>
+</tr>
+<tr>
+<td>“شركة تطوير عقاري” + [مدينة]</td>
+<td>cross-reference مع LinkedIn</td>
+</tr>
+</tbody>
+</table>
+<hr></div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <span class="step-num">06</span>
+              <span>القسم ١٢: مؤشرات الأداء</span>
+            </div>
+            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-body"><table>
+<thead>
+<tr>
+<th>المؤشر</th>
+<th style="text-align: center;">أسبوع ١</th>
+<th style="text-align: center;">شهر ١</th>
+<th style="text-align: center;">٩٠ يوم</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>طلبات LinkedIn</td>
+<td style="text-align: center;">١٠٠</td>
+<td style="text-align: center;">٣٠٠</td>
+<td style="text-align: center;">٧٠٠+</td>
+</tr>
+<tr>
+<td>ردود</td>
+<td style="text-align: center;">١٠-١٥</td>
+<td style="text-align: center;">٥٠+</td>
+<td style="text-align: center;">١٥٠+</td>
+</tr>
+<tr>
+<td>اجتماعات</td>
+<td style="text-align: center;">٣-٥</td>
+<td style="text-align: center;">١٥+</td>
+<td style="text-align: center;">٤٠+</td>
+</tr>
+<tr>
+<td>عروض أسعار</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">٥+</td>
+<td style="text-align: center;">١٥+</td>
+</tr>
+<tr>
+<td>deals closed</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">٢-٣</td>
+</tr>
+<tr>
+<td>pipeline</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">SAR 2M+</td>
+<td style="text-align: center;">SAR 5M+</td>
+</tr>
+<tr>
+<td>شراكات استشارية</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">٥ تواصل</td>
+<td style="text-align: center;">٣ شراكات</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="القسم-١٣-الأسئلة-المطلوبة-من-مصطفى">القسم ١٣: الأسئلة المطلوبة
+من مصطفى</h1>
+<blockquote>
+<p><strong>⚠️ بدون الإجابات دي ما نقدر نشغّل الـ outreach
+بفعالية.</strong> <strong>الوقت المطلوب: ≈ ساعة واحدة.</strong></p>
+</blockquote>
+<h2 id="سجل-الأعمال">١. سجل الأعمال 🔴</h2>
+<p><strong>كم مشروع أنجزتوه إجمالاً؟</strong> ____________</p>
+<table>
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 17%" />
+<col style="width: 10%" />
+<col style="width: 27%" />
+<col style="width: 19%" />
+<col style="width: 20%" />
 </colgroup>
 <thead>
 <tr>
 <th>#</th>
 <th>نوع المشروع</th>
 <th>الموقع</th>
-<th style="text-align: center;">عدد الوحدات</th>
+<th style="text-align: center;">عدد الوحدات/المساحة</th>
 <th style="text-align: center;">القيمة (ريال)</th>
-<th style="text-align: center;">المدة</th>
-<th style="text-align: center;">العميل (مطور / فرد / جهة)</th>
+<th style="text-align: center;">سُلّم بالموعد؟</th>
 </tr>
 </thead>
 <tbody>
@@ -2537,7 +1752,6 @@ L3 / L4</label></li>
 <td>1</td>
 <td></td>
 <td></td>
-<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -2549,13 +1763,11 @@ L3 / L4</label></li>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
 </tr>
 <tr>
 <td>3</td>
 <td></td>
 <td></td>
-<td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -2567,7 +1779,6 @@ L3 / L4</label></li>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
 </tr>
 <tr>
 <td>5</td>
@@ -2576,42 +1787,16 @@ L3 / L4</label></li>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-<h3 id="نموذج-الجناح-التنفيذي">نموذج “الجناح التنفيذي”</h3>
-<blockquote>
-<p><strong>سؤال مهم جداً:</strong> نبيعكم كـ “جناح تنفيذي” للمطورين —
-يعني المطور يختار الأرض وأنتم تبنون. هل اشتغلتم بهذا الشكل من قبل؟</p>
-</blockquote>
-<ul class="task-list">
-<li><label><input type="checkbox" /><strong>نعم</strong> — اشتغلنا مع
-مطور واحد أو أكثر بهذا الشكل</label>
-<ul>
-<li>مع من؟ ____________</li>
-<li>كم مشروع؟ ____________</li>
-<li>هل التجربة نجحت؟ ____________</li>
-</ul></li>
-<li><label><input type="checkbox" /><strong>لا لكننا مستعدون</strong> —
-لم نجربه حرفياً لكن لدينا القدرة</label></li>
-<li><label><input type="checkbox" /><strong>لا ولسنا متأكدين</strong> —
-نحتاج أن نفهم أكثر</label></li>
-</ul>
-<h3 id="خدمات-المصانع">خدمات المصانع</h3>
-<p><strong>هل اشتغلتم مع مصانع على صيانة MEP؟</strong></p>
-<ul class="task-list">
-<li><label><input type="checkbox" /><strong>نعم</strong></label>
-<ul>
-<li>كم مصنعاً؟ ____________</li>
-<li>نوع المصانع؟ ____________</li>
-<li>العقود (شهري / سنوي / مرة واحدة)؟ ____________</li>
-<li>متوسط قيمة العقد الشهري (ريال)؟ ____________</li>
-</ul></li>
-<li><label><input type="checkbox" /><strong>لا</strong></label></li>
-</ul>
-<hr />
-<h2 id="بيانات-الشركة">3) بيانات الشركة 🔴</h2>
+<p><strong>هل اشتغلتوا مع مطور عقاري من قبل؟</strong> - [ ] أيوا — مع
+مين؟ ____________ - [ ] لا — بس نفذنا مشاريع سكنية</p>
+<p><strong>هل نفذتوا أنظمة MEP (مش بس صيانة)؟</strong> - [ ] أيوا — أي
+نوع؟ (كهرباء / تكييف / سباكة / حريق) ____________ - [ ] لا</p>
+<p><strong>نسبة المشاريع اللي سُلّمت بالموعد أو قبله:</strong>
+_______%</p>
+<h2 id="بيانات-الشركة">٢. بيانات الشركة 🔴</h2>
 <table>
 <thead>
 <tr>
@@ -2621,20 +1806,11 @@ L3 / L4</label></li>
 </thead>
 <tbody>
 <tr>
-<td>الاسم الرسمي (عربي)</td>
+<td>الاسم الرسمي (عربي + إنجليزي)</td>
 <td></td>
 </tr>
 <tr>
-<td>الاسم الرسمي (إنجليزي)</td>
-<td></td>
-</tr>
-<tr>
-<td>تصنيف المقاولات (أولى / ثانية / ثالثة / رابعة / خامسة / غير
-مصنف)</td>
-<td></td>
-</tr>
-<tr>
-<td>رقم السجل التجاري</td>
+<td>تصنيف المقاولات</td>
 <td></td>
 </tr>
 <tr>
@@ -2642,50 +1818,36 @@ L3 / L4</label></li>
 <td></td>
 </tr>
 <tr>
-<td>عدد المهندسين</td>
+<td>عدد الموظفين (مهندسين + فنيين)</td>
 <td></td>
 </tr>
 <tr>
-<td>عدد الفنيين</td>
+<td>المدن اللي تشتغلون فيها</td>
 <td></td>
 </tr>
 <tr>
-<td>عدد الإداريين</td>
+<td>موقع إلكتروني</td>
 <td></td>
 </tr>
 <tr>
-<td>إجمالي الموظفين</td>
+<td>LinkedIn</td>
 <td></td>
 </tr>
 <tr>
-<td>المدن التي تعملون فيها</td>
-<td></td>
-</tr>
-<tr>
-<td>موقع إلكتروني (الرابط)</td>
-<td></td>
-</tr>
-<tr>
-<td>صفحة LinkedIn (الرابط)</td>
-<td></td>
-</tr>
-<tr>
-<td>أكبر مشروع نفذتموه (القيمة)</td>
+<td>ضمان ما بعد التسليم (كم سنة؟)</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="المنافسون">4) المنافسون 🔴</h2>
-<p><strong>من المقاولون الذين تعتبرونهم منافسين؟</strong></p>
+<h2 id="المنافسين">٣. المنافسين 🔴</h2>
 <table>
 <thead>
 <tr>
 <th>#</th>
-<th>اسم الشركة</th>
-<th style="text-align: center;">حجمها (أكبر/نفس/أصغر)</th>
-<th>ما يميزها</th>
-<th>ما يعيبها</th>
+<th>اسم المنافس</th>
+<th style="text-align: center;">حجمه مقارنة بكم</th>
+<th>ميزته</th>
+<th>عيبه</th>
 </tr>
 </thead>
 <tbody>
@@ -2712,2732 +1874,48 @@ L3 / L4</label></li>
 </tr>
 </tbody>
 </table>
-<p><strong>عندما يقارنك عميل بمقاول آخر — غالباً:</strong> - [ ] أنتم
-أرخص - [ ] نفس السعر لكن جودة أعلى - [ ] أغلى لكن تسلّمون بالموعد - [ ]
-لا نعرف</p>
-<p><strong>هل يوجد من يقدم “جناحاً تنفيذياً” أو “outsourced construction
-team” في السعودية؟</strong> - [ ] نعم — من؟ ____________ - [ ] لا — نحن
-أول فريق</p>
-<hr />
-<h2 id="دورة-البيع">5) دورة البيع 🟠</h2>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>نوع العميل</th>
-<th style="text-align: center;">كيف وصلكم</th>
-<th style="text-align: center;">كم أخذت حتى التوقيع</th>
-<th style="text-align: center;">عدد الاجتماعات</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>2</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>3</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>4</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>5</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>السؤال</th>
-<th>الجواب</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>من يوقّع العقد عادة؟</td>
-<td></td>
-</tr>
-<tr>
-<td>ما أكبر سبب يرفض أو يؤجل؟</td>
-<td></td>
-</tr>
-<tr>
-<td>هل تقدمون زيارة موقع مجانية؟</td>
-<td></td>
-</tr>
-<tr>
-<td>متوسط قيمة العقد (ريال)؟</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="الصور-والملفات">6) الصور والملفات 🟡</h2>
-<ul class="task-list">
-<li><label><input type="checkbox" />صور مشاريع (قبل وبعد) — على الأقل 3
-مشاريع</label></li>
-<li><label><input type="checkbox" />ملف تعريفي (Company Profile) لو
-موجود</label></li>
-<li><label><input type="checkbox" />شهادات أو رخص (تصنيف مقاولات،
-ISO)</label></li>
-<li><label><input type="checkbox" />خطاب شكر أو تزكية من عميل
-سابق</label></li>
-<li><label><input type="checkbox" />شعار الشركة (بدقة
-عالية)</label></li>
-</ul>
-<hr />
-<h2 id="ملخص">ملخص</h2>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>المطلوب</th>
-<th style="text-align: center;">الأولوية</th>
-<th style="text-align: center;">الوقت</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>أرقام التكلفة</td>
-<td style="text-align: center;">🔴</td>
-<td style="text-align: center;">15 دقيقة</td>
-</tr>
-<tr>
-<td>2</td>
-<td>سجل الأعمال + دراسة حالة</td>
-<td style="text-align: center;">🔴</td>
-<td style="text-align: center;">20 دقيقة</td>
-</tr>
-<tr>
-<td>3</td>
-<td>بيانات الشركة</td>
-<td style="text-align: center;">🔴</td>
-<td style="text-align: center;">10 دقائق</td>
-</tr>
-<tr>
-<td>4</td>
-<td>المنافسون</td>
-<td style="text-align: center;">🔴</td>
-<td style="text-align: center;">10 دقائق</td>
-</tr>
-<tr>
-<td>5</td>
-<td>دورة البيع</td>
-<td style="text-align: center;">🟠</td>
-<td style="text-align: center;">10 دقائق</td>
-</tr>
-<tr>
-<td>6</td>
-<td>الصور والملفات</td>
-<td style="text-align: center;">🟡</td>
-<td style="text-align: center;">حسب التوفر</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>الإجمالي: ≈ ساعة واحدة</strong> <strong>⚠️ بدون الأقسام 1–4
-لا نستطيع بدء الحملة.</strong></p>
-</blockquote>
-</div>
-          </div>
-        </div>
-        
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="lang lang-en">
-    <nav>
-      <div class="container">
-        <div class="nav-brand">Mustafa Zayed</div>
-        <div class="nav-links">
-          <a href="#hero-en" class="nav-link">Home</a>
-          <a href="#highlights-en" class="nav-link">Sections</a>
-          <a href="#valuepacks-en" class="nav-link">Messages</a>
-          <a href="#full-en" class="nav-link primary">Document</a>
-          <button class="lang-toggle" data-lang-toggle data-lang-target="ar">AR</button>
-        </div>
-      </div>
-    </nav>
-
-    <section class="hero" id="hero-en">
-      <div class="container">
-        <p class="hero-eyebrow">GTM Strategy</p>
-        <h1 class="hero-title">Mustafa Zayed — Complete GTM Strategy</h1>
-        <p class="hero-subtitle">A concise execution brief for developers and factories.</p>
-        <div class="hero-stats">
-          <div class="stat">
-            <div class="stat-value">300K</div>
-            <div class="stat-label">Housing units needed per year</div>
-          </div>
-          <div class="stat">
-            <div class="stat-value">36+</div>
-            <div class="stat-label">Industrial cities across MODON</div>
-          </div>
-          <div class="stat">
-            <div class="stat-value">5–50K</div>
-            <div class="stat-label">Factory downtime per hour (SAR)</div>
-          </div>
-          <div class="stat">
-            <div class="stat-value">269</div>
-            <div class="stat-label">Professions under Saudization</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="overview-en">
-      <div class="container">
-        <p class="section-eyebrow">Opportunity</p>
-        <h2 class="section-title">Why Now?</h2>
-        <p class="section-description">A once-in-a-generation execution opportunity: massive housing demand, pressure on small developers, and high factory risk.</p>
-        <div class="card-grid">
-          <div class="card highlight-card">
-            <h3 class="card-title">Housing Demand Surge</h3>
-            <p class="card-text">300K units/year means developers need execution capacity fast.</p>
-          </div>
-          <div class="card">
-            <h3 class="card-title">Small Developer Squeeze</h3>
-            <p class="card-text">Scale is owned by giants — speed is the only edge.</p>
-          </div>
-          <div class="card">
-            <h3 class="card-title">Factory Downtime Cost</h3>
-            <p class="card-text">Every hour of downtime destroys margin and contracts.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="highlights-en">
-      <div class="container">
-        <p class="section-eyebrow">Quick Structure</p>
-        <h2 class="section-title">Key sections before the deep dive</h2>
-        <p class="section-description">The most important pillars, summarized as cards before the full document.</p>
-        <div class="card-grid">
-          <div class="card highlight-card">
-            <h3 class="card-title">Core Data Points</h3>
-            <p class="card-text">Housing demand, factory downtime cost, and Saudization impact.</p>
-          </div>
-          <div class="card">
-            <h3 class="card-title">Target Personas</h3>
-            <p class="card-text">An ambitious developer + a stressed factory manager with clear buying triggers.</p>
-          </div>
-          <div class="card">
-            <h3 class="card-title">Detectable Signals</h3>
-            <p class="card-text">Hiring posts, maintenance gaps, limited project portfolios, and operational triggers.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="valuepacks-en">
-      <div class="container">
-        <p class="section-eyebrow">Message Sample</p>
-        <h2 class="section-title">A clean, send-ready message</h2>
-        <p class="section-description">Structured like a real message — concise, direct, and precise.</p>
-        <div class="message-card">
-          <div class="message-header">
-            <span class="message-title">LinkedIn DM — Developer</span>
-            <span class="message-tag">Message</span>
-          </div>
-          <div class="message-body">
-            <p>Thanks for connecting, [Name].</p>
-            <p>I saw your projects in [Neighborhood] — I pulled a cost benchmark for similar builds in Riyadh (Q1 2026):</p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Item</th>
-                  <th>Market Avg SAR/m²</th>
-                  <th>Best SAR/m²</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Structure</td>
-                  <td>1,450</td>
-                  <td>1,180</td>
-                </tr>
-                <tr>
-                  <td>Finishing</td>
-                  <td>850</td>
-                  <td>650</td>
-                </tr>
-                <tr>
-                  <td>MEP</td>
-                  <td>380</td>
-                  <td>290</td>
-                </tr>
-              </tbody>
-            </table>
-            <p>The gap on a 100-unit project is ~SAR 9M.</p>
-            <p>I have a full file with 12 line items — want me to send it?</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="full-en">
-      <div class="container">
-        <p class="section-eyebrow">Full Strategy</p>
-        <h2 class="section-title">Complete strategy — structured by parts</h2>
-        <div class="accordion">
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">01</span>
-              <span>PART 1: STRATEGY</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="executive-summary">Executive Summary</h2>
-<p><strong>Company:</strong> Mustafa Zayed — Construction Company
-<strong>Motion:</strong> Outbound-first <strong>Positioning:</strong>
-“We don’t sell construction — we sell execution capacity.”</p>
-<h3 id="two-target-segments">Two Target Segments</h3>
-<table>
-<colgroup>
-<col style="width: 27%" />
-<col style="width: 27%" />
-<col style="width: 45%" />
-</colgroup>
-<thead>
-<tr>
-<th>Segment</th>
-<th>Service</th>
-<th style="text-align: center;">Revenue Model</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🏗️ <strong>Small Real Estate Developers</strong></td>
-<td>Executive Construction Wing</td>
-<td style="text-align: center;">Per project</td>
-</tr>
-<tr>
-<td>🏭 <strong>Factories</strong></td>
-<td>MEP Infrastructure Supervision</td>
-<td style="text-align: center;">Monthly retainer</td>
-</tr>
-</tbody>
-</table>
-<h3 id="why-these-segments-why-now">Why These Segments, Why Now</h3>
-<blockquote>
-<p><strong>Saudi Arabia needs 300,000 housing units/year.</strong> Small
-developers see demand but can’t scale execution.</p>
-<p><strong>PIF-backed mega-developers are dominating.</strong> Roshn
-alone targets 400K homes. Small developers must outrun, not
-outscale.</p>
-<p><strong>Factory downtime costs SAR 5–50K/hour.</strong> One
-electrical fault = lost orders + broken contracts.</p>
-<p><strong>Civil Defense doesn’t warn — they shut you down.</strong>
-Mandatory safety inspections.</p>
-<p><strong>269 professions are under Saudization.</strong> The MEP
-talent pool is shrinking. Don’t hire from zero — partner with a ready
-team.</p>
-</blockquote>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">02</span>
-              <span>PART 2: PAIN-BASED SEGMENTS</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="segment-a-small-real-estate-developers-primary">🏗️ SEGMENT A:
-Small Real Estate Developers (PRIMARY)</h2>
-<p><strong>Pain Intensity:</strong> 🔴🔴🔴 CRITICAL</p>
-<table>
-<colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
-</colgroup>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Who</strong></td>
-<td>Small development companies building 1–5 residential/mixed-use
-projects per year</td>
-</tr>
-<tr>
-<td><strong>Decision Maker</strong></td>
-<td>Owner / CEO / Managing Director</td>
-</tr>
-<tr>
-<td><strong>Geography</strong></td>
-<td>Riyadh, Jeddah, Dammam, and emerging secondary cities</td>
-</tr>
-<tr>
-<td><strong>Core Pain</strong></td>
-<td><strong>Execution bottleneck</strong> — can secure land, financing,
-and sales, but can’t run more than 1–5 projects in parallel</td>
-</tr>
-<tr>
-<td><strong>Secondary Pain</strong></td>
-<td>Competition from PIF-backed developers, construction cost inflation
-(+4% in 2026), regulatory complexity</td>
-</tr>
-<tr>
-<td><strong>Trigger Events</strong></td>
-<td>New land acquisition, new developer license, hiring for PM
-roles</td>
-</tr>
-<tr>
-<td><strong>Emotional State</strong></td>
-<td>Frustrated ambition — sees Vision 2030 demand but can’t capture
-it</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Voice of Customer:</strong> &gt; “We have three ready,
-approved plots, but we can’t start them all because we don’t have an
-execution team that can oversee more than two projects at the same
-time.”</p>
-<p><strong>Service Fit:</strong> Executive Construction Wing - Mustafa =
-outsourced construction execution arm - Full delivery: structure +
-finishing + supervision + handover - Developer focuses on land,
-financing, and sales</p>
-<hr />
-<h2 id="segment-b-factories-primary">🏭 SEGMENT B: Factories
-(PRIMARY)</h2>
-<p><strong>Pain Intensity:</strong> 🔴🔴🔴 CRITICAL</p>
-<table>
-<colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
-</colgroup>
-<thead>
-<tr>
-<th>Dimension</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Who</strong></td>
-<td>Factory owners/managers in MODON industrial cities</td>
-</tr>
-<tr>
-<td><strong>Decision Maker</strong></td>
-<td>Factory Owner / Operations Manager</td>
-</tr>
-<tr>
-<td><strong>Geography</strong></td>
-<td>MODON (36+ cities), Jubail, Yanbu, Riyadh Industrial Cities</td>
-</tr>
-<tr>
-<td><strong>Core Pain</strong></td>
-<td><strong>Unplanned downtime</strong> — electrical faults, water
-failures, infrastructure breakdowns</td>
-</tr>
-<tr>
-<td><strong>Secondary Pain</strong></td>
-<td>Civil Defense compliance, skilled labor shortage (Saudization),
-energy costs</td>
-</tr>
-<tr>
-<td><strong>Trigger Events</strong></td>
-<td>Equipment failure, Civil Defense inspection notice, factory
-expansion</td>
-</tr>
-<tr>
-<td><strong>Emotional State</strong></td>
-<td>Operational anxiety — needs reliable infrastructure oversight</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Voice of Customer:</strong> &gt; “Power went out last week
-for six hours and we lost a full order. It wasn’t just the money — the
-client pulled the contract.”</p>
-<p><strong>Service Fit:</strong> MEP Infrastructure Supervision -
-Monthly retainer for electrical, water, HVAC, and fire safety -
-Emergency response SLA (&lt; 4 hours) - Preventive maintenance costs a
-fraction of emergency repairs</p>
-<hr />
-<h2 id="anti-icp-who-to-avoid">❌ Anti-ICP: Who to Avoid</h2>
-<table>
-<thead>
-<tr>
-<th>Anti-Persona</th>
-<th>Why Avoid</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Mega-developer (Roshn, NHC-scale)</td>
-<td>Has in-house execution capacity</td>
-</tr>
-<tr>
-<td>Individual villa builder</td>
-<td>One-off, too small</td>
-</tr>
-<tr>
-<td>Factory with in-house MEP team</td>
-<td>Already solved the problem</td>
-</tr>
-<tr>
-<td>Unfunded developer</td>
-<td>Can’t start projects</td>
-</tr>
-<tr>
-<td>Equipment buyer</td>
-<td>We sell services, not equipment</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">03</span>
-              <span>PART 3: EXISTENTIAL DATA POINTS (EDPs)</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="edp-1-housing-demand-explosion">EDP #1: Housing Demand
-Explosion</h2>
-<blockquote>
-<p>Saudi needs 300,000 new housing units/year. Market value: $164.85B.
-SAR 27.77B in new mortgages (+25.6% YoY). 106,000+ Sakani contracts in 6
-months.</p>
-</blockquote>
-<p><strong>Hook:</strong> “Saudi Arabia needs 300K units every year —
-how many projects can you execute this year?”</p>
-<h2 id="edp-2-small-developer-squeeze">EDP #2: Small Developer
-Squeeze</h2>
-<blockquote>
-<p>Roshn targets 400K+ homes. NHC is the largest developer. Small
-developers cannot compete on scale — only on speed.</p>
-</blockquote>
-<p><strong>Hook:</strong> “Roshn and NHC are taking the market. The
-answer isn’t to outscale them — it’s to outrun them.”</p>
-<h2 id="edp-3-factory-downtime-crisis">EDP #3: Factory Downtime
-Crisis</h2>
-<blockquote>
-<p>Unplanned downtime costs SAR 5–50K/hour. Electrical faults are the #1
-cause of production stops in light/medium industry.</p>
-</blockquote>
-<p><strong>Hook:</strong> “One electrical fault cost a factory SAR 50K
-in six hours. What does one hour of downtime cost you?”</p>
-<h2 id="edp-4-civil-defense-compliance">EDP #4: Civil Defense
-Compliance</h2>
-<blockquote>
-<p>Inspections are mandatory and more frequent. Non-compliance means
-shutdown + legal liability.</p>
-</blockquote>
-<p><strong>Hook:</strong> “Civil Defense doesn’t issue warnings — it
-issues shutdown orders. When was the last time you checked your
-electrical panel?”</p>
-<h2 id="edp-5-skilled-labor-vacuum">EDP #5: Skilled Labor Vacuum</h2>
-<blockquote>
-<p>269 professions under Saudization. NEOM/Red Sea drain the best
-engineers. Smaller players are left behind.</p>
-</blockquote>
-<p><strong>Hook:</strong> “NEOM and the Red Sea pulled the best
-engineers. Instead of a long hiring hunt — use a ready team.”</p>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">04</span>
-              <span>PART 4: BUYER PERSONAS</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="persona-1-khalid-the-ambitious-small-developer">Persona 1:
-Khalid — The Ambitious Small Developer</h2>
-<table>
-<colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
-</colgroup>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Age</strong></td>
-<td>42</td>
-</tr>
-<tr>
-<td><strong>Title</strong></td>
-<td>CEO / Owner of a small RE development company</td>
-</tr>
-<tr>
-<td><strong>Company</strong></td>
-<td>8–15 employees, 2–3 active projects</td>
-</tr>
-<tr>
-<td><strong>Pain</strong></td>
-<td>Execution capacity ceiling — has land + financing but can’t build
-fast enough</td>
-</tr>
-<tr>
-<td><strong>Trigger</strong></td>
-<td>New land acquired + financing approved, but no team to execute</td>
-</tr>
-<tr>
-<td><strong>Fears</strong></td>
-<td>Contractor abandonment, cost overruns, SBC failures, delivery
-delays</td>
-</tr>
-<tr>
-<td><strong>Trust Needs</strong></td>
-<td>Contractor classification, project portfolio, on-time delivery
-record</td>
-</tr>
-<tr>
-<td><strong>Channels</strong></td>
-<td>LinkedIn → WhatsApp → Twitter/X → Blue Pages → Aqar</td>
-</tr>
-</tbody>
-</table>
-<p><strong>SPICED:</strong> - <strong>S:</strong> 3 active projects, 5
-land plots waiting - <strong>P:</strong> Can’t scale beyond 3
-simultaneous projects - <strong>I:</strong> Losing SAR 5–10M/year per
-idle land plot - <strong>C:</strong> New land acquired, financing
-approved - <strong>D:</strong> Partnership model, not one-off
-contracting</p>
-<hr />
-<h2 id="persona-2-fahad-the-stressed-factory-manager">Persona 2: Fahad —
-The Stressed Factory Manager</h2>
-<table>
-<colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
-</colgroup>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Details</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Age</strong></td>
-<td>47</td>
-</tr>
-<tr>
-<td><strong>Title</strong></td>
-<td>Factory Owner / Operations Manager</td>
-</tr>
-<tr>
-<td><strong>Company</strong></td>
-<td>50–150 workers, MODON-based, no in-house MEP team</td>
-</tr>
-<tr>
-<td><strong>Pain</strong></td>
-<td>Reactive maintenance → unplanned downtime → lost production</td>
-</tr>
-<tr>
-<td><strong>Trigger</strong></td>
-<td>Civil Defense inspection in 30 days OR recent equipment failure</td>
-</tr>
-<tr>
-<td><strong>Fears</strong></td>
-<td>Shutdown, fines, electrical fire, water contamination, legal
-liability</td>
-</tr>
-<tr>
-<td><strong>Trust Needs</strong></td>
-<td>MEP certs, Civil Defense knowledge, emergency SLA, factory
-references</td>
-</tr>
-<tr>
-<td><strong>Channels</strong></td>
-<td>WhatsApp → LinkedIn → MODON → Google (emergency)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>SPICED:</strong> - <strong>S:</strong> Medium factory, 50–150
-workers, no in-house MEP - <strong>P:</strong> Reactive = 2–3x cost,
-unplanned downtime = lost orders - <strong>I:</strong> SAR 5–50K/hour
-downtime + client churn + compliance risk - <strong>C:</strong>
-Inspection notice or recent equipment failure - <strong>D:</strong>
-Preventive retainer, not break-fix contractor</p>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">05</span>
-              <span>PART 5: EXTERNAL FORCES</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="forces-creating-urgency">Forces Creating Urgency</h2>
-<table>
-<colgroup>
-<col style="width: 24%" />
-<col style="width: 75%" />
-</colgroup>
-<thead>
-<tr>
-<th>Force</th>
-<th>Impact on Our Segments</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Vision 2030 Housing Target</strong></td>
-<td>300K units/year → developers who scale execution win</td>
-</tr>
-<tr>
-<td><strong>Industrial Diversification (NIDLP)</strong></td>
-<td>36+ MODON cities → more factories needing MEP</td>
-</tr>
-<tr>
-<td><strong>Monetary Easing</strong></td>
-<td>Low SAIBOR → capital deployed → developers ready to build</td>
-</tr>
-<tr>
-<td><strong>SBC Enforcement</strong></td>
-<td>Code compliance is mandatory → developers need compliant
-partners</td>
-</tr>
-<tr>
-<td><strong>Civil Defense Inspections</strong></td>
-<td>Factory shutdown risk → drives MEP supervision demand</td>
-</tr>
-</tbody>
-</table>
-<h2 id="forces-creating-hesitation">Forces Creating Hesitation</h2>
-<table>
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 65%" />
-</colgroup>
-<thead>
-<tr>
-<th>Force</th>
-<th>Our Response</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Material Cost Inflation (+4%)</strong></td>
-<td>“Efficient execution protects your margin”</td>
-</tr>
-<tr>
-<td><strong>Skilled Labor Vacuum</strong></td>
-<td>“Don’t hire — partner with a ready team”</td>
-</tr>
-<tr>
-<td><strong>Mega-Developer Dominance</strong></td>
-<td>“You can’t outscale Roshn — outrun them”</td>
-</tr>
-<tr>
-<td><strong>Reactive Maintenance Culture</strong></td>
-<td>“Prevention costs 1/3 of emergency repair”</td>
-</tr>
-</tbody>
-</table>
-<h2 id="cultural-forces">Cultural Forces</h2>
-<table>
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 65%" />
-</colgroup>
-<thead>
-<tr>
-<th>Force</th>
-<th>Implication</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>WhatsApp Business Culture</strong></td>
-<td>98% open rate — LinkedIn for discovery, WhatsApp for
-relationship</td>
-</tr>
-<tr>
-<td><strong>Trust via Track Record</strong></td>
-<td>Portfolio + references beat brand name. Results &gt; promises</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">06</span>
-              <span>PART 6: DATA SOURCES & SIGNALS</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="data-source-1-blue-pages-bluepages.com.sa">Data Source #1: Blue
-Pages (bluepages.com.sa)</h2>
-<blockquote>
-<p>The largest industrial/commercial directory for Saudi Chamber
-subscribers</p>
-</blockquote>
-<p><strong>What We Get:</strong> Company name, WhatsApp, email,
-LinkedIn, website, city, description</p>
-<h3 id="real-data-validation-22-feb-2026">⚠️ Real Data Validation (22
-Feb 2026)</h3>
-<blockquote>
-<p>The big numbers (4,563 real estate listings) are total registrations.
-Active paid memberships are far fewer:</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>Category</th>
-<th style="text-align: center;">Paid Active</th>
-<th style="text-align: center;">WhatsApp</th>
-<th style="text-align: center;">LinkedIn</th>
-<th style="text-align: center;">Website</th>
-<th style="text-align: center;">Email</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Real Estate (1335)</td>
-<td style="text-align: center;"><strong>25</strong></td>
-<td style="text-align: center;">15% ❌</td>
-<td style="text-align: center;">10% ❌</td>
-<td style="text-align: center;">60%</td>
-<td style="text-align: center;">65%</td>
-</tr>
-<tr>
-<td>Ops &amp; Maintenance (649)</td>
-<td style="text-align: center;"><strong>26</strong></td>
-<td style="text-align: center;">55% ✅</td>
-<td style="text-align: center;">50% ✅</td>
-<td style="text-align: center;">80%</td>
-<td style="text-align: center;">95%</td>
-</tr>
-<tr>
-<td>Plastics (566)</td>
-<td style="text-align: center;"><strong>10</strong></td>
-<td style="text-align: center;">30%</td>
-<td style="text-align: center;">10%</td>
-<td style="text-align: center;">80%</td>
-<td style="text-align: center;">100%</td>
-</tr>
-<tr>
-<td>Food (467)</td>
-<td style="text-align: center;"><strong>5</strong></td>
-<td style="text-align: center;">0% ❌</td>
-<td style="text-align: center;">0% ❌</td>
-<td style="text-align: center;">60%</td>
-<td style="text-align: center;">60%</td>
-</tr>
-</tbody>
-</table>
-<h3 id="conclusion">Conclusion</h3>
-<table>
-<colgroup>
-<col style="width: 21%" />
-<col style="width: 35%" />
-<col style="width: 42%" />
-</colgroup>
-<thead>
-<tr>
-<th>Segment</th>
-<th style="text-align: center;">Primary Source</th>
-<th style="text-align: center;">Secondary Source</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Developers</strong></td>
-<td style="text-align: center;"><strong>LinkedIn Sales
-Navigator</strong></td>
-<td style="text-align: center;">Blue Pages (25 companies only) +
-Google</td>
-</tr>
-<tr>
-<td><strong>Factories (Ops &amp; Maintenance)</strong></td>
-<td style="text-align: center;"><strong>Blue Pages</strong> (rich
-data)</td>
-<td style="text-align: center;">LinkedIn + Google Maps</td>
-</tr>
-<tr>
-<td><strong>Factories (Industrial)</strong></td>
-<td style="text-align: center;"><strong>Google Maps +
-LinkedIn</strong></td>
-<td style="text-align: center;">Blue Pages (small counts)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>API Endpoint:</strong></p>
-<pre><code>GET https://bluepages.com.sa/api/companies/getAll/paginate
-  ?limit=20&amp;page=1&amp;city=true
-  &amp;categories[]=CATEGORY_ID
-  &amp;packages[]=2&amp;...&amp;packages[]=8
-  &amp;about_to_expire=not_expired&amp;status=true</code></pre>
-<p><strong>City IDs:</strong> 4=Riyadh, 2=Jeddah, 5=Dammam</p>
-<hr />
-<h2 id="data-source-2-linkedin-sales-navigator">Data Source #2: LinkedIn
-Sales Navigator</h2>
-<p><strong>Developer Search:</strong> Industry=Real Estate/Construction,
-Size=1–50, Title=CEO/Owner, Geo=KSA <strong>Factory Search:</strong>
-Industry=Manufacturing, Size=11–200, Title=Owner/Manager, Geo=Industrial
-Cities</p>
-<hr />
-<h2 id="data-source-3-google-maps">Data Source #3: Google Maps</h2>
-<p><strong>Factories:</strong> “مصنع” + industrial city name → phone,
-location, reviews <strong>Developers:</strong> “شركة تطوير عقاري” + city
-→ cross-reference with Blue Pages</p>
-<hr />
-<h2 id="the-enrichment-workflow">The Enrichment Workflow</h2>
-<pre><code>Blue Pages → Raw list (name, WhatsApp, LinkedIn, website)
-      ↓
-Filter: remove 500+ employee companies
-      ↓
-Enrich from website:
-  Developer → “Projects” page: count &amp; type
-  Factory → maintenance page? factory type?
-      ↓
-Enrich from LinkedIn:
-  Company size, job posts, CEO/owner profile
-      ↓
-Score: L1–L4 based on signals
-      ↓
-Personalize Message with enrichment data</code></pre>
-<hr />
-<h2 id="signal-levels-whats-actually-detectable">Signal Levels — What’s
-Actually Detectable</h2>
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 22%" />
-<col style="width: 22%" />
-<col style="width: 34%" />
-</colgroup>
-<thead>
-<tr>
-<th>Level</th>
-<th>Signal</th>
-<th>Source</th>
-<th style="text-align: center;">Realistic?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🔴 L1 HOT</td>
-<td>Job post for PM (developer)</td>
-<td>LinkedIn</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>🔴 L1 HOT</td>
-<td>Job post for maintenance tech (factory)</td>
-<td>LinkedIn</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>🔴 L1 HOT</td>
-<td>Website shows only 2–3 projects</td>
-<td>Company website</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>🔴 L1 HOT</td>
-<td>Factory with no maintenance page</td>
-<td>Company website</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>🟠 L2 WARM</td>
-<td>Blue Pages listing + LinkedIn match</td>
-<td>Blue Pages + LinkedIn</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>🟠 L2 WARM</td>
-<td>Factory in MODON zone</td>
-<td>Google Maps / Blue Pages</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>🟡 L3 LUKEWARM</td>
-<td>Active in LinkedIn industry groups</td>
-<td>LinkedIn</td>
-<td style="text-align: center;">✅</td>
-</tr>
-<tr>
-<td>🔵 L4 COLD</td>
-<td>ICP match with no enrichment data</td>
-<td>Sales Navigator</td>
-<td style="text-align: center;">✅</td>
-</tr>
-</tbody>
-</table>
-<h3 id="signals-we-wont-use">❌ Signals We Won’t Use</h3>
-<table>
-<colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
-</colgroup>
-<thead>
-<tr>
-<th>Signal</th>
-<th>Why Not</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Etimad tender monitoring</td>
-<td>Government tenders — not relevant to private sector</td>
-</tr>
-<tr>
-<td>Civil Defense schedule</td>
-<td>Not publicly available</td>
-</tr>
-<tr>
-<td>Baladi license tracking</td>
-<td>Not automatable</td>
-</tr>
-<tr>
-<td>NHC partnership announcements</td>
-<td>Too rare to scale</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">07</span>
-              <span>PART 7: OUTBOUND Messages (ENGLISH) — Scored 9–10/10</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><blockquote>
-<p>Every Message delivers <strong>concrete data the prospect can use
-immediately</strong> — before any meeting or ask.</p>
-</blockquote>
-<h2 id="value-pack-d1-the-cost-benchmark-developer-l1-hot-910">Value
-Pack D1: The Cost Benchmark (Developer — L1 Hot) ⭐ 9/10</h2>
-<blockquote>
-<p>Mr. [Name], I saw your projects in [Neighborhood] — [Number]
-residential projects.</p>
-<p>I pulled a <strong>build-cost benchmark</strong> for similar projects
-in Riyadh (Q1 2026):</p>
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th style="text-align: center;">Market Avg SAR/m²</th>
-<th style="text-align: center;">Best Price SAR/m²</th>
-<th style="text-align: center;">Gap</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Structure (concrete + steel)</td>
-<td style="text-align: center;">1,450</td>
-<td style="text-align: center;">1,180</td>
-<td style="text-align: center;">-19%</td>
-</tr>
-<tr>
-<td>Standard finishing</td>
-<td style="text-align: center;">850</td>
-<td style="text-align: center;">650</td>
-<td style="text-align: center;">-24%</td>
-</tr>
-<tr>
-<td>MEP</td>
-<td style="text-align: center;">380</td>
-<td style="text-align: center;">290</td>
-<td style="text-align: center;">-24%</td>
-</tr>
-<tr>
-<td>Supervision + PM</td>
-<td style="text-align: center;">120</td>
-<td style="text-align: center;">85</td>
-<td style="text-align: center;">-29%</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Total:</strong> 100-unit project × 150m² = the gap between
-SAR 42M and 33M. The difference isn’t materials — it’s execution and
-subcontract management.</p>
-<p>I have a full file with 12 line items — want me to send it?</p>
-</blockquote>
-<p><strong>Value Delivered:</strong> A cost benchmark table usable for
-budgeting right now.</p>
-<hr />
-<h2
-id="value-pack-d2-hiring-vs.-outsource-math-developer-l1-hot-910">Value
-Pack D2: Hiring vs. Outsource Math (Developer — L1 Hot) ⭐ 9/10</h2>
-<blockquote>
-<p>Mr. [Name], I saw you’re hiring a Project Manager.</p>
-<p>📊 <strong>Engineering hiring data in Riyadh (Feb 2026):</strong> -
-Average Saudi PM salary (5+ years): <strong>SAR 18–25K/month</strong> -
-Average hiring time: <strong>3–6 months</strong> (Saudization) -
-Attrition rate: <strong>35%</strong> (NEOM/Red Sea pull the talent)</p>
-<p>That means: <strong>1 PM hire = SAR 280K/year + 3–6 months
-waiting.</strong> If they leave after 8 months, you’re back to zero.</p>
-<p><strong>Alternative:</strong> A full execution team (PM + site
-engineer + QA) ready within one week. The cost is bundled into the
-execution contract.</p>
-</blockquote>
-<p><strong>Value Delivered:</strong> Salary benchmarks and a clear cost
-comparison for HR decisions.</p>
-<hr />
-<h2
-id="value-pack-d3-the-idle-land-calculator-developer-l2-warm-910">Value
-Pack D3: The Idle Land Calculator (Developer — L2 Warm) ⭐ 9/10</h2>
-<blockquote>
-<p>Mr. [Name], I have data that might help:</p>
-<p>📊 <strong>Idle land cost in [City] (2026):</strong></p>
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th style="text-align: center;">Annual Cost</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>White land tax (2.5% of value)</td>
-<td style="text-align: center;">Based on valuation</td>
-</tr>
-<tr>
-<td>Opportunity cost (8% return)</td>
-<td style="text-align: center;">8% of land value</td>
-</tr>
-<tr>
-<td>Construction inflation (+4%/yr)</td>
-<td style="text-align: center;">Added project cost</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Example:</strong> A SAR 10M plot sitting idle for one year =
-<strong>SAR 1.05M loss</strong> (fees + opportunity cost). Every month
-of delay increases the number.</p>
-<p>I built an <strong>“Idle Land Cost Calculator”</strong> — plug in
-your land value and get the true monthly cost. Want it?</p>
-</blockquote>
-<p><strong>Value Delivered:</strong> A calculator they can use on any
-plot.</p>
-<hr />
-<h2 id="value-pack-f1-the-downtime-cost-report-factory-l1-hot-910">Value
-Pack F1: The Downtime Cost Report (Factory — L1 Hot) ⭐ 9/10</h2>
-<blockquote>
-<p>Mr. [Name], I saw your factory in [Industrial Zone] — [Industry
-Type].</p>
-<p>📊 <strong>Unplanned downtime cost (mid-size factories,
-2025–2026):</strong></p>
-<table>
-<thead>
-<tr>
-<th>Failure Type</th>
-<th style="text-align: center;">Avg Time</th>
-<th style="text-align: center;">Avg Cost</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Electrical panel failure</td>
-<td style="text-align: center;">4–8 hours</td>
-<td style="text-align: center;">SAR 20K–80K</td>
-</tr>
-<tr>
-<td>Industrial water line burst</td>
-<td style="text-align: center;">2–6 hours</td>
-<td style="text-align: center;">SAR 10K–40K</td>
-</tr>
-<tr>
-<td>Cooling system failure</td>
-<td style="text-align: center;">3–12 hours</td>
-<td style="text-align: center;">SAR 15K–100K</td>
-</tr>
-<tr>
-<td>Civil Defense shutdown</td>
-<td style="text-align: center;">1–7 days</td>
-<td style="text-align: center;">SAR 50K–500K</td>
-</tr>
-</tbody>
-</table>
-<p><strong>70% of these cases are avoidable with a quarterly preventive
-check that costs ~SAR 5K.</strong></p>
-</blockquote>
-<p><strong>Value Delivered:</strong> Downtime cost table by failure type
-— usable for budgeting and risk.</p>
-<hr />
-<h2
-id="value-pack-f2-the-civil-defense-checklist-factory-l1-hot-1010">Value
-Pack F2: The Civil Defense Checklist (Factory — L1 Hot) ⭐ 10/10</h2>
-<blockquote>
-<p>Mr. [Name], your company is registered in [Industrial Zone].</p>
-<p>I prepared a <strong>Civil Defense inspection checklist</strong> — 32
-items across 4 sections:</p>
-<p><strong>📋 Sections:</strong> 1. <strong>Electrical (10
-items):</strong> panels, grounding, load, cabling 2. <strong>Safety (8
-items):</strong> extinguishers, sprinklers, alarms, emergency exits 3.
-<strong>Water &amp; Drainage (7 items):</strong> pipes, tanks,
-industrial drainage 4. <strong>Ventilation &amp; Environment (7
-items):</strong> exhausts, HVAC, industrial ventilation</p>
-<p><strong>Each item includes:</strong> required standard ✅ +
-violation/fine ⚠️ + how to self-check 🔧</p>
-<p>The checklist is free — want it as PDF? Note: if you find one or two
-items that need a specialist, we can help. The checklist is yours either
-way.</p>
-</blockquote>
-<p><strong>Value Delivered:</strong> A 32-point self-audit checklist
-with no strings attached.</p>
-<hr />
-<h2 id="value-pack-f3-the-energy-benchmark-factory-l2-warm-910">Value
-Pack F3: The Energy Benchmark (Factory — L2 Warm) ⭐ 9/10</h2>
-<blockquote>
-<p>Mr. [Name], your factory operates in [Industry Type].</p>
-<p>📊 <strong>Electricity consumption benchmark (for [Industry Type]
-factories):</strong></p>
-<table>
-<thead>
-<tr>
-<th>Size</th>
-<th style="text-align: center;">Monthly kWh</th>
-<th style="text-align: center;">Monthly Cost (SAR)</th>
-<th style="text-align: center;">After 20% Savings</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Small (20–50 workers)</td>
-<td style="text-align: center;">80,000</td>
-<td style="text-align: center;">14,400</td>
-<td style="text-align: center;">11,520</td>
-</tr>
-<tr>
-<td>Medium (50–150 workers)</td>
-<td style="text-align: center;">250,000</td>
-<td style="text-align: center;">45,000</td>
-<td style="text-align: center;">36,000</td>
-</tr>
-<tr>
-<td>Large (150+ workers)</td>
-<td style="text-align: center;">600,000</td>
-<td style="text-align: center;">108,000</td>
-<td style="text-align: center;">86,400</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Top four loss drivers:</strong> old panels (8–12%),
-undersized cabling (5–8%), unmaintained cooling (10–15%), conventional
-lighting (3–5%).</p>
-<p>We can run a <strong>load audit</strong> in two hours — you get your
-numbers vs. the benchmark.</p>
-</blockquote>
-<p><strong>Value Delivered:</strong> A clear energy benchmark for
-performance comparison.</p>
-<hr />
-<h2 id="value-pack-s1-the-saudization-map-both-l3-lukewarm-910">Value
-Pack S1: The Saudization Map (Both — L3 Lukewarm) ⭐ 9/10</h2>
-<blockquote>
-<p>📊 <strong>Saudization impact on construction &amp; factories
-(2026):</strong></p>
-<table style="width:100%;">
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 21%" />
-<col style="width: 25%" />
-<col style="width: 28%" />
-<col style="width: 15%" />
-</colgroup>
-<thead>
-<tr>
-<th>Role</th>
-<th style="text-align: center;">Saudization %</th>
-<th style="text-align: center;">Avg Saudi Salary</th>
-<th style="text-align: center;">Prior Expat Salary</th>
-<th style="text-align: center;">Increase</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Electrical Engineer</td>
-<td style="text-align: center;">75%</td>
-<td style="text-align: center;">12,000</td>
-<td style="text-align: center;">5,500</td>
-<td style="text-align: center;">+118%</td>
-</tr>
-<tr>
-<td>Maintenance Tech</td>
-<td style="text-align: center;">30%</td>
-<td style="text-align: center;">7,000</td>
-<td style="text-align: center;">3,500</td>
-<td style="text-align: center;">+100%</td>
-</tr>
-<tr>
-<td>Project Manager</td>
-<td style="text-align: center;">100%</td>
-<td style="text-align: center;">20,000</td>
-<td style="text-align: center;">8,000</td>
-<td style="text-align: center;">+150%</td>
-</tr>
-<tr>
-<td>QA Inspector</td>
-<td style="text-align: center;">50%</td>
-<td style="text-align: center;">9,000</td>
-<td style="text-align: center;">4,000</td>
-<td style="text-align: center;">+125%</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Result:</strong> execution team cost up 120% + hiring time
-doubled + 35% attrition. The companies that survive are those that plug
-into execution teams instead of building from zero.</p>
-</blockquote>
-<p><strong>Value Delivered:</strong> Salary comparison data for hiring
-decisions.</p>
-<hr />
-<h2 id="value-pack-deployment-map">Message Deployment Map</h2>
-<table>
-<colgroup>
-<col style="width: 8%" />
-<col style="width: 15%" />
-<col style="width: 13%" />
-<col style="width: 62%" />
-</colgroup>
-<thead>
-<tr>
-<th>Message</th>
-<th>Segment</th>
-<th style="text-align: center;">Signal</th>
-<th>What They Get Before Any Meeting</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>D1: Cost Benchmark</td>
-<td>Developer</td>
-<td style="text-align: center;">L1</td>
-<td>📊 Build-cost comparison (SAR/m²)</td>
-</tr>
-<tr>
-<td>D2: Hiring Math</td>
-<td>Developer</td>
-<td style="text-align: center;">L1</td>
-<td>📊 Salary benchmarks + outsource ROI</td>
-</tr>
-<tr>
-<td>D3: Idle Land</td>
-<td>Developer</td>
-<td style="text-align: center;">L2</td>
-<td>🧮 Idle land cost calculator</td>
-</tr>
-<tr>
-<td>F1: Downtime Report</td>
-<td>Factory</td>
-<td style="text-align: center;">L1</td>
-<td>📊 Downtime cost by failure type</td>
-</tr>
-<tr>
-<td>F2: Civil Defense</td>
-<td>Factory</td>
-<td style="text-align: center;">L1</td>
-<td>📋 32-item self-audit checklist</td>
-</tr>
-<tr>
-<td>F3: Energy Benchmark</td>
-<td>Factory</td>
-<td style="text-align: center;">L2</td>
-<td>📊 Energy consumption comparison</td>
-</tr>
-<tr>
-<td>S1: Saudization Map</td>
-<td>Both</td>
-<td style="text-align: center;">L3</td>
-<td>📊 Salary comparison + hiring data</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">08</span>
-              <span>PART 8: OUTBOUND TEMPLATES</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="linkedin-connection-request-developer">LinkedIn Connection
-Request — Developer</h2>
-<pre><code>Hi [Name], I’ve seen your work in real estate development — impressive. Would love to connect; we share the same field.</code></pre>
-<h2 id="linkedin-connection-request-factory">LinkedIn Connection Request
-— Factory</h2>
-<pre><code>Hi [Name], we work with factories in the industrial zones on infrastructure. Would be great to connect.</code></pre>
-<h2
-id="linkedin-dm-developer-after-connection-delivers-value-pack-d1">LinkedIn
-DM — Developer (After Connection — Delivers Message D1)</h2>
-<pre><code>Thanks for connecting, [Name].
-
-I saw your projects in [Neighborhood] — I pulled a cost benchmark for similar builds in Riyadh (Q1 2026):
-
-| Item | Market Avg SAR/m² | Best SAR/m² |
-| Structure | 1,450 | 1,180 |
-| Finishing | 850 | 650 |
-| MEP | 380 | 290 |
-
-The gap on a 100-unit project is ~SAR 9M.
-
-I have a full file with 12 line items — want me to send it?</code></pre>
-<h2
-id="linkedin-dm-factory-after-connection-delivers-value-pack-f2">LinkedIn
-DM — Factory (After Connection — Delivers Message F2)</h2>
-<pre><code>Thanks for connecting, [Name].
-
-I prepared a Civil Defense inspection checklist — 32 items:
-1. Electrical (10 items)
-2. Safety (8 items)
-3. Water &amp; drainage (7 items)
-4. Ventilation &amp; environment (7 items)
-
-Each item includes the standard + fine + self-check method.
-
-Want it as a PDF? It’s free and yours to use quarterly.</code></pre>
-<h2 id="whatsapp-developer-follow-up">WhatsApp — Developer
-Follow-up</h2>
-<pre><code>Hi {{1}}, we connected on LinkedIn 👋
-
-Here is the construction cost benchmark I mentioned — 12 line items (Q1 2026).
-
-[PDF attached]
-
-If you want to tailor it to your projects, we can spend 15 minutes and review it together.</code></pre>
-<h2 id="whatsapp-factory-follow-up">WhatsApp — Factory Follow-up</h2>
-<pre><code>Hello {{1}} 👋
-
-Here is the Civil Defense checklist I mentioned — 32 items PDF.
-
-[PDF attached]
-
-If any items need a specialist (electrical, water, safety), we can help. The checklist is yours either way.</code></pre>
-<h2 id="cold-call-script-developer">Cold Call Script — Developer</h2>
-<pre><code>Hello Mr. [Name], this is [Your Name] from Mustafa.
-
-We connected on LinkedIn — I sent you the build-cost benchmark. Did you see it?
-
-[If yes] Great — which items felt off vs your numbers?
-[If no] No problem — quick question: how many projects are you running right now?
-
-We operate as an execution wing — we can take your next project from foundations to handover.
-
-Do you have 15 minutes this week?</code></pre>
-<h2 id="cold-call-script-factory">Cold Call Script — Factory</h2>
-<pre><code>Hello Mr. [Name], this is [Your Name] from Mustafa.
-
-I sent you the Civil Defense checklist — 32 items. Did you see it?
-
-[If yes] Which items look like they need a specialist?
-[If no] No problem — do you have an in-house maintenance team, or do you run on emergency fixes?
-
-[If emergency] Most factories in that mode pay 2–3x more.
-
-We offer a free audit — two hours and you leave with a full report. When works for you?</code></pre>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">09</span>
-              <span>PART 9: KEYWORD LISTS</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="developer-keywords">Developer Keywords</h2>
-<table>
-<colgroup>
-<col style="width: 32%" />
-<col style="width: 36%" />
-<col style="width: 32%" />
-</colgroup>
-<thead>
-<tr>
-<th>Arabic Term</th>
-<th>English Meaning</th>
-<th>Intent</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>مقاول للمطورين العقاريين</td>
-<td>Contractor for developers</td>
-<td>Transactional</td>
-</tr>
-<tr>
-<td>شريك تنفيذي مشاريع سكنية</td>
-<td>Residential execution partner</td>
-<td>Transactional</td>
-</tr>
-<tr>
-<td>مقاول بناء فلل بالجملة</td>
-<td>Bulk villa contractor</td>
-<td>Transactional</td>
-</tr>
-<tr>
-<td>تنفيذ مشاريع عقارية</td>
-<td>RE project execution</td>
-<td>Transactional</td>
-</tr>
-<tr>
-<td>مقاول بناء مصنف الرياض</td>
-<td>Classified contractor Riyadh</td>
-<td>Transactional</td>
-</tr>
-<tr>
-<td>تكلفة بناء مشروع سكني</td>
-<td>Residential build cost</td>
-<td>Informational</td>
-</tr>
-</tbody>
-</table>
-<h2 id="factory-keywords">Factory Keywords</h2>
-<table>
-<colgroup>
-<col style="width: 32%" />
-<col style="width: 36%" />
-<col style="width: 32%" />
-</colgroup>
-<thead>
-<tr>
-<th>Arabic Term</th>
-<th>English Meaning</th>
-<th>Intent</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>صيانة كهرباء مصانع</td>
-<td>Factory electrical maintenance</td>
-<td>Transactional</td>
-</tr>
-<tr>
-<td>إشراف بنية تحتية مصانع</td>
-<td>Factory infra supervision</td>
-<td>Transactional</td>
-</tr>
-<tr>
-<td>صيانة مصانع الرياض</td>
-<td>Factory maintenance Riyadh</td>
-<td>Transactional</td>
-</tr>
-<tr>
-<td>فحص لوحات كهرباء صناعية</td>
-<td>Industrial panel inspection</td>
-<td>Transactional</td>
-</tr>
-<tr>
-<td>التزام الدفاع المدني مصانع</td>
-<td>Civil Defense compliance</td>
-<td>Informational</td>
-</tr>
-<tr>
-<td>تكلفة توقف مصنع</td>
-<td>Factory downtime cost</td>
-<td>Informational</td>
-</tr>
-</tbody>
-</table>
-<h2 id="negative-keywords">Negative Keywords</h2>
-<table>
-<thead>
-<tr>
-<th>Arabic Term</th>
-<th>Why Exclude</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>وظائف صيانة</td>
-<td>Job seekers</td>
-</tr>
-<tr>
-<td>مقاول رخيص</td>
-<td>Price shoppers</td>
-</tr>
-<tr>
-<td>معدات كهربائية للبيع</td>
-<td>Equipment buyers</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">10</span>
-              <span>PART 10: CHANNEL ARCHITECTURE</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="channel-priority">Channel Priority</h2>
-<pre><code>🔴 List Build    → Blue Pages + LinkedIn Sales Navigator + Google Maps
-🟠 First Touch   → LinkedIn DM (personalized Message)
-🟡 Follow-up     → WhatsApp (portfolio/audit checklist)
-🔵 Meeting       → Cold Call (after warm-up)
-⚪ Proposal      → Email (after meeting)
-💡 Brand         → LinkedIn Content (2 Arabic posts/week)</code></pre>
-<h2 id="the-10-day-outbound-sequence">The 10-Day Outbound Sequence</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Day</th>
-<th>Channel</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td>LinkedIn</td>
-<td>Connection request</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td>LinkedIn</td>
-<td>DM with personalized Message</td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td>WhatsApp</td>
-<td>Portfolio PDF / audit checklist</td>
-</tr>
-<tr>
-<td style="text-align: center;">6</td>
-<td>Cold Call</td>
-<td>Reference LinkedIn → free assessment</td>
-</tr>
-<tr>
-<td style="text-align: center;">8</td>
-<td>Email</td>
-<td>Formal proposal (if meeting happened)</td>
-</tr>
-<tr>
-<td style="text-align: center;">10</td>
-<td>WhatsApp</td>
-<td>Final follow-up + EDP content</td>
-</tr>
-</tbody>
-</table>
-<h2 id="monthly-budget">Monthly Budget</h2>
-<table>
-<thead>
-<tr>
-<th>Channel</th>
-<th style="text-align: center;">Cost</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>LinkedIn Navigator</td>
-<td style="text-align: center;">SAR 500–800</td>
-</tr>
-<tr>
-<td>WhatsApp Business API</td>
-<td style="text-align: center;">SAR 300–500</td>
-</tr>
-<tr>
-<td>Blue Pages</td>
-<td style="text-align: center;">Free</td>
-</tr>
-<tr>
-<td>Google Maps</td>
-<td style="text-align: center;">Free</td>
-</tr>
-<tr>
-<td>Cold calling</td>
-<td style="text-align: center;">SAR 200–500</td>
-</tr>
-<tr>
-<td><strong>Total</strong></td>
-<td style="text-align: center;"><strong>SAR 1,000–1,800/mo</strong></td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">11</span>
-              <span>PART 11: 90-DAY OUTBOUND CALENDAR</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="phase-1-days-130-foundation-first-pipeline">Phase 1: Days 1–30 —
-Foundation &amp; First Pipeline</h2>
-<p><strong>Goal:</strong> Build infrastructure, create lists, launch
-sequences, book 10+ meetings</p>
-<table>
-<colgroup>
-<col style="width: 46%" />
-<col style="width: 53%" />
-</colgroup>
-<thead>
-<tr>
-<th>Week</th>
-<th>Focus</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Week 1</td>
-<td>LinkedIn Navigator setup, Blue Pages extraction, prospect list (50
-devs + 50 factories), portfolio PDF</td>
-</tr>
-<tr>
-<td>Week 2</td>
-<td>Launch outbound sequences (100 prospects), WhatsApp follow-ups</td>
-</tr>
-<tr>
-<td>Week 3–4</td>
-<td>Cold calling sprint (50+ calls), first 10 meetings, first
-proposals</td>
-</tr>
-</tbody>
-</table>
-<p><strong>KPIs:</strong> 100 contacted, &gt; 15% response, 10+
-meetings, 3+ proposals</p>
-<h2 id="phase-2-days-3160-acceleration">Phase 2: Days 31–60 —
-Acceleration</h2>
-<p><strong>Goal:</strong> Expand to 250+ prospects, close first
-deals</p>
-<table>
-<colgroup>
-<col style="width: 46%" />
-<col style="width: 53%" />
-</colgroup>
-<thead>
-<tr>
-<th>Week</th>
-<th>Focus</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Week 5–6</td>
-<td>Expand list (150 devs + 100 factories), Blue Pages new categories,
-Google Ads launch</td>
-</tr>
-<tr>
-<td>Week 7–8</td>
-<td>20 calls/day, first deals in negotiation, A/B test LinkedIn DMs</td>
-</tr>
-</tbody>
-</table>
-<p><strong>KPIs:</strong> 250+ contacted, &gt; 20% response, 25+
-meetings, SAR 5M+ pipeline, 1–2 deals closed</p>
-<h2 id="phase-3-days-6190-full-pipeline">Phase 3: Days 61–90 — Full
-Pipeline</h2>
-<p><strong>Goal:</strong> 500+ contacted, 5+ deals, referral engine
-active</p>
-<table>
-<colgroup>
-<col style="width: 46%" />
-<col style="width: 53%" />
-</colgroup>
-<thead>
-<tr>
-<th>Week</th>
-<th>Focus</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Week 9–10</td>
-<td>500+ prospects, referral program, LinkedIn thought leadership,
-industry events</td>
-</tr>
-<tr>
-<td>Week 11–12</td>
-<td>Full pipeline review, 3–5+ deals closed, Q2 plan</td>
-</tr>
-</tbody>
-</table>
-<p><strong>KPIs:</strong> 500+ contacted, &gt; 25% response, 50+
-meetings, SAR 10M+ pipeline, 5+ deals</p>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">12</span>
-              <span>PART 12: SUCCESS METRICS</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><table>
-<thead>
-<tr>
-<th>Metric</th>
-<th style="text-align: center;">Day 30</th>
-<th style="text-align: center;">Day 60</th>
-<th style="text-align: center;">Day 90</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Prospects contacted</td>
-<td style="text-align: center;">100+</td>
-<td style="text-align: center;">250+</td>
-<td style="text-align: center;">500+</td>
-</tr>
-<tr>
-<td>Response rate</td>
-<td style="text-align: center;">&gt; 15%</td>
-<td style="text-align: center;">&gt; 20%</td>
-<td style="text-align: center;">&gt; 25%</td>
-</tr>
-<tr>
-<td>Meetings booked</td>
-<td style="text-align: center;">10+</td>
-<td style="text-align: center;">25+</td>
-<td style="text-align: center;">50+</td>
-</tr>
-<tr>
-<td>Proposals sent</td>
-<td style="text-align: center;">3+</td>
-<td style="text-align: center;">8+</td>
-<td style="text-align: center;">15+</td>
-</tr>
-<tr>
-<td>Pipeline value</td>
-<td style="text-align: center;">SAR 2M+</td>
-<td style="text-align: center;">SAR 5M+</td>
-<td style="text-align: center;">SAR 10M+</td>
-</tr>
-<tr>
-<td>Deals closed</td>
-<td style="text-align: center;">1+</td>
-<td style="text-align: center;">3+</td>
-<td style="text-align: center;">5+</td>
-</tr>
-</tbody>
-</table>
-<h2 id="unit-economics">Unit Economics</h2>
-<table>
-<thead>
-<tr>
-<th>Metric</th>
-<th>Target</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Avg deal (Developer)</td>
-<td>SAR 500K+ per project</td>
-</tr>
-<tr>
-<td>Avg deal (Factory)</td>
-<td>SAR 5K+/month retainer</td>
-</tr>
-<tr>
-<td>LinkedIn → response</td>
-<td>15–25%</td>
-</tr>
-<tr>
-<td>Response → meeting</td>
-<td>40–50%</td>
-</tr>
-<tr>
-<td>Meeting → proposal</td>
-<td>60–70%</td>
-</tr>
-<tr>
-<td>Proposal → closed</td>
-<td>20–30%</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">13</span>
-              <span>PART 13: LAUNCH CHECKLIST</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><ul class="task-list">
-<li><label><input type="checkbox" />LinkedIn Sales Navigator
-activated</label></li>
-<li><label><input type="checkbox" />Blue Pages data extracted: 50 devs +
-50 factories</label></li>
-<li><label><input type="checkbox" />Each prospect enriched (website +
-LinkedIn)</label></li>
-<li><label><input type="checkbox" />LinkedIn profile optimized (Arabic +
-English, portfolio link)</label></li>
-<li><label><input type="checkbox" />WhatsApp Business ready (4 templates
-submitted)</label></li>
-<li><label><input type="checkbox" />CRM configured with segment tags
-(Developer/Factory) + signal levels (L1–L4)</label></li>
-<li><label><input type="checkbox" />Portfolio PDF ready (developer
-projects + factory MEP work)</label></li>
-<li><label><input type="checkbox" />Free MEP audit checklist
-designed</label></li>
-<li><label><input type="checkbox" />Free project capacity assessment
-template ready</label></li>
-<li><label><input type="checkbox" />Cold calling script
-practiced</label></li>
-<li><label><input type="checkbox" />Email signature with portfolio
-link</label></li>
-</ul>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">14</span>
-              <span>PART 14: ENRICHMENT CHECKLIST</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><h2 id="per-developer-prospect">Per Developer Prospect</h2>
-<ul class="task-list">
-<li><label><input type="checkbox" />Visit website → count projects on
-“Projects” page</label></li>
-<li><label><input type="checkbox" />Note project types +
-locations</label></li>
-<li><label><input type="checkbox" />LinkedIn → company size</label></li>
-<li><label><input type="checkbox" />LinkedIn → PM/engineer job
-posts?</label></li>
-<li><label><input type="checkbox" />Find CEO/Owner LinkedIn → for
-DM</label></li>
-<li><label><input type="checkbox" />Confirm WhatsApp from Blue
-Pages</label></li>
-<li><label><input type="checkbox" /><strong>Score:</strong> L1 / L2 / L3
-/ L4</label></li>
-</ul>
-<h2 id="per-factory-prospect">Per Factory Prospect</h2>
-<ul class="task-list">
-<li><label><input type="checkbox" />Blue Pages → factory type from
-description</label></li>
-<li><label><input type="checkbox" />Google Maps → industrial
-zone</label></li>
-<li><label><input type="checkbox" />Website → maintenance page
-exists?</label></li>
-<li><label><input type="checkbox" />LinkedIn → company size + hiring
-maintenance?</label></li>
-<li><label><input type="checkbox" />Find Owner/Manager → for
-DM</label></li>
-<li><label><input type="checkbox" />Confirm WhatsApp from Blue
-Pages</label></li>
-<li><label><input type="checkbox" /><strong>Score:</strong> L1 / L2 / L3
-/ L4</label></li>
-</ul>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">15</span>
-              <span>PART 15: ANTI-PATTERNS TO AVOID</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><table>
-<colgroup>
-<col style="width: 47%" />
-<col style="width: 52%" />
-</colgroup>
-<thead>
-<tr>
-<th>❌ Bad</th>
-<th>✅ Good</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Mass-blast identical messages</td>
-<td>Personalized by enrichment data</td>
-</tr>
-<tr>
-<td>Lead with price</td>
-<td>Lead with a value question</td>
-</tr>
-<tr>
-<td>Cold-cold call (no warm-up)</td>
-<td>LinkedIn warm → then call</td>
-</tr>
-<tr>
-<td>Send long proposal unsolicited</td>
-<td>Proposal only after conversation</td>
-</tr>
-<tr>
-<td>Skip WhatsApp follow-up</td>
-<td>LinkedIn → WhatsApp within 48h</td>
-</tr>
-<tr>
-<td>Post only in English</td>
-<td>Arabic posts get 3–5x engagement</td>
-</tr>
-<tr>
-<td>“We are honored to offer our services…”</td>
-<td>“How many projects can you execute this year?”</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">16</span>
-              <span>PART 16: VALIDATION GAPS — What’s Missing Before Launch</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><blockquote>
-<p>⚠️ <strong>Parts 1–15 are the strategy. There are critical missing
-inputs before any outbound.</strong> Each gap links to a Message or
-asset that will be affected.</p>
-</blockquote>
-<h2 id="gap-1-value-pack-numbers-not-validated">🔴 GAP 1: Message
-Numbers Not Validated</h2>
-<p><strong>Problem:</strong> The cost table in Message D1 (the first
-message to developers) uses approximate numbers — not Mustafa’s real
-project data. If a prospect asks “Where is this from?” we won’t have a
-solid answer.</p>
-<p><strong>Fix:</strong> Mustafa fills the cost table in Part 17.</p>
-<p><strong>Impacts:</strong> Message D1 (Cost Benchmark) + Message
-D2 (Hiring Math) + Message S1 (Saudization Map)</p>
-<hr />
-<h2 id="gap-2-track-record-not-verified">🔴 GAP 2: Track Record Not
-Verified</h2>
-<p><strong>Problem:</strong> We sell Mustafa as an “execution wing” —
-but we don’t know if he has actually delivered in that model.</p>
-<table>
-<colgroup>
-<col style="width: 55%" />
-<col style="width: 45%" />
-</colgroup>
-<thead>
-<tr>
-<th>If the answer is</th>
-<th>Impact</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Track record with developers</td>
-<td>✅ Use a real case study in Messages</td>
-</tr>
-<tr>
-<td>Projects exist but not with developers</td>
-<td>⚠️ Adjust Message: “We delivered residential projects” vs “We
-work with developers”</td>
-</tr>
-<tr>
-<td>No clear track record</td>
-<td>❌ Change positioning or start with a discounted pilot</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Fix:</strong> Mustafa answers the track record section in
-Part 17.</p>
-<hr />
-<h2 id="gap-3-no-competitive-intel">🔴 GAP 3: No Competitive Intel</h2>
-<p><strong>Problem:</strong> We don’t know the real competitors. Is
-anyone offering an “execution wing” in Saudi, or is Mustafa first?</p>
-<p><strong>Fix:</strong> Mustafa answers the competitor questions in
-Part 17.</p>
-<hr />
-<h2 id="gap-4-blue-pages-data-weak-for-developers">🟠 GAP 4: Blue Pages
-Data Weak for Developers</h2>
-<p><strong>Problem:</strong> (validated in Part 6) - Real Estate:
-<strong>25 companies only</strong> with 15% WhatsApp — not enough as a
-primary source - Ops &amp; Maintenance: <strong>26 companies</strong>
-with 55% WhatsApp — strong</p>
-<p><strong>Fix:</strong> LinkedIn Sales Navigator = primary for
-developers. Blue Pages = primary for factories.</p>
-<hr />
-<h2 id="gap-5-sales-cycle-unknown">🟠 GAP 5: Sales Cycle Unknown</h2>
-<p><strong>Problem:</strong> We don’t know the time from first touch to
-signature. Part 12 numbers are assumptions, not data.</p>
-<p><strong>Fix:</strong> Mustafa answers the sales-cycle questions in
-Part 17.</p>
-<hr />
-<h2 id="priority-order">Priority Order</h2>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>Gap</th>
-<th style="text-align: center;">Required before outbound?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Cost numbers</td>
-<td style="text-align: center;">✅ Required</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Track record</td>
-<td style="text-align: center;">✅ Required</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Competitors</td>
-<td style="text-align: center;">✅ Required</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Blue Pages data (handled)</td>
-<td style="text-align: center;">➖</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Sales cycle</td>
-<td style="text-align: center;">Important but not blocking</td>
-</tr>
-</tbody>
-</table>
-<hr />
-</div>
-          </div>
-        </div>
-        
-
-        <div class="accordion-item">
-          <div class="accordion-header">
-            <div class="accordion-title">
-              <span class="step-num">17</span>
-              <span>PART 17: Questions for Mustafa — Data Collection</span>
-            </div>
-            <svg class="accordion-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-          </div>
-          <div class="accordion-content">
-            <div class="accordion-body"><blockquote>
-<p><strong>⏱️ Time needed: ~1 hour</strong> <strong>⚠️ Without the 🔴
-sections, we can’t launch.</strong></p>
-</blockquote>
-<hr />
-<h2 id="real-cost-numbers">1) Real Cost Numbers 🔴</h2>
-<blockquote>
-<p>We use these in the first message to developers — the build-cost
-benchmark.</p>
-</blockquote>
-<h3 id="construction-cost-from-mustafas-real-projects">Construction Cost
-(From Mustafa’s Real Projects)</h3>
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th style="text-align: center;">Mustafa Price (SAR/m²)</th>
-<th style="text-align: center;">Market Avg (SAR/m²)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Structure (concrete + steel)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>Standard finishing</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>Premium finishing</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>MEP (electrical + water + HVAC)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>Supervision + PM</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>Earthworks + foundations</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>External facades</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>Approx total cost per m²</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<h3 id="real-project-example-most-recent-handover">Real Project Example
-(Most recent handover)</h3>
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Answer</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Project name/type (villas / apartments / commercial)</td>
-<td></td>
-</tr>
-<tr>
-<td>Location (district + city)</td>
-<td></td>
-</tr>
-<tr>
-<td>Total area (m²)</td>
-<td></td>
-</tr>
-<tr>
-<td>Number of units</td>
-<td></td>
-</tr>
-<tr>
-<td>Total cost (SAR)</td>
-<td></td>
-</tr>
-<tr>
-<td>Agreed duration</td>
-<td></td>
-</tr>
-<tr>
-<td>Actual duration</td>
-<td></td>
-</tr>
-<tr>
-<td>Delivered on time?</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="track-record">2) Track Record 🔴</h2>
-<h3 id="previous-projects">Previous Projects</h3>
-<p><strong>How many projects have you completed overall?</strong>
+<h2 id="دورة-البيع">٤. دورة البيع 🟠</h2>
+<p><strong>آخر ٥ عملاء — كم أخذت من أول تواصل لحد التوقيع؟</strong>
 ____________</p>
-<table>
-<colgroup>
-<col style="width: 3%" />
-<col style="width: 15%" />
-<col style="width: 9%" />
-<col style="width: 15%" />
-<col style="width: 16%" />
-<col style="width: 8%" />
-<col style="width: 30%" />
-</colgroup>
-<thead>
-<tr>
-<th>#</th>
-<th>Project type</th>
-<th>Location</th>
-<th style="text-align: center;">Units</th>
-<th style="text-align: center;">Value (SAR)</th>
-<th style="text-align: center;">Duration</th>
-<th style="text-align: center;">Client (developer / individual /
-entity)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>2</td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>3</td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>4</td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>5</td>
-<td></td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<h3 id="execution-wing-model">“Execution Wing” Model</h3>
-<blockquote>
-<p><strong>Critical question:</strong> We sell you as an “execution
-wing” for developers — the developer sources land and you build. Have
-you worked this way before?</p>
-</blockquote>
+<p><strong>مين يوقّع العقد عادة؟</strong> ____________</p>
+<p><strong>إيش أكبر سبب العميل يرفض أو يأجل؟</strong> ____________</p>
+<h2 id="الملفات-المطلوبة">٥. الملفات المطلوبة 🟡</h2>
 <ul class="task-list">
-<li><label><input type="checkbox" /><strong>Yes</strong> — we did this
-with one or more developers</label>
-<ul>
-<li>With who? ____________</li>
-<li>How many projects? ____________</li>
-<li>Was it successful? ____________</li>
-</ul></li>
-<li><label><input type="checkbox" /><strong>Not yet, but ready</strong>
-— we haven’t done it exactly but we have the capability</label></li>
-<li><label><input type="checkbox" /><strong>Not sure</strong> — we need
-to understand more</label></li>
-</ul>
-<h3 id="factory-services">Factory Services</h3>
-<p><strong>Have you worked with factories on MEP
-maintenance?</strong></p>
-<ul class="task-list">
-<li><label><input type="checkbox" /><strong>Yes</strong></label>
-<ul>
-<li>How many factories? ____________</li>
-<li>Factory types? ____________</li>
-<li>Contract type (monthly / yearly / one-off)? ____________</li>
-<li>Avg monthly contract value (SAR)? ____________</li>
-</ul></li>
-<li><label><input type="checkbox" /><strong>No</strong></label></li>
-</ul>
-<hr />
-<h2 id="company-data">3) Company Data 🔴</h2>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Answer</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Legal name (Arabic)</td>
-<td></td>
-</tr>
-<tr>
-<td>Legal name (English)</td>
-<td></td>
-</tr>
-<tr>
-<td>Contractor classification (1st/2nd/3rd/4th/5th/unclassified)</td>
-<td></td>
-</tr>
-<tr>
-<td>Commercial registration number</td>
-<td></td>
-</tr>
-<tr>
-<td>Year founded</td>
-<td></td>
-</tr>
-<tr>
-<td># Engineers</td>
-<td></td>
-</tr>
-<tr>
-<td># Technicians</td>
-<td></td>
-</tr>
-<tr>
-<td># Admin</td>
-<td></td>
-</tr>
-<tr>
-<td>Total headcount</td>
-<td></td>
-</tr>
-<tr>
-<td>Cities you operate in</td>
-<td></td>
-</tr>
-<tr>
-<td>Website (link)</td>
-<td></td>
-</tr>
-<tr>
-<td>LinkedIn page (link)</td>
-<td></td>
-</tr>
-<tr>
-<td>Largest project delivered (value)</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="competitors">4) Competitors 🔴</h2>
-<p><strong>Which contractors do you consider competitors?</strong></p>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>Company</th>
-<th style="text-align: center;">Size (larger/same/smaller)</th>
-<th>Strength</th>
-<th>Weakness</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>2</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>3</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>When a client compares you to another contractor —
-usually:</strong> - [ ] You’re cheaper - [ ] Same price, higher quality
-- [ ] More expensive but on-time delivery - [ ] Not sure</p>
-<p><strong>Is anyone offering an “execution wing” or “outsourced
-construction team” in Saudi?</strong> - [ ] Yes — who? ____________ - [
-] No — we’re first</p>
-<hr />
-<h2 id="sales-cycle">5) Sales Cycle 🟠</h2>
-<table>
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 18%" />
-<col style="width: 18%" />
-<col style="width: 36%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr>
-<th>#</th>
-<th>Client type</th>
-<th style="text-align: center;">How they found you</th>
-<th style="text-align: center;">Time to signature</th>
-<th style="text-align: center;"># of meetings</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>2</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>3</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>4</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>5</td>
-<td></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Question</th>
-<th>Answer</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Who usually signs the contract?</td>
-<td></td>
-</tr>
-<tr>
-<td>Biggest reason deals are delayed or lost?</td>
-<td></td>
-</tr>
-<tr>
-<td>Do you offer a free site visit?</td>
-<td></td>
-</tr>
-<tr>
-<td>Avg contract value (SAR)?</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="photos-files">6) Photos &amp; Files 🟡</h2>
-<ul class="task-list">
-<li><label><input type="checkbox" />Project photos (before/after) — at
-least 3 projects</label></li>
-<li><label><input type="checkbox" />Company profile (if
-available)</label></li>
-<li><label><input type="checkbox" />Certificates or licenses
-(classification, ISO)</label></li>
-<li><label><input type="checkbox" />Client testimonial/thank-you
-letter</label></li>
-<li><label><input type="checkbox" />Company logo (high-res)</label></li>
-</ul>
-<hr />
-<h2 id="summary">Summary</h2>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>Requirement</th>
-<th style="text-align: center;">Priority</th>
-<th style="text-align: center;">Time</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Cost numbers</td>
-<td style="text-align: center;">🔴</td>
-<td style="text-align: center;">15 minutes</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Track record + case study</td>
-<td style="text-align: center;">🔴</td>
-<td style="text-align: center;">20 minutes</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Company data</td>
-<td style="text-align: center;">🔴</td>
-<td style="text-align: center;">10 minutes</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Competitors</td>
-<td style="text-align: center;">🔴</td>
-<td style="text-align: center;">10 minutes</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Sales cycle</td>
-<td style="text-align: center;">🟠</td>
-<td style="text-align: center;">10 minutes</td>
-</tr>
-<tr>
-<td>6</td>
-<td>Photos &amp; files</td>
-<td style="text-align: center;">🟡</td>
-<td style="text-align: center;">As available</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p><strong>Total: ~1 hour</strong> <strong>⚠️ Without sections 1–4, we
-can’t launch.</strong></p>
-</blockquote>
-</div>
+<li><label><input type="checkbox" />صور مشاريع (قبل وبعد) — على الأقل
+٥</label></li>
+<li><label><input type="checkbox" />Company Profile PDF</label></li>
+<li><label><input type="checkbox" />شهادة التصنيف</label></li>
+<li><label><input type="checkbox" />شهادة التأمين</label></li>
+<li><label><input type="checkbox" />مراجع عملاء (٣ أسماء + أرقام
+بإذنهم)</label></li>
+<li><label><input type="checkbox" />لوقو بدقة عالية</label></li>
+</ul></div>
           </div>
         </div>
-        
-        </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
   <script>
-    const setLang = (lang) => {
-      document.body.setAttribute('data-lang', lang);
-      document.documentElement.lang = lang;
-      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-      localStorage.setItem('preferredLang', lang);
-    };
-
-    const storedLang = localStorage.getItem('preferredLang') || 'ar';
-    setLang(storedLang);
-
-    document.querySelectorAll('[data-lang-toggle]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        setLang(btn.getAttribute('data-lang-target'));
-      });
+document.querySelectorAll('.accordion-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const item = header.parentElement;
+    const content = item.querySelector('.accordion-content');
+    const isOpen = item.classList.contains('open');
+    
+    // Close all
+    document.querySelectorAll('.accordion-item').forEach(ai => {
+      ai.classList.remove('open');
+      ai.querySelector('.accordion-content').style.maxHeight = null;
     });
-
-    document.querySelectorAll('.accordion-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const item = header.parentElement;
-        const content = item.querySelector('.accordion-content');
-        if (item.classList.contains('open')) {
-          item.classList.remove('open');
-          content.style.maxHeight = null;
-        } else {
-          item.classList.add('open');
-          content.style.maxHeight = content.scrollHeight + 'px';
-        }
-      });
-    });
-
-    document.querySelectorAll('.accordion-item:first-child').forEach(item => {
-      const content = item.querySelector('.accordion-content');
+    
+    // Toggle current
+    if (!isOpen) {
       item.classList.add('open');
       content.style.maxHeight = content.scrollHeight + 'px';
-    });
+    }
+  });
+});
   </script>
 </body>
 </html>
